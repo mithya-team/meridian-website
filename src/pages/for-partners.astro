@@ -1,0 +1,84 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/partners.css";
+---
+<Base
+  title="For partners · Meridian"
+  description="What your partners experience in Meridian: one place to request funds, sign and claim, with the status and the next step always in view."
+  share="og-for-partners.png"
+  shareAlt="Meridian: Your partners always know what's next. A partner's view of an example request: requested, approved and signed, with the agency invoice needed for the claim."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, the partner's view of one request right -->
+<section class="fphero" id="top"><div class="in fphero-grid">
+  <div class="hero-copy">
+    <span class="pill">For partners</span>
+    <h1>Your partners always know <em>what's next.</em></h1>
+    <p class="lead">One place to request funds, sign and claim. Partners see where each request stands and what is needed from them, without asking you.</p>
+    <div class="btns"><a class="btn" href="#walkthrough">Request a walkthrough</a><a class="btn ghost" href="#steps">See the partner's side</a></div>
+  </div>
+  <div class="fpart peach" role="img" aria-label="A partner's view of the launch event request: requested, approved and signed, with the claim in progress and the agency invoice still needed.">
+    <div class="card fpcard" id="fpcard">
+      <div class="rec-h"><div><b>Launch event</b><small class="mono">MDF-000123</small></div><span class="st">Ready</span></div>
+      <ol class="fpsteps"><li class="done">Requested</li><li class="done">Approved</li><li class="done">Signed</li><li class="now">Claim</li><li>Paid</li></ol>
+      <div class="fpnext"><small>Needed from you</small><b>Upload the agency invoice</b></div>
+    </div>
+    <div class="chip fpchip"><i class="ok">✓</i>Approved · USD 24,000</div>
+  </div>
+</div></section>
+
+<!-- 2 · The partner's side: one column, six moments -->
+<section class="sec" id="steps" aria-labelledby="h-steps"><div class="in">
+  <div class="sec-c"><h2 id="h-steps" class="rv">From draft to paid, <em>without chasing.</em></h2><p class="lead rv">Six moments, as your partner meets them.</p></div>
+  <ol class="fpl" id="fpl">
+    <li class="fpi"><h3>Draft together</h3><p>Drafts save automatically and are shared with colleagues at the same partner.</p>
+      <div class="fps"><i class="ok">✓</i>Draft saved · shared with your colleagues</div></li>
+    <li class="fpi"><h3>Submit, or learn why not</h3><p>If a partner can't submit, the portal says why and who to contact.</p>
+      <div class="fps warn"><i class="fpw" aria-hidden="true">!</i><span>You can't submit yet. Your organisation doesn't have access to this Program. Contact Tom Reyes.</span></div></li>
+    <li class="fpi"><h3>Follow the status</h3><p>Partners can edit until approval, answer a correction, or withdraw. They are told the outcome with the approved terms.</p>
+      <div class="fps two"><span class="st">Approved</span><b class="mono">USD 24,000</b><span>Q2 FY26</span></div></li>
+    <li class="fpi"><h3>Sign by link</h3><p>The partner's authorised signatory signs from an emailed link. No account needed.</p>
+      <div class="fps two"><span>Request form ready to sign</span><span class="fakebtn">Open secure link</span></div></li>
+    <li class="fpi"><h3>Claim against a checklist</h3><p>Each activity type has its own evidence checklist, so partners know what to upload.</p>
+      <ul class="fps list"><li><i class="ok">✓</i>Event photos</li><li><i class="ok">✓</i>Attendee list</li><li class="no"><i class="ok">✓</i>Agency invoice</li></ul></li>
+    <li class="fpi"><h3>Invoice, then payment</h3><p>The partner uploads the invoice for the confirmed amount, and is told when payment is recorded.</p>
+      <div class="fps"><i class="ok">✓</i>Payment recorded · 4 Jun 2026</div></li>
+  </ol>
+</div></section>
+
+<!-- 3 · What partners see and never see: two panes -->
+<section class="sec" id="sees" aria-labelledby="h-sees"><div class="in">
+  <div class="sec-h rv"><h2 id="h-sees">Their requests, <em>and only theirs.</em></h2><a class="lk" href="/controls#c-16">See the rule <span aria-hidden="true">→</span></a></div>
+  <div class="fpduo">
+    <article class="fpp mint pv"><h3>Partners see</h3><ul><li><i class="ok">✓</i>Their own organisation's requests</li><li><i class="ok">✓</i>Where each one stands</li><li><i class="ok">✓</i>What is needed from them next</li><li><i class="ok">✓</i>The outcome, with the approved terms</li></ul></article>
+    <article class="fpp grey pv"><h3>Partners never see</h3><ul><li><i class="fpx" aria-hidden="true">✕</i>Internal notes</li><li><i class="fpx" aria-hidden="true">✕</i>Internal reasons for a decision</li><li><i class="fpx" aria-hidden="true">✕</i>Budgets</li><li><i class="fpx" aria-hidden="true">✕</i>Other partners</li></ul></article>
+  </div>
+</div></section>
+
+<!-- 4 · Questions partners ask: heading left, one accordion column right -->
+<section class="sec" id="questions" aria-labelledby="h-q"><div class="in acols">
+  <div class="ahead"><h2 id="h-q" class="rv">Questions <em>partners ask.</em></h2><p class="lead rv">Written so you can forward this page to a partner.</p></div>
+  <div class="acc">
+    <details class="pv" name="pq" open><summary><h3>Do I need an account to sign?</h3><i class="aplus" aria-hidden="true"></i></summary><p>No. The authorised signatory opens an emailed link, downloads the approved request form and returns it signed, or declines. They see only that one form.</p></details>
+    <details class="pv" name="pq"><summary><h3>Can I change a request after I submit it?</h3><i class="aplus" aria-hidden="true"></i></summary><p>Yes, until it is approved. You can also answer a correction if one is asked for, or withdraw the request.</p></details>
+    <details class="pv" name="pq"><summary><h3>How do I know what proof to upload?</h3><i class="aplus" aria-hidden="true"></i></summary><p>Each activity type has an evidence checklist. When the activity is ready, you upload proof and cost files against it and submit the claim.</p></details>
+    <details class="pv" name="pq"><summary><h3>When do I get paid?</h3><i class="aplus" aria-hidden="true"></i></summary><p>You upload the invoice for the confirmed amount. Once the claim is approved, the vendor's finance team pays it in their own system, and you are told when payment is recorded.</p></details>
+    <details class="pv" name="pq"><summary><h3>Who can see my requests?</h3><i class="aplus" aria-hidden="true"></i></summary><p>Your own organisation and the vendor's team. Other partners never see them.</p></details>
+  </div>
+</div></section>
+
+<!-- 5 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See the partner's side<br>for yourself.</h2><p>We'll walk one request through as a partner, with one of your activity types.</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a><p class="start">Support for every partner and team member.</p></div>
+  <ul class="qs"><li><a href="/how-it-works">How it works</a></li><li><a href="/controls">See the controls</a></li><li><a href="/audit-evidence-pack">Open the audit evidence pack</a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/partners.js";
+</script>
+</Base>

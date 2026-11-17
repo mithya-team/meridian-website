@@ -1,0 +1,51 @@
+/* Teams page. Shares the homepage's look (home.css is loaded first). Hero with one person's queue, a finance feature, then roles on the left and one role's sheet on the right, then the teal close. */
+
+/* 1 hero */
+.thero { padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem); }
+.thero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; }
+.tart { position: relative; border-radius: 28px; min-height: 24rem; padding: 3.5rem 1.5rem 2.5rem; display: grid; place-items: center; }
+.tq, .tclose { width: min(100%, 21rem); padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .2rem; font-size: 1rem; color: var(--ink2); }
+.tq li, .tclose li { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 0; border-top: 1px solid var(--soft); }
+.tq .fl-t, .tclose .fl-t { border-top: 0; padding-top: 0; }
+.tclose b { font-weight: 500; font-size: .9375rem; color: var(--ink); }
+.tchip { right: 1.25rem; top: 1.5rem; transition: opacity .3s, transform .5s var(--spring); }
+.js .tart:not(.seen) .tchip { opacity: 0; transform: translateY(10px) scale(.9); } .js .tart.seen .tchip { transition-delay: .9s; }
+.js .tq li { opacity: 0; transform: translateX(-8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.js .tart.seen .tq li { opacity: 1; transform: none; } .js .tart.seen .tq li:nth-child(2) { transition-delay: .25s; } .js .tart.seen .tq li:nth-child(3) { transition-delay: .4s; } .js .tart.seen .tq li:nth-child(4) { transition-delay: .55s; }
+@media (max-width: 900px) { .thero-grid { grid-template-columns: 1fr; } .tart { min-height: 0; padding-top: 4.75rem; } }
+
+/* 2 finance */
+.tfin { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem 4rem; align-items: center; }
+.tfin-w { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+.pill.white-line { background: var(--sky); color: #1D5FBF; }
+.tfin-p { position: relative; min-height: 28rem; border-radius: 28px; background: var(--sky); }
+.tfin-p .tclose { position: absolute; left: 7%; top: 3.6rem; rotate: -2deg; }
+.tfin-p .tmatch { position: absolute; right: 6%; bottom: 1.6rem; width: min(17rem, 62%); rotate: 2deg; margin: 0; }
+.tchip2 { right: 5%; top: 1.4rem; }
+.js .tfin-p.seen .tchip2 { animation: chipIn .6s var(--spring) both .7s; }
+@media (max-width: 900px) { .tfin { grid-template-columns: 1fr; } .tfin-p { min-height: 31rem; } }
+
+/* 3 roles */
+.ttabs { display: none; flex-direction: column; gap: .3rem; max-width: 22rem; }
+.ix .ttabs { display: flex; }
+.tgl { font: 500 .75rem var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--mut); padding: .9rem 1.1rem .3rem; }
+.tgl:first-child { padding-top: 0; }
+.ttab { all: unset; box-sizing: border-box; cursor: pointer; padding: .8rem 1.1rem; border-radius: 14px; font-size: 1.0625rem; color: var(--ink2); transition: background-color .2s, color .2s; }
+.ttab:hover { background: #F4F6F8; color: var(--ink); }
+.ttab[aria-pressed="true"] { background: var(--ink); color: #fff; font-weight: 500; }
+.ttab:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.tsheets { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.tsheet { border-radius: 28px; padding: clamp(1.5rem, 3.5vw, 2.5rem); display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; scroll-margin-top: 6.5rem; }
+.ix .tsheet { display: none; } .ix .tsheet.on { display: flex; animation: sayIn .5s var(--ease) both; }
+.tsheet header h3 { font-size: clamp(1.5rem, 2.4vw, 1.875rem); } .tsheet header p { font-size: .9375rem; color: var(--ink2); margin-top: .3rem; }
+.tchange { font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 500; letter-spacing: -.02em; line-height: 1.3; max-width: 34rem; }
+.tchange small { display: block; font: 500 .75rem var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--teal-d); margin-bottom: .5rem; }
+.tsteps { align-self: stretch; display: flex; flex-direction: column; gap: .45rem; counter-reset: s; }
+.tsteps li { counter-increment: s; background: #fff; border-radius: 14px; padding: .9rem 1.05rem; font-size: 1rem; line-height: 1.45; display: flex; align-items: baseline; gap: .9rem; }
+.tsteps li::before { content: counter(s); flex: none; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--mint); color: var(--teal-d); display: inline-grid; place-items: center; font: 500 .75rem/1 var(--mono); translate: 0 -.05em; }
+.ix .tsheet.on .tsteps li { animation: rowIn .4s var(--ease) both; }
+.ix .tsheet.on .tsteps li:nth-child(2) { animation-delay: .05s; } .ix .tsheet.on .tsteps li:nth-child(3) { animation-delay: .1s; } .ix .tsheet.on .tsteps li:nth-child(4) { animation-delay: .15s; } .ix .tsheet.on .tsteps li:nth-child(5) { animation-delay: .2s; } .ix .tsheet.on .tsteps li:nth-child(6) { animation-delay: .25s; }
+@media (max-width: 900px) { .ttabs { flex-direction: row; flex-wrap: wrap; max-width: none; gap: .45rem; } .tgl { display: none; } .ttab { padding: .65rem .9rem; font-size: .9375rem; box-shadow: inset 0 0 0 1px #CBD2DB; border-radius: 999px; } .ttab[aria-pressed="true"] { box-shadow: none; } }
+
+.close { padding-top: clamp(1rem, 3vw, 2.5rem); }
+@media (max-width: 560px) { .tfin-p .tclose { width: 84%; } }

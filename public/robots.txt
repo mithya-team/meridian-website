@@ -1,0 +1,5 @@
+# In review: keep crawlers out until launch. At launch, replace with:
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /

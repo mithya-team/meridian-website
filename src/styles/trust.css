@@ -1,0 +1,40 @@
+/* Trust page. Shares the homepage's look (home.css is loaded first, including the shared accordion). Hero with an access list, what is true today as one accordion column, what is being confirmed in one tinted panel, two doors to the controls and the evidence pack, then the teal close. */
+
+/* 1 hero */
+.trhero { padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem); }
+.trhero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 2.5rem 3.5rem; align-items: center; }
+.trart { position: relative; border-radius: 28px; min-height: 24rem; padding: 3.75rem 1.5rem 2.5rem; display: grid; place-items: center; }
+.tracc { width: min(100%, 23rem); padding: 1.3rem 1.4rem; display: flex; flex-direction: column; font-size: 1rem; }
+.tracc li { display: flex; align-items: center; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--soft); }
+.tracc .fl-t { border-top: 0; padding-top: 0; } .tracc li > span:nth-child(2) { flex: 1; min-width: 0; }
+.trchip { right: 1.25rem; top: 1.5rem; }
+.js .tracc li { opacity: 0; transform: translateX(-8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.js .trart.seen .tracc li { opacity: 1; transform: none; } .js .trart.seen .tracc li:nth-child(2) { transition-delay: .25s; } .js .trart.seen .tracc li:nth-child(3) { transition-delay: .4s; } .js .trart.seen .tracc li:nth-child(4) { transition-delay: .55s; }
+.js .trart.seen .trchip { animation: chipIn .6s var(--spring) both .9s; }
+@media (max-width: 900px) { .trhero-grid { grid-template-columns: 1fr; } .trart { min-height: 0; padding-top: 4.75rem; } }
+
+/* 2 true today */
+.acc details { scroll-margin-top: 7rem; }
+.qa { padding: 0 1.4rem 1.4rem; display: flex; flex-direction: column; gap: .8rem; max-width: 40rem; }
+.qa p { font-size: 1.0625rem; line-height: 1.55; color: var(--ink2); } .qa .lk { font-size: 1rem; margin-left: .2rem; }
+.js .acc .pv:nth-child(n+2) { transition-delay: .08s; }
+
+/* 3 being confirmed */
+.trpend { border-radius: 28px; background: var(--peach); padding: clamp(1.6rem, 4vw, 3rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 2.5rem 3.5rem; align-items: start; }
+.trpend-w { display: flex; flex-direction: column; gap: 1.2rem; }
+.trpend h2 { font-size: clamp(2.125rem, 3.7vw, 3.25rem); }
+.trlist { display: flex; flex-direction: column; gap: .45rem; }
+.trlist li { background: #fff; border-radius: 14px; padding: .85rem 1rem; display: flex; align-items: center; gap: .9rem; font-size: 1rem; line-height: 1.4; }
+.trlist .st { flex: none; }
+@media (max-width: 900px) { .trpend { grid-template-columns: 1fr; } .trlist li { align-items: flex-start; flex-direction: column; gap: .5rem; } }
+
+/* 4 two doors */
+.trdoors-s { padding-top: 0; }
+.trdoors { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.trdoor { border-radius: 28px; padding: clamp(1.6rem, 3.5vw, 2.5rem); min-height: 15rem; display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; transition: transform .35s var(--ease); }
+.trdoor:hover { transform: translateY(-4px); } .trdoor:hover .lk span { transform: translateX(4px); }
+.trdoor h3 { font-size: clamp(1.5rem, 2.4vw, 1.875rem); } .trdoor p { font-size: 1.0625rem; color: var(--ink2); max-width: 22rem; } .trdoor .lk { margin-top: auto; }
+.js .trdoor.pv.seen:hover { transform: translateY(-4px); transition-delay: 0s; transition-duration: .35s; }
+@media (max-width: 760px) { .trdoors { grid-template-columns: 1fr; } .trdoor { min-height: 0; gap: 1rem; } }
+
+.close { padding-top: clamp(1rem, 3vw, 2.5rem); }

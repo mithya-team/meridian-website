@@ -1,0 +1,181 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+---
+<Base
+  title="Meridian · The whole MDF cycle, on one common process"
+  description="Meridian runs the whole MDF cycle on one common process. Partners and your teams work the same request from first draft to paid claim, with a clear owner at every step."
+  share="og-home.png"
+  shareAlt="Meridian: The whole MDF cycle, on one common process. An example record, MDF-000123, approved in three steps."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, product right -->
+<section class="hero" id="top"><div class="in hero-grid">
+  <div class="hero-copy">
+    <span class="pill">Marketing enablement platform · MDF</span>
+    <h1>The whole MDF cycle,<br> on <em>one common<br> process.</em></h1>
+    <p class="lead">Partners and your teams work the same request from first draft to paid claim, with a clear owner at every step and progress everyone can see.</p>
+    <div class="btns"><a class="btn" href="#walkthrough">Request a walkthrough</a><a class="btn ghost" href="/audit-evidence-pack">See a sample record</a></div>
+  </div>
+  <div class="hero-art" role="img" aria-label="Example record MDF-000123 for Halden Networks: submitted by Priya Nair, qualified by Tom Reyes, and approved by Ruth Okafor for USD 24,000.">
+    <span class="blob hb1"></span><span class="blob hb2"></span><span class="sheet"></span>
+    <div class="rec card" id="heroRec">
+      <div class="rec-h"><div><b class="mono">MDF-000123</b><small>Halden Networks · Launch event</small></div><span class="st" data-status>Approved</span></div>
+      <ul class="rec-rows">
+        <li><i class="av a1">PN</i><span><b>Priya Nair</b><small>Submitted the request</small></span><i class="ok">✓</i></li>
+        <li><i class="av a2">TR</i><span><b>Tom Reyes</b><small>Qualified it</small></span><i class="ok">✓</i></li>
+        <li><i class="av a3">RO</i><span><b>Ruth Okafor</b><small>Approved as Channels leader</small></span><i class="ok">✓</i></li>
+      </ul>
+      <div class="rec-f"><span>Next</span><span class="st w">Partner signature</span></div>
+    </div>
+    <div class="chip c1"><i class="ok">✓</i>Approved by Ruth, Channels leader</div>
+    <div class="chip c2"><small>Approved amount</small><b class="mono">USD 24,000</b></div>
+  </div>
+  <ul class="facts"><li>A clear owner at every step</li><li>Access by role</li><li>Progress everyone can see</li></ul>
+</div></section>
+
+<!-- 2 · The problem: words in the centre, pieces floating around -->
+<section class="tools" id="tools" aria-labelledby="h-tools">
+  <div class="floaters" aria-hidden="true">
+    <span class="t t1" data-alt="Request_v3_final.docx" style="--k:#FFD9BF">Request form.pdf</span>
+    <span class="t t2" data-alt="Any update on this?" style="--k:#CFC8FF">RE: RE: FW: approval?</span>
+    <span class="t t3" data-alt="EMEA tracker (copy).xlsx" style="--k:#BFE3FF">Tracker_v7_FINAL.xlsx</span>
+    <span class="t t4" data-alt="Receipts.zip" style="--k:#FFE7A8">claims@ inbox</span>
+    <span class="t t5" data-alt="PDF to procurement" style="--k:#BFEDE3">PO request</span>
+    <span class="t t6" data-alt="Is this amount right?" style="--k:#FFD9BF">Invoice check</span>
+  </div>
+  <div class="in tools-in">
+    <h2 id="h-tools" class="rv">Documents, inboxes and a tracker.<br><em>One record.</em></h2>
+    <p class="lead rv">That is how MDF usually runs. Meridian replaces them with one record your partners and your teams work from.</p>
+    <div class="one-wrap pv"><span class="stem"></span><div class="one card"><i class="ok">✓</i><b class="mono">MDF-000123</b><span>one record, one history</span></div></div>
+    <ul class="repl">
+      <li class="rv"><b>One place for the request</b><span>Replaces a form per activity, sent by email.</span></li>
+      <li class="rv"><b>Approvals that route themselves</b><span>Replaces approval threads someone has to chase.</span></li>
+      <li class="rv"><b>Claims checked against what was approved</b><span>Replaces claim mailboxes and a manual tracker update.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 3 · The journey: a line of six stops over one wide stage, with a flag where other tools end -->
+<section class="sec" id="how" aria-labelledby="h-how"><div class="in">
+  <div class="sec-h rv"><h2 id="h-how">From budget to <em>paid claim.</em></h2><a class="lk" href="/how-it-works">See how it works <span aria-hidden="true">→</span></a></div>
+  <div class="railwrap rv" id="railwrap">
+    <p class="flag">Most MDF tools stop here</p>
+    <div class="rail" role="tablist" aria-label="The six steps">
+      <span class="prog" aria-hidden="true"></span>
+      <button role="tab" id="st0" class="done" aria-controls="sp0" aria-selected="false" tabindex="-1">Budget</button>
+      <button role="tab" id="st1" class="done" aria-controls="sp1" aria-selected="false" tabindex="-1">Request</button>
+      <button role="tab" id="st2" class="done" aria-controls="sp2" aria-selected="false" tabindex="-1">Qualify</button>
+      <button role="tab" id="st3" aria-controls="sp3" aria-selected="true">Approve</button>
+      <button role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1">Sign</button>
+      <button role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1">Claim and pay</button>
+    </div>
+  </div>
+  <div class="stage pv">
+    <div class="panel" role="tabpanel" id="sp0" aria-labelledby="st0" hidden>
+      <div class="say"><h3>Budget</h3><p>Each Program has an allocation. You always see what's approved, what's in review and what's left.</p><ol class="chain" aria-label="Who acts, in order"><li>Programme administrator</li><li class="ar" aria-hidden="true">→</li><li>Marketing manager</li></ol></div>
+      <div class="pic"><div class="card mini bud"><div class="bud-h"><b class="ttl">FY26 Growth · EMEA</b><span class="st">Program</span></div>
+        <div class="bar" role="img" aria-label="USD 230,000 approved, USD 90,000 in review and USD 180,000 available, of USD 500,000 allocated."><i class="ba"></i><i class="bb"></i></div>
+        <ul class="bud-l"><li style="--k:#0E8C82"><span>Approved</span><b class="mono">USD 230,000</b></li><li style="--k:#8E7FF0"><span>In review</span><b class="mono">USD 90,000</b></li><li><span>Available</span><b class="mono">USD 180,000</b></li></ul></div><div class="chip s"><i class="ok">✓</i>USD 500,000 allocated</div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="sp1" aria-labelledby="st1" hidden>
+      <div class="say"><h3>Request</h3><p>The partner fills in one request per activity, on a form that follows your programme's rules.</p><ol class="chain" aria-label="Who acts, in order"><li>Partner</li></ol></div>
+      <div class="pic"><div class="card mini"><b class="ttl">New request</b><dl class="kv"><div><dt>Activity</dt><dd>Launch event</dd></div><div><dt>Program</dt><dd>FY26 Growth</dd></div><div><dt>Amount</dt><dd class="mono">USD 24,000</dd></div></dl><span class="fakebtn">Submit request</span></div><div class="chip s"><i class="ok">✓</i>Draft saved</div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
+      <div class="say"><h3>Qualify</h3><p>Your marketing manager checks the request and records a funding recommendation.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li></ol></div>
+      <div class="pic"><div class="card mini"><b class="ttl">Funding recommendation</b><div class="opts"><span class="on"><i class="ok">✓</i>Fund in full</span><span>Fund in part</span><span>Decline</span></div><p class="note">"Fits the Q2 launch plan."</p></div><div class="chip s"><i class="ok">✓</i>Qualified by Tom</div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="sp3" aria-labelledby="st3">
+      <div class="say"><h3>Approve</h3><p>Your rules pick the approvers from the amount. Each one is told when it's their turn.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol></div>
+      <div class="pic"><div class="card mini"><ul class="people"><li><i class="av a2">TR</i><span><b>Tom Reyes</b><small>Marketing manager</small></span><i class="ok">✓</i></li><li><i class="av a3">RO</i><span><b>Ruth Okafor</b><small>Channels leader</small></span><i class="ok">✓</i></li><li id="samRow"><i class="av a4">SL</i><span><b>Sam Lindqvist</b><small>Regional VP · their turn</small></span><button type="button" class="act" id="approveBtn">Approve</button><i class="ok pop" hidden>✓</i></li></ul><p class="try" id="tryHint">Try it: approve as Sam.</p></div><div class="chip s" id="approveChip"><i class="ok">✓</i><span>Step 2 of 3 approved</span></div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
+      <div class="say"><h3>Sign</h3><p>The partner signs by secure link, with no account needed. Your signer countersigns, and the purchase order is recorded.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Signatories</li><li class="ar" aria-hidden="true">+</li><li>Claims team</li></ol></div>
+      <div class="pic"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Partner signature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Your countersignature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Purchase order</span><small class="mono">4500018832</small></li></ul><div class="rec-f"><span>Status</span><span class="st">Ready</span></div></div><div class="chip s"><i class="ok">✓</i>Signed by link, no account</div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="sp5" aria-labelledby="st5" hidden>
+      <div class="say"><h3>Claim and pay</h3><p>The partner uploads proof. Your team confirms one amount, the invoice must match it, and it goes to accounts payable.</p><ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol></div>
+      <div class="pic"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Event photos</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Attendee list</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Agency invoice</span><small>Accepted</small></li></ul><div class="rec-f"><span>Confirmed</span><b class="mono">USD 23,410.00</b></div></div><div class="chip s"><i class="ok">✓</i>Sent to accounts payable</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4 · The rules: three tinted tiles -->
+<section class="sec" id="rules" aria-labelledby="h-rules"><div class="in">
+  <div class="sec-h rv"><h2 id="h-rules">Built so <em>nothing slips.</em></h2><a class="lk" href="/controls">See the controls <span aria-hidden="true">→</span></a></div>
+  <div class="tiles">
+    <article class="tile lav pv" id="tileA"><h3>Nobody approves their own request</h3>
+      <div class="card mock"><p class="mock-t"><b class="mono">MDF-000123</b> is waiting for approval.</p><span class="dis">Approve</span><span class="tip">You submitted this request</span></div></article>
+    <article class="tile mint pv" id="tileB"><h3>Ready means ready</h3>
+      <ul class="card ck"><li><i class="ok">✓</i>Partner signature</li><li><i class="ok">✓</i>Your signature</li><li><i class="ok">✓</i>Purchase order</li><li class="no"><i class="ok">✓</i>Campaign reference</li></ul></article>
+    <article class="tile peach pv" id="tileC"><h3>The invoice must match</h3>
+      <div class="card eq"><div><span>Confirmed</span><b class="mono" data-count="23410">23,410.00</b></div><div><span>Invoice</span><b class="mono" data-count="23410">23,410.00</b></div><div class="m"><span>Amounts match</span><i class="ok">✓</i></div></div></article>
+  </div>
+</div></section>
+
+<!-- 5 · The record: one object left, words right -->
+<section class="sec" id="record" aria-labelledby="h-record"><div class="in obj-grid">
+  <div class="obj pv" id="obj" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="beam"></span>
+    <div class="glass"><div class="g-h"><b class="mono">MDF-000123</b><span class="st">Closed</span></div><ul class="g-rows"><li><time>14 Mar</time><span><b>Approved</b><small>Ruth Okafor · Channels leader</small></span></li><li><time>15 Mar</time><span><b>Signed and countersigned</b><small>Both parties, by secure link</small></span></li><li><time>2 May</time><span><b>Amount confirmed</b><small>USD 23,410 of 24,000 approved</small></span></li></ul><div class="g-f"><span>9 files, each fingerprinted<span class="mono">7c1e…a90b</span></span><span class="seal">✓</span></div></div>
+  </div>
+  <div class="obj-copy">
+    <h2 id="h-record" class="rv">Every decision,<br><em>on file.</em></h2>
+    <p class="lead rv">The audit file is written as the work happens. Nobody assembles it at the end of the quarter.</p>
+    <ul class="ticks rv"><li><i class="ok">✓</i>Who, in what role, and when</li><li><i class="ok">✓</i>Files that can't be altered</li><li><i class="ok">✓</i>The rules it was approved under</li></ul>
+    <a class="lk rv" href="/audit-evidence-pack">Open the audit evidence pack <span aria-hidden="true">→</span></a>
+  </div>
+</div></section>
+
+<!-- 6 · Roles: four tinted columns, one open at a time -->
+<section class="sec" id="roles" aria-labelledby="h-roles"><div class="in">
+  <div class="sec-c"><h2 id="h-roles" class="rv">Built for <em>every role.</em></h2><p class="lead rv">Each person sees the work that is theirs, in the order it reaches them.</p></div>
+  <div class="roles pv" id="roleRow">
+    <article class="role sky open">
+      <button type="button" class="role-t" aria-expanded="true" aria-controls="rb1"><span class="pill white">Finance</span><b>Pay what was approved</b><small>With the proof already on file.</small><i class="plus" aria-hidden="true"></i></button>
+      <div class="role-b" id="rb1"><h3>Pay only what was approved, with the proof already on file.</h3><p>Claims are checked line by line, and the invoice must match.</p>
+        <a class="lk" href="/teams#role-claims">Finance's view <span aria-hidden="true">→</span></a>
+        <div class="rpic"><ul class="card rcard"><li class="fl-t">May close · EMEA</li><li>Claims confirmed<b class="mono">14</b></li><li>Invoices matched<b class="mono">14</b></li><li>Waiting on proof<b class="mono">2</b></li></ul><div class="chip"><i class="ok">✓</i>14 sent to accounts payable</div></div></div>
+    </article>
+    <article class="role peach">
+      <button type="button" class="role-t" aria-expanded="false" aria-controls="rb2"><span class="pill white">Channel marketing</span><b>One queue</b><small>The next action on every request.</small><i class="plus" aria-hidden="true"></i></button>
+      <div class="role-b" id="rb2"><h3>One queue, with the next action on every request.</h3><p>No tracker to update. Each request shows who it's waiting on.</p>
+        <a class="lk" href="/teams#role-marketing">Marketing's view <span aria-hidden="true">→</span></a>
+        <div class="rpic"><ul class="card rcard"><li class="fl-t">Your queue</li><li>Halden Networks<span class="st">Qualify</span></li><li>Northgate IT<span class="st w">With partner</span></li><li>Brightline<span class="st v">With approver</span></li></ul><div class="chip"><i class="ok">✓</i>1 needs you today</div></div></div>
+    </article>
+    <article class="role mint">
+      <button type="button" class="role-t" aria-expanded="false" aria-controls="rb3"><span class="pill white">Approvers</span><b>Only your decisions</b><small>Asked when it's your turn.</small><i class="plus" aria-hidden="true"></i></button>
+      <div class="role-b" id="rb3"><h3>Asked only when it's your turn.</h3><p>The request, the recommendation and the amount are on one screen.</p>
+        <a class="lk" href="/teams#role-approvers">The approver's view <span aria-hidden="true">→</span></a>
+        <div class="rpic"><ul class="card rcard"><li class="fl-t">Waiting for you</li><li>Halden Networks<b class="mono">USD 24,000</b></li><li>Recommendation<span class="st">Fund in full</span></li><li>Approval<span class="st v">Step 2 of 3</span></li></ul><div class="chip"><i class="ok">✓</i>Your turn</div></div></div>
+    </article>
+    <article class="role lav">
+      <button type="button" class="role-t" aria-expanded="false" aria-controls="rb4"><span class="pill white">Partners</span><b>Always know what's next</b><small>And why a request is waiting.</small><i class="plus" aria-hidden="true"></i></button>
+      <div class="role-b" id="rb4"><h3>Always know what's next, and why a request is waiting.</h3><p>A checklist for each activity, and signing by link.</p>
+        <a class="lk" href="/for-partners">What partners see <span aria-hidden="true">→</span></a>
+        <div class="rpic"><ul class="card rcard"><li class="fl-t">Launch event claim</li><li><i class="ok">✓</i>Event photos</li><li><i class="ok">✓</i>Attendee list</li><li class="no"><i class="ok">✓</i>Agency invoice</li></ul><div class="chip"><i class="ok">✓</i>2 of 3 accepted</div></div></div>
+    </article>
+  </div>
+  <p class="rnote rv">Signatories and accounts payable act from an emailed link or a mailbox, and need no account.</p>
+</div></section>
+
+<!-- A slim strip: what is planned, clearly marked -->
+<section class="strip" aria-label="Planned connections"><div class="in">
+  <a class="pstrip rv" href="/how-it-works#connect"><span class="st v">Planned</span><span>Connections to your sign-in, documents, signature, CRM and budget planning.</span><span class="lk">See what's planned <span aria-hidden="true">→</span></span></a>
+</div></section>
+
+<!-- 7 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See one request<br>go end to end.</h2><p>We'll walk it through with your activity types and your approval rules.</p><a class="btn white" href="#walkthrough">Request a walkthrough</a><p class="start">Start with one region and one Program. Support for every partner and team member.</p></div>
+  <ul class="qs"><li><a href="/questions#q-paid">How do claims get paid?</a></li><li><a href="/questions#q-currency">How are currencies converted?</a></li><li><a href="/questions#q-ai">Do you use AI?</a></li><li><a href="/questions#q-staff">Can your staff see our data?</a></li><li class="all"><a class="lk" href="/questions">All questions <span aria-hidden="true">→</span></a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/home.js";
+</script>
+</Base>

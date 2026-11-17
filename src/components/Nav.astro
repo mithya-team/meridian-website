@@ -1,0 +1,25 @@
+---
+import Logo from "./Logo.astro";
+
+const links = [
+  { href: "/how-it-works", label: "How it works" },
+  { href: "/controls", label: "Controls" },
+  { href: "/teams", label: "Teams" },
+  { href: "/for-partners", label: "For partners" },
+  { href: "/trust", label: "Trust" },
+];
+const menu = [...links, { href: "/questions", label: "Questions" }];
+
+const here = Astro.url.pathname.replace(/\/$/, "") || "/";
+const current = (href: string) => (href === here ? "page" : undefined);
+// Every page ends with a #walkthrough section, except the not-found page: send that one to the homepage's.
+const walkthrough = here.startsWith("/404") ? "/#walkthrough" : "#walkthrough";
+---
+<header class="nav" id="nav"><div class="in">
+  <a class="brand" href="/#top" aria-label="Meridian home"><Logo /></a>
+  <nav aria-label="Main"><ul>{links.map((l) => <li><a href={l.href} aria-current={current(l.href)}>{l.label}</a></li>)}</ul></nav>
+  <a class="btn sm" href={walkthrough}>Request a walkthrough</a>
+  <details class="mnav"><summary aria-label="Menu"><i aria-hidden="true"></i></summary>
+    <ul>{menu.map((l) => <li><a href={l.href} aria-current={current(l.href)}>{l.label}</a></li>)}</ul>
+  </details>
+</div></header>

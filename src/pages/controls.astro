@@ -1,0 +1,119 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/controls.css";
+---
+<Base
+  title="Controls · Meridian"
+  description="The rules Meridian's workflow enforces on every partner funding request: who can approve, what must be in place before signing and paying, what is kept, and who can see what."
+  share="og-controls.png"
+  shareAlt="Meridian: Rules the workflow won't let you break. An example request, MDF-000123: its Approve button is blocked by rule C-01, because you submitted it."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, a rule you can try to break right -->
+<section class="khero" id="top"><div class="in khero-grid">
+  <div class="hero-copy">
+    <span class="pill">Controls</span>
+    <h1>Rules the workflow <em>won't let you break.</em></h1>
+    <p class="lead">They aren't policies to remember. The workflow checks each rule at the moment it matters, and records that it did.</p>
+    <div class="btns"><a class="btn" href="#rules">See every rule</a><a class="btn ghost" href="/audit-evidence-pack">See them on a record</a></div>
+  </div>
+  <div class="ktry lav" id="tryBox">
+    <div class="card kmock">
+      <p class="kmock-t"><b class="mono">MDF-000123</b> is waiting for approval.</p>
+      <dl class="kv"><div><dt>Submitted by</dt><dd>You</dd></div><div><dt>Amount</dt><dd class="mono">USD 24,000</dd></div></dl>
+      <button type="button" class="kbtn" id="tryApprove">Approve</button>
+      <span class="ktip">You submitted this request</span>
+    </div>
+    <div class="chip kchip"><i class="kx" aria-hidden="true">✕</i>Blocked by rule <b class="mono">C-01</b></div>
+    <p class="khint" id="tryHint" aria-live="polite">Nobody approves their own request.</p>
+  </div>
+</div></section>
+
+<!-- 2 · Every rule: the heading stays on the left; on the right, one column that opens a group at a time -->
+<section class="sec" id="rules" aria-labelledby="h-rules"><div class="in kcols">
+  <div class="khead"><h2 id="h-rules" class="rv">Every rule,<br><em>in plain words.</em></h2><p class="lead rv">19 controls, grouped by the question they answer.</p><p class="knote rv">These are controls built into the workflow. Security attestations are a separate subject.</p></div>
+  <div class="kacc">
+      <details class="kt lav pv" name="rules" open>
+        <summary><h3>Who can approve</h3><span class="kn">5 rules</span><i class="kplus" aria-hidden="true"></i></summary>
+        <ul>
+        <li class="kc" id="c-01"><b class="mono">C-01</b><span>The person who submitted or edited a request cannot approve it.</span></li>
+        <li class="kc" id="c-02"><b class="mono">C-02</b><span>One person takes at most one approval step on a request per round.</span></li>
+        <li class="kc" id="c-03"><b class="mono">C-03</b><span>A step accepts only the role it names, with a minimum number of different approvers.</span></li>
+        <li class="kc" id="c-04"><b class="mono">C-04</b><span>Approval steps are selected by amount and funding recommendation, from the published route.</span></li>
+        <li class="kc" id="c-05"><b class="mono">C-05</b><span>Approval records the amount, the period and any conditions.</span></li></ul>
+      </details>
+      <details class="kt mint pv" name="rules">
+        <summary><h3>Before anything is signed</h3><span class="kn">3 rules</span><i class="kplus" aria-hidden="true"></i></summary>
+        <ul>
+        <li class="kc" id="c-06"><b class="mono">C-06</b><span>Nothing is signed before the campaign references are recorded.</span></li>
+        <li class="kc" id="c-07"><b class="mono">C-07</b><span>The countersignature follows the partner's signature.</span></li>
+        <li class="kc" id="c-08"><b class="mono">C-08</b><span>An activity is Ready only with both signatures, a current purchase order and campaign references.</span></li></ul>
+      </details>
+      <details class="kt peach pv" name="rules">
+        <summary><h3>Before anything is paid</h3><span class="kn">4 rules</span><i class="kplus" aria-hidden="true"></i></summary>
+        <ul>
+        <li class="kc" id="c-09"><b class="mono">C-09</b><span>Proof is reviewed file by file and cost line by cost line, against the activity type's checklist.</span></li>
+        <li class="kc" id="c-10"><b class="mono">C-10</b><span>Costs are converted at your published monthly exchange rates.</span></li>
+        <li class="kc" id="c-11"><b class="mono">C-11</b><span>The invoice must equal the confirmed claim amount exactly.</span></li>
+        <li class="kc" id="c-12"><b class="mono">C-12</b><span>Only approved invoices reach accounts payable, stamped with who approved them.</span></li></ul>
+      </details>
+      <details class="kt sky pv" name="rules">
+        <summary><h3>What is kept</h3><span class="kn">3 rules</span><i class="kplus" aria-hidden="true"></i></summary>
+        <ul>
+        <li class="kc" id="c-13"><b class="mono">C-13</b><span>Every decision is stored with the person, their role and the time.</span></li>
+        <li class="kc" id="c-14"><b class="mono">C-14</b><span>Uploaded files are fingerprinted and cannot be altered after upload.</span></li>
+        <li class="kc" id="c-15"><b class="mono">C-15</b><span>Each request keeps the form and approval-route version it was submitted under.</span></li></ul>
+      </details>
+      <details class="kt lav pv" name="rules">
+        <summary><h3>Who can see what</h3><span class="kn">4 rules</span><i class="kplus" aria-hidden="true"></i></summary>
+        <ul>
+        <li class="kc" id="c-16"><b class="mono">C-16</b><span>Partners never see internal notes, reasons, budgets or other partners.</span></li>
+        <li class="kc" id="c-17"><b class="mono">C-17</b><span>The explanation shown to the partner is stored apart from internal reasons.</span></li>
+        <li class="kc" id="c-18"><b class="mono">C-18</b><span>Each customer's data is isolated. Access is granted per person, per Workspace, per role.</span></li>
+        <li class="kc" id="c-19"><b class="mono">C-19</b><span>Meridian staff set up your organisation and have no access to your business records.</span></li></ul>
+      </details>
+  </div>
+</div></section>
+
+<!-- 3 · Why: three sourced reasons, each tied to the rules that answer it -->
+<section class="sec" id="why" aria-labelledby="h-why"><div class="in">
+  <div class="sec-c"><h2 id="h-why" class="rv">Why these <em>rules exist.</em></h2><p class="lead rv">Regulators and accounting standards already expect them.</p></div>
+  <ul class="wy">
+    <li class="wyc pv"><span class="pill">Separate duties</span><p>The DOJ and SEC's guide to the Foreign Corrupt Practices Act lists segregation of duties among the internal controls it expects.</p>
+      <div class="wya"><a class="tag ctl" href="#c-01">C-01</a><a class="tag ctl" href="#c-02">C-02</a><a class="tag ctl" href="#c-03">C-03</a></div>
+      <a class="lk" href="https://www.justice.gov/criminal-fraud/file/1292051/download" target="_blank" rel="noopener">FCPA Resource Guide <span aria-hidden="true">↗</span></a></li>
+    <li class="wyc pv"><span class="pill">Proof before payment</span><p>In 2022 the SEC found that a large software vendor's subsidiaries approved marketing reimbursements under USD 5,000 without evidence the activity took place.</p>
+      <div class="wya"><a class="tag ctl" href="#c-08">C-08</a><a class="tag ctl" href="#c-09">C-09</a><a class="tag ctl" href="#c-11">C-11</a></div>
+      <a class="lk" href="https://www.sec.gov/files/litigation/admin/2022/34-95913.pdf" target="_blank" rel="noopener">SEC order 34-95913 <span aria-hidden="true">↗</span></a></li>
+    <li class="wyc pv"><span class="pill">Expense or revenue</span><p>Under ASC 606 and IFRS 15, a payment to a partner is a marketing expense only when it buys a distinct service at fair value.</p>
+      <div class="wya"><a class="tag ctl" href="#c-09">C-09</a><a class="tag ctl" href="#c-10">C-10</a><a class="tag ctl" href="#c-14">C-14</a></div>
+      <a class="lk" href="https://viewpoint.pwc.com/dt/us/en/pwc/accounting_guides/revenue_from_contrac/revenue_from_contrac_US/chapter_4_determinin_US/46consideration_paya_US.html" target="_blank" rel="noopener">PwC on ASC 606 <span aria-hidden="true">↗</span></a></li>
+  </ul>
+</div></section>
+
+<!-- 4 · Proof: one sheet of glass, with the checks a record carries -->
+<section class="sec kproof-s" aria-labelledby="h-proof"><div class="in">
+  <div class="kproof pv">
+    <span class="blob kb1"></span><span class="blob kb2"></span>
+    <div class="kglass">
+      <div class="kp-w"><h2 id="h-proof">Every check <em>leaves a mark.</em></h2><p class="lead">Each time a rule is checked, the record says so: who, when, and which rule.</p><a class="lk" href="/audit-evidence-pack">Open the audit evidence pack <span aria-hidden="true">→</span></a></div>
+      <ul class="kp-l" aria-label="Checks on example record MDF-000123"><li><time>14 Mar</time><span>Approved by Ruth Okafor</span><b class="tag ctl">C-01 checked</b></li><li><time>16 Mar</time><span>Ready</span><b class="tag ctl">C-08 checked</b></li><li><time>22 May</time><span>Invoice approved</span><b class="tag ctl">C-11 checked</b></li></ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See the rules<br>on your own process.</h2><p>We'll walk one request through with your approval route and your evidence checklist.</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a></div>
+  <ul class="qs"><li><a href="/how-it-works">How it works</a></li><li><a href="/audit-evidence-pack">Open the audit evidence pack</a></li><li><a href="/#roles">Built for every role</a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/controls.js";
+</script>
+</Base>

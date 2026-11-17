@@ -1,0 +1,190 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/how.css";
+---
+<Base
+  title="How it works · Meridian"
+  description="How Meridian runs a partner funding request: five stages, each with a clear owner, and thirteen states on one record from first draft to paid claim."
+  share="og-how-it-works.png"
+  shareAlt="Meridian: Five stages, each with a clear owner. An example record, MDF-000123, at Closed, the last of its thirteen states."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, one record moving through its thirteen states right -->
+<section class="whero" id="top"><div class="in whero-grid">
+  <div class="hero-copy">
+    <span class="pill">How it works</span>
+    <h1>Five stages,<br>each with<br><em>a clear owner.</em></h1>
+    <p class="lead">Work moves in one direction. Nothing moves on until its checks pass, and every move is kept on the record.</p>
+    <div class="btns"><a class="btn" href="#walkthrough">Request a walkthrough</a><a class="btn ghost" href="/audit-evidence-pack">See the audit evidence pack</a></div>
+  </div>
+  <div class="hero-art" role="img" aria-label="Example record MDF-000123 moving through its thirteen states, from Draft to Closed.">
+    <span class="blob hb1"></span><span class="blob hb2"></span><span class="sheet"></span>
+    <div class="rec card" id="states">
+      <div class="rec-h"><div><b class="mono">MDF-000123</b><small>Halden Networks · Launch event</small></div><span class="st" id="stNow">Closed</span></div>
+      <ol class="sts"><li>Draft</li><li>Submitted</li><li>Qualified</li><li>Approved</li><li>Signed</li><li>Countersigned</li><li>PO recorded</li><li>Ready</li><li>Claim submitted</li><li>Amount confirmed</li><li>Invoice approved</li><li>Sent to accounts payable</li><li class="now">Closed</li></ol>
+      <div class="rec-f"><span>State</span><b class="mono" id="stCount">13 of 13</b></div>
+    </div>
+    <div class="chip wc1"><i class="ok">✓</i>One record, thirteen states</div>
+  </div>
+</div></section>
+
+<!-- 2 · The five stages: a list that follows you on the left, one tinted block per stage on the right -->
+<section class="sec" id="stages" aria-label="The five stages"><div class="in flow">
+  <nav class="idx" id="idx" aria-label="Stages"><a href="#s1"><i>01</i>Set up</a><a href="#s2"><i>02</i>Onboard partners</a><a href="#s3"><i>03</i>Request and approval</a><a href="#s4"><i>04</i>Agreement and PO</a><a href="#s5"><i>05</i>Claim and payment</a></nav>
+  <div class="stgs">
+
+    <article class="stg sky pv" id="s1">
+      <div class="stg-w"><span class="stg-n">01</span><h2>Set up your programme</h2><p>Your fiscal calendar, activity types, countries, partner levels and reason codes, with your own request form, approval route and request numbering.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Programme administrator</li><li class="ar" aria-hidden="true">→</li><li>Marketing manager</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>The form and the approval route are published as versions</li><li><i class="ok">✓</i>A Workspace per region, and Programs with an allocation</li></ul></div>
+      <div class="stg-p"><div class="card mini"><b class="ttl">Settings</b><dl class="kv"><div><dt>Request form</dt><dd><span class="st">v4 published</span></dd></div><div><dt>Approval route</dt><dd><span class="st">v3 published</span></dd></div><div><dt>Request numbering</dt><dd class="mono">MDF-000123</dd></div></dl></div><div class="chip"><i class="ok">✓</i>Rules in one place</div></div>
+    </article>
+
+    <article class="stg lav flip pv" id="s2">
+      <div class="stg-w"><span class="stg-n">02</span><h2>Onboard partners</h2><p>Add partners one by one or from a spreadsheet, give each access to the right Programs, and invite their people.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Programme administrator</li><li class="ar" aria-hidden="true">→</li><li>Partner</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Partners see only their own organisation</li><li><i class="ok">✓</i>If a partner can't submit, the portal says why</li></ul></div>
+      <div class="stg-p"><div class="card mini"><b class="ttl">Partners</b><ul class="checks"><li><span>Halden Networks</span><span class="st">Active</span></li><li><span>Northgate IT</span><span class="st v">Invited</span></li><li><span>Brightline</span><span class="st v">Invited</span></li></ul></div><div class="chip"><i class="ok">✓</i>Access to FY26 Growth</div></div>
+    </article>
+
+    <article class="stg mint pv" id="s3">
+      <div class="stg-w"><span class="stg-n">03</span><h2>Request and approval</h2><p>One request per marketing activity. Your marketing manager qualifies it, then your rules select the approval steps.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">→</li><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Steps are selected by amount and recommendation</li><li><i class="ok">✓</i>Nobody approves their own request</li></ul></div>
+      <div class="stg-p"><div class="card mini"><ul class="people"><li><i class="av a2">TR</i><span><b>Tom Reyes</b><small>Marketing manager · qualified</small></span><i class="ok">✓</i></li><li><i class="av a3">RO</i><span><b>Ruth Okafor</b><small>Channels leader · approved</small></span><i class="ok">✓</i></li><li><i class="av a4">SL</i><span><b>Sam Lindqvist</b><small>Regional VP · their turn</small></span><span class="st w">Waiting</span></li></ul></div><div class="chip"><i class="ok">✓</i>Step 2 of 3 approved</div>
+        <ol class="trail" aria-label="States in this stage"><li>Draft</li><li>Submitted</li><li>Qualified</li><li>Approved</li></ol></div>
+    </article>
+
+    <p class="stopflag" id="stopflag"><span>Most MDF tools stop here</span></p>
+
+    <article class="stg peach flip pv" id="s4">
+      <div class="stg-w"><span class="stg-n">04</span><h2>Agreement and purchase order</h2><p>Campaign references, the partner's signature, your countersignature and the purchase order make the activity ready.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Signatories</li><li class="ar" aria-hidden="true">+</li><li>Claims team</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Signing by secure link, with no account needed</li><li><i class="ok">✓</i>Ready only when every piece is in place</li></ul></div>
+      <div class="stg-p"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Partner signature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Your countersignature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Purchase order</span><small class="mono">4500018832</small></li></ul><div class="rec-f"><span>Status</span><span class="st">Ready</span></div></div><div class="chip"><i class="ok">✓</i>Signed by link, no account</div>
+        <ol class="trail" aria-label="States in this stage"><li>Signed</li><li>Countersigned</li><li>PO recorded</li><li>Ready</li></ol></div>
+    </article>
+
+    <article class="stg sky pv" id="s5">
+      <div class="stg-w"><span class="stg-n">05</span><h2>Claim and payment</h2><p>Proof first, then the confirmed amount, then the invoice. Approval sends the invoice to accounts payable and closes the activity.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>The invoice must equal the confirmed amount</li><li><i class="ok">✓</i>Payment stays in your finance system</li></ul></div>
+      <div class="stg-p"><div class="card eq"><div><span>Confirmed</span><b class="mono">23,410.00</b></div><div><span>Invoice</span><b class="mono">23,410.00</b></div><div class="m"><span>Amounts match</span><i class="ok">✓</i></div></div><div class="chip"><i class="ok">✓</i>Sent to accounts payable</div>
+        <ol class="trail" aria-label="States in this stage"><li>Claim submitted</li><li>Amount confirmed</li><li>Invoice approved</li><li>Sent to accounts payable</li><li>Closed</li></ol></div>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- 3 · Visibility: three tinted tiles -->
+<section class="sec" id="see" aria-labelledby="h-see"><div class="in">
+  <div class="sec-h rv"><h2 id="h-see">Everyone sees <em>where it stands.</em></h2></div>
+  <div class="vtiles">
+    <article class="vt sky pv"><h3>A dashboard for each role</h3><p>For the administrator, marketing managers, account managers and partners.</p>
+      <div class="card vdash" aria-hidden="true"><div><span>In review</span><b class="mono">6</b></div><div><span>Ready</span><b class="mono">4</b></div><div><span>In claim</span><b class="mono">3</b></div></div></article>
+    <article class="vt lav pv"><h3>One searchable list</h3><p>Every request, with filters by status, fiscal year and period.</p>
+      <div class="card vlist" aria-hidden="true"><div class="vf"><span>Status: Ready</span><span>FY26</span><span>Q2</span></div><ul><li><b class="mono">MDF-000123</b><span class="st">Ready</span></li><li><b class="mono">MDF-000131</b><span class="st">Ready</span></li></ul></div></article>
+    <article class="vt mint pv"><h3>An email at every hand-off</h3><p>Each person is told when it's their turn, with an opt-out per person.</p>
+      <div class="card vmail" aria-hidden="true"><small>To Ruth Okafor</small><b>A request is waiting for your approval</b><span class="mono">MDF-000123 · USD 24,000</span></div></article>
+  </div>
+</div></section>
+
+<!-- 3b · Start small: one switch, and the set-up grows -->
+<section class="sec" id="grow" aria-labelledby="h-grow"><div class="in">
+  <div class="sec-c"><h2 id="h-grow" class="rv">Start small. <em>Grow by setup.</em></h2><p class="lead rv">A new region or a new year is a setup task, not a project.</p>
+    <div class="seg rv" role="group" aria-label="Size of programme"><button type="button" data-size="one" aria-pressed="false">One region</button><button type="button" data-size="many" aria-pressed="true">Several regions</button></div></div>
+  <div class="grow pv" id="growBox" data-size="many">
+    <ul class="gstats" aria-live="polite"><li><b data-one="1" data-many="3">3</b><span data-one="Workspace" data-many="Workspaces">Workspaces</span></li><li><b data-one="1" data-many="2">2</b><span data-one="Program" data-many="Programs">Programs</span></li><li><b data-one="1" data-many="3">3</b><span data-one="approval step" data-many="approval steps">approval steps</span></li></ul>
+    <div class="card gmap">
+      <div class="gr"><span class="gl">Workspaces</span><div class="gc"><span class="node">EMEA</span><span class="node x">Americas</span><span class="node x">Asia Pacific</span></div></div>
+      <div class="gr"><span class="gl">Programs</span><div class="gc"><span class="node">FY26 Growth</span><span class="node x">FY26 Launch</span></div></div>
+      <div class="gr"><span class="gl">Approval steps</span><div class="gc"><span class="node x">Partner Sales leader</span><span class="node x">RVP</span><span class="node">Channels leader</span></div></div>
+      <div class="gr"><span class="gl">Currencies</span><div class="gc"><span class="node">USD</span><span class="node x">EUR</span><span class="node x">JPY</span><span class="gnote x">at your monthly rates</span></div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4 · Connections: five cards on a dashed line, each saying what happens today and what is planned -->
+<section class="sec" id="connect" aria-labelledby="h-connect"><div class="in">
+  <div class="chead"><h2 id="h-connect" class="rv">Connects to <em>your environment.</em></h2><p class="lead rv">Meridian works on its own today. Five connections to your own systems are planned, and each is marked that way.</p></div>
+  <div class="cwrap rv"><span class="cline" aria-hidden="true"></span>
+    <ul class="cgrid">
+      <li class="cx"><h3>Sign-in</h3><dl><div><dt class="st">Today</dt><dd>Access is granted per person, per Workspace, per role.</dd></div><div><dt class="st v">Planned</dt><dd>Sign in through your corporate identity provider.</dd></div></dl></li>
+      <li class="cx"><h3>Documents</h3><dl><div><dt class="st">Today</dt><dd>Files are uploaded to the record and fingerprinted.</dd></div><div><dt class="st v">Planned</dt><dd>Stored in your document system, linked to the activity or claim.</dd></div></dl></li>
+      <li class="cx"><h3>Signature</h3><dl><div><dt class="st">Today</dt><dd>Each party signs by secure link, with no account.</dd></div><div><dt class="st v">Planned</dt><dd>One combined request through your e-signature service.</dd></div></dl></li>
+      <li class="cx"><h3>CRM</h3><dl><div><dt class="st">Today</dt><dd>Campaign references are recorded by hand.</dd></div><div><dt class="st v">Planned</dt><dd>Campaign and pipeline data, for performance reporting.</dd></div></dl></li>
+      <li class="cx"><h3>Budget planning</h3><dl><div><dt class="st">Today</dt><dd>Each Program's allocation, against approved and in-review amounts.</dd></div><div><dt class="st v">Planned</dt><dd>Budget pools and allocation scenarios from your planning tool.</dd></div></dl></li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- 5 · Who does what: choose a role on the left; on the right, one column showing only that role's steps -->
+<section class="sec" id="who" aria-labelledby="h-who"><div class="in acols">
+  <div class="ahead">
+    <h2 id="h-who" class="rv">Who does <em>what.</em></h2>
+    <p class="lead rv" id="whoSum" aria-live="polite">Every step has one owner. Everyone else sees only what they need.</p>
+    <div class="rolepick rv" id="rolepick" role="group" aria-label="Choose a role"><button type="button" class="rp" aria-pressed="false">Programme administrator</button><button type="button" class="rp" aria-pressed="false">Marketing manager</button><button type="button" class="rp" aria-pressed="false">Account manager</button><button type="button" class="rp" aria-pressed="false">Leadership</button><button type="button" class="rp" aria-pressed="false">Claims team</button><button type="button" class="rp" aria-pressed="false">Partner</button><button type="button" class="rp" aria-pressed="false">Signatories</button><button type="button" class="rp" aria-pressed="false">Accounts payable</button></div>
+    <p class="wkey rv" id="wkey"><span><b class="mk d">Does</b>performs or decides the step</span><span><b class="mk v">Sees</b>can see it</span><span><b class="mk e">Told</b>gets an email when it happens</span></p>
+    <p class="wnote rv">Signatories and accounts payable work outside Meridian. They act from an emailed link or a mailbox, and need no account.</p>
+  </div>
+  <div class="wacc" id="wgrid">
+    <details class="wg sky pv" name="who" open>
+      <summary><h3>Set up and onboarding</h3><span class="wn">4 steps</span><i class="aplus" aria-hidden="true"></i></summary>
+      <ul>
+        <li class="wr" data-m="D,,,,,,,"><span>Publish settings, request form and approval route</span></li>
+        <li class="wr" data-m="D,D,,,,,,"><span>Create Workspaces and Programs, set allocation</span></li>
+        <li class="wr" data-m="D,E,E,E,E,,,"><span>Invite the team and assign roles</span></li>
+        <li class="wr" data-m="D,,,,,E,,"><span>Add partners, grant Program access, invite partner users</span></li></ul>
+      <p class="wnone" hidden>This role has no part in this stage.</p>
+    </details>
+    <details class="wg mint pv" name="who">
+      <summary><h3>Request and approval</h3><span class="wn">7 steps</span><i class="aplus" aria-hidden="true"></i></summary>
+      <ul>
+        <li class="wr" data-m=",E,,,,D,,"><span>Draft and submit a request</span></li>
+        <li class="wr" data-m=",D,,,,,,"><span>Qualify and record the funding recommendation</span></li>
+        <li class="wr" data-m=",D,,D,,E,,"><span>Approve a step</span></li>
+        <li class="wr" data-m=",D,,D,,E,,"><span>Ask for a correction or decline</span></li>
+        <li class="wr" data-m=",E,,,,D,,"><span>Correct, edit before approval, or withdraw</span></li>
+        <li class="wr" data-m=",,D,,,,,"><span>Follow-up notes</span></li>
+        <li class="wr" data-m=",V,V,V,,V,,"><span>See the Workspace's requests</span></li></ul>
+      <p class="wnone" hidden>This role has no part in this stage.</p>
+    </details>
+    <details class="wg peach pv" name="who">
+      <summary><h3>Agreement and purchase order</h3><span class="wn">5 steps</span><i class="aplus" aria-hidden="true"></i></summary>
+      <ul>
+        <li class="wr" data-m=",D,,,,,,"><span>Record campaign and budget references</span></li>
+        <li class="wr" data-m=",D,,,,,E,"><span>Send the request form for signature</span></li>
+        <li class="wr" data-m=",E,,,,,D,"><span>Sign and countersign</span></li>
+        <li class="wr" data-m=",V,,,D,,,"><span>Record the final purchase order</span></li>
+        <li class="wr" data-m=",V,,,V,E,,"><span>Activity becomes ready</span></li></ul>
+      <p class="wnone" hidden>This role has no part in this stage.</p>
+    </details>
+    <details class="wg lav pv" name="who">
+      <summary><h3>Claim and payment</h3><span class="wn">6 steps</span><i class="aplus" aria-hidden="true"></i></summary>
+      <ul>
+        <li class="wr" data-m=",V,,,E,D,,"><span>Upload proof and costs, submit the claim</span></li>
+        <li class="wr" data-m=",V,,,D,E,,"><span>Review files and confirm the amount</span></li>
+        <li class="wr" data-m=",V,,,E,D,,"><span>Upload the invoice</span></li>
+        <li class="wr" data-m=",V,,,D,E,,"><span>Approve the claim</span></li>
+        <li class="wr" data-m=",V,,,D,,,E"><span>Approved invoice sent; activity closed</span></li>
+        <li class="wr" data-m=",V,,,D,E,,"><span>Record payment status</span></li></ul>
+      <p class="wnone" hidden>This role has no part in this stage.</p>
+    </details>
+  </div>
+</div></section>
+
+<!-- 6 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See one request<br>go end to end.</h2><p>We'll walk it through with your activity types and your approval rules.</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a></div>
+  <ul class="qs"><li><a href="/audit-evidence-pack">Open the audit evidence pack</a></li><li><a href="/controls">See the controls</a></li><li><a href="/#roles">Built for every role</a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/how.js";
+</script>
+</Base>

@@ -1,0 +1,72 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/trust.css";
+---
+<Base
+  title="Trust · Meridian"
+  description="What Meridian does to protect your data and your decisions, said plainly: what is true today, and what is still being confirmed."
+  share="og-trust.png"
+  shareAlt="Meridian: Said plainly, and only what's true. An example access list for the EMEA Workspace, with each person's role."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, who has access right -->
+<section class="trhero" id="top"><div class="in trhero-grid">
+  <div class="hero-copy">
+    <span class="pill">Trust</span>
+    <h1>Said plainly, <em>and only what's true.</em></h1>
+    <p class="lead">What Meridian does to protect your data and your decisions. Where an answer is still being confirmed, this page says so.</p>
+    <div class="btns"><a class="btn" href="#today">What's true today</a><a class="btn ghost" href="#pending">What's being confirmed</a></div>
+  </div>
+  <div class="trart mint" role="img" aria-label="Example access list for the EMEA Workspace: Tom Reyes as marketing manager, Dana Whitfield on the claims team, and Ruth Okafor as an approver.">
+    <ul class="card tracc" id="tracc"><li class="fl-t">Access · EMEA Workspace</li><li><i class="av a2">TR</i><span>Tom Reyes</span><span class="st">Marketing manager</span></li><li><i class="av a4">DW</i><span>Dana Whitfield</span><span class="st v">Claims team</span></li><li><i class="av a3">RO</i><span>Ruth Okafor</span><span class="st w">Approver</span></li></ul>
+    <div class="chip trchip"><i class="ok">✓</i>Per person, per Workspace, per role</div>
+  </div>
+</div></section>
+
+<!-- 2 · True today: heading left, one accordion column right -->
+<section class="sec" id="today" aria-labelledby="h-today"><div class="in acols">
+  <div class="ahead"><h2 id="h-today" class="rv">True <em>today.</em></h2><p class="lead rv">Eight things you can rely on now. Each one is built into the product.</p></div>
+  <div class="acc">
+    <details id="t-isolated" class="pv" name="tf" open><summary><h3>Your data is kept apart from every other customer's</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Each customer's data is isolated from every other customer's. <a class="lk" href="/controls#c-18">See the rule <span aria-hidden="true">→</span></a></p></div></details>
+    <details id="t-access" class="pv" name="tf"><summary><h3>Access is granted per person, per Workspace, per role</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Nobody gets access by default. Your programme administrator invites each person and gives them a role in each Workspace.</p></div></details>
+    <details id="t-staff" class="pv" name="tf"><summary><h3>Meridian staff can't see your business records</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Meridian staff set up your organisation and have no access to your business records. <a class="lk" href="/controls#c-19">See the rule <span aria-hidden="true">→</span></a></p></div></details>
+    <details id="t-partners" class="pv" name="tf"><summary><h3>Partners see only their own organisation</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Partners never see internal notes, internal reasons, budgets or other partners. The explanation written for the partner is stored apart from internal reasons. <a class="lk" href="/for-partners#sees">What partners see <span aria-hidden="true">→</span></a></p></div></details>
+    <details id="t-record" class="pv" name="tf"><summary><h3>Every decision is on the record</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Each decision is stored with the person, their role and the time. Each request keeps the form and approval-route version it was submitted under. <a class="lk" href="/audit-evidence-pack">See it on a record <span aria-hidden="true">→</span></a></p></div></details>
+    <details id="t-files" class="pv" name="tf"><summary><h3>Files can't be changed after upload</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Uploaded files are fingerprinted and cannot be altered after upload.</p></div></details>
+    <details id="t-money" class="pv" name="tf"><summary><h3>Meridian never moves money</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Approved invoices go to your accounts payable address, stamped with who approved them. Payment stays in your finance system. <a class="lk" href="/questions#q-paid">Do you pay our partners? <span aria-hidden="true">→</span></a></p></div></details>
+    <details id="t-people" class="pv" name="tf"><summary><h3>A person gives every verdict</h3><i class="aplus" aria-hidden="true"></i></summary><div class="qa"><p>Meridian reads cost figures from uploaded files to save typing. A person on your claims team gives the verdict on every file and every cost line. <a class="lk" href="/questions#q-ai">Do you use AI? <span aria-hidden="true">→</span></a></p></div></details>
+  </div>
+</div></section>
+
+<!-- 3 · Being confirmed: one tinted panel, words left, one column of topics right -->
+<section class="sec" id="pending" aria-labelledby="h-pending"><div class="in">
+  <div class="trpend pv">
+    <div class="trpend-w"><h2 id="h-pending">Being <em>confirmed.</em></h2><p class="lead">We are getting exact answers from the team on these. Until each one is confirmed, we make no claim about it.</p></div>
+    <ul class="trlist"><li><span class="st w">To confirm</span><span>SOC 2 and ISO 27001 status</span></li><li><span class="st w">To confirm</span><span>Where data is hosted, and whether you can choose</span></li><li><span class="st w">To confirm</span><span>Encryption in transit and at rest</span></li><li><span class="st w">To confirm</span><span>Sign-in today, and multi-factor authentication</span></li><li><span class="st w">To confirm</span><span>Backups, recovery and uptime</span></li><li><span class="st w">To confirm</span><span>Retention, and what happens when a contract ends</span></li><li><span class="st w">To confirm</span><span>The outside companies that process your data</span></li><li><span class="st w">To confirm</span><span>How figures are read from files, and whether files leave Meridian</span></li><li><span class="st w">To confirm</span><span>Independent penetration testing</span></li><li><span class="st w">To confirm</span><span>A data processing agreement</span></li></ul>
+  </div>
+</div></section>
+
+<!-- 4 · Check it yourself: two doors -->
+<section class="sec trdoors-s" aria-labelledby="h-check"><div class="in">
+  <div class="sec-c"><h2 id="h-check" class="rv">Check it <em>yourself.</em></h2></div>
+  <div class="trdoors">
+    <a class="trdoor lav pv" href="/controls"><h3>The controls</h3><p>Every rule the workflow enforces, in plain words.</p><span class="lk">See the controls <span aria-hidden="true">→</span></span></a>
+    <a class="trdoor sky pv" href="/audit-evidence-pack"><h3>The audit evidence pack</h3><p>One request's full history, as your auditor would receive it.</p><span class="lk">Open the pack <span aria-hidden="true">→</span></span></a>
+  </div>
+</div></section>
+
+<!-- 5 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">Send us your<br>security questionnaire.</h2><p>We'll answer it in full, and say plainly where the answer is "not yet".</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a></div>
+  <ul class="qs"><li><a href="/questions">Questions</a></li><li><a href="/controls">See the controls</a></li><li><a href="/audit-evidence-pack">Open the audit evidence pack</a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/trust.js";
+</script>
+</Base>

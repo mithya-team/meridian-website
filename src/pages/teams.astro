@@ -1,0 +1,113 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/teams.css";
+---
+<Base
+  title="Teams · Meridian"
+  description="What Meridian changes for each team: finance, marketing, approvers, account managers, partners and signatories. Each person sees the work that is theirs, in the order it reaches them."
+  share="og-teams.png"
+  shareAlt="Meridian: Each person sees the work that is theirs. An example queue of three partner requests, one waiting for you to qualify."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, one person's queue right -->
+<section class="thero" id="top"><div class="in thero-grid">
+  <div class="hero-copy">
+    <span class="pill">Teams</span>
+    <h1>Each person sees <em>the work that is theirs.</em></h1>
+    <p class="lead">In the order it reaches them. Nobody keeps a tracker in step, and nobody chases an approval.</p>
+    <div class="btns"><a class="btn" href="#roles">Find your role</a><a class="btn ghost" href="#walkthrough">Request a walkthrough</a></div>
+  </div>
+  <div class="tart sky" role="img" aria-label="An example queue: Halden Networks waiting for you to qualify, Northgate IT with the partner, and Brightline with an approver.">
+    <ul class="card tq" id="tq"><li class="fl-t">Your queue</li><li><span>Halden Networks</span><span class="st">Qualify</span></li><li><span>Northgate IT</span><span class="st w">With partner</span></li><li><span>Brightline</span><span class="st v">With approver</span></li></ul>
+    <div class="chip tchip"><i class="ok">✓</i>1 needs you today</div>
+  </div>
+</div></section>
+
+<!-- 2 · Finance first: words left, one month's close right -->
+<section class="sec" id="finance" aria-labelledby="h-fin"><div class="in tfin">
+  <div class="tfin-w">
+    <span class="pill white-line">Finance</span>
+    <h2 id="h-fin" class="rv">A file to review, <em>not a claim to chase.</em></h2>
+    <ul class="ticks rv"><li><i class="ok">✓</i>One confirmed amount per claim</li><li><i class="ok">✓</i>The invoice must equal it exactly</li><li><i class="ok">✓</i>Only approved invoices reach accounts payable</li></ul>
+    <a class="lk rv" href="/controls#c-11">See the rules before anything is paid <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="tfin-p pv">
+    <ul class="card tclose"><li class="fl-t">May close · EMEA</li><li><span>Claims confirmed</span><b class="mono">14</b></li><li><span>Invoices matched</span><b class="mono">14</b></li><li><span>Waiting on proof</span><b class="mono">2</b></li></ul>
+    <div class="card eq tmatch"><div><span>Confirmed</span><b class="mono">23,410.00</b></div><div><span>Invoice</span><b class="mono">23,410.00</b></div><div class="m"><span>Amounts match</span><i class="ok">✓</i></div></div>
+    <div class="chip tchip2"><i class="ok">✓</i>14 sent to accounts payable</div>
+  </div>
+</div></section>
+
+<!-- 3 · Every role: pick one on the left; on the right, that role's sheet -->
+<section class="sec" id="roles" aria-labelledby="h-roles"><div class="in acols">
+  <div class="ahead">
+    <h2 id="h-roles" class="rv">Find <em>your role.</em></h2>
+    <div class="ttabs rv" id="ttabs" role="group" aria-label="Roles"><p class="tgl">Finance</p><button type="button" class="ttab" data-r="claims" aria-pressed="true">Claims team</button><button type="button" class="ttab" data-r="payables" aria-pressed="false">Accounts payable</button><p class="tgl">Marketing</p><button type="button" class="ttab" data-r="admin" aria-pressed="false">Programme administrator</button><button type="button" class="ttab" data-r="marketing" aria-pressed="false">Partner marketing manager</button><p class="tgl">Leadership and sales</p><button type="button" class="ttab" data-r="approvers" aria-pressed="false">Leadership approvers</button><button type="button" class="ttab" data-r="account" aria-pressed="false">Partner account manager</button><p class="tgl">Outside your team</p><button type="button" class="ttab" data-r="partner" aria-pressed="false">Partner</button><button type="button" class="ttab" data-r="signatories" aria-pressed="false">Signatories</button></div>
+  </div>
+  <div class="tsheets" id="tsheets">
+    <article class="tsheet sky" id="role-claims" data-r="claims">
+      <header><h3>Claims team</h3><p>Claim role · per Workspace</p></header>
+      <p class="tchange"><small>What changes</small>The approval, the purchase order, the proof and the invoice sit side by side, so validation is a review and the audit file builds itself.</p>
+      <ol class="tsteps"><li><span>Records the final purchase order on the approved activity.</span></li><li><span>Reviews each proof file and cost line on a submitted claim.</span></li><li><span>Asks for more information, or confirms the claimable amount.</span></li><li><span>Checks the invoice against that amount and approves the claim.</span></li><li><span>Records the payment status once accounts payable has paid.</span></li></ol>
+      <a class="lk" href="/audit-evidence-pack">See the audit evidence pack <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet sky" id="role-payables" data-r="payables">
+      <header><h3>Accounts payable</h3><p>Your payables mailbox · outside Meridian</p></header>
+      <p class="tchange"><small>What changes</small>Only validated invoices arrive, each already matched to an approved claim.</p>
+      <ol class="tsteps"><li><span>Receives each approved invoice by email, stamped with who approved it.</span></li><li><span>Pays the partner in your own finance system.</span></li><li><span>The claims team records the outcome, so the partner and the record both show it.</span></li></ol>
+      <a class="lk" href="/questions#q-paid">Do you pay our partners? <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet peach" id="role-admin" data-r="admin">
+      <header><h3>Programme administrator</h3><p>Organisation-wide</p></header>
+      <p class="tchange"><small>What changes</small>The programme's rules live in one configured place, and setting up a new region or year is a setup task.</p>
+      <ol class="tsteps"><li><span>Publishes the settings: calendar, lists, request form, approval route, numbering and accounts payable address.</span></li><li><span>Uploads the monthly exchange rates.</span></li><li><span>Creates Workspaces and Programs, and sets each Program's allocation.</span></li><li><span>Invites the team and gives each person a role per Workspace.</span></li><li><span>Adds partners, grants Program access and invites partner users.</span></li><li><span>Follows the organisation dashboard.</span></li></ol>
+      <a class="lk" href="/how-it-works#grow">Start small, grow by setup <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet peach" id="role-marketing" data-r="marketing">
+      <header><h3>Partner marketing manager</h3><p>Per Workspace</p></header>
+      <p class="tchange"><small>What changes</small>One queue with the next action on each request, instead of forms, threads and a tracker to keep in step.</p>
+      <ol class="tsteps"><li><span>Opens a submitted request, qualifies it and records the funding recommendation.</span></li><li><span>Takes the approval steps assigned to the role, or asks the partner for a correction.</span></li><li><span>After approval, records the CRM campaign and budget references.</span></li><li><span>Sends the request form for signature, checks the signed copy and arranges the countersignature.</span></li><li><span>Watches the Program's allocation against approved and in-review amounts.</span></li></ol>
+      <a class="lk" href="/how-it-works">See how it works <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet mint" id="role-approvers" data-r="approvers">
+      <header><h3>Leadership approvers</h3><p>Partner Sales leader · RVP · Channels leader</p></header>
+      <p class="tchange"><small>What changes</small>Approvers are asked only for the requests their role must decide, and the decision is on the record.</p>
+      <ol class="tsteps"><li><span>Receive an email when a request reaches their step.</span></li><li><span>Read the request with its recommendation, and approve the step.</span></li><li><span>Can instead ask for a correction, decline with a reason, or change the recommendation.</span></li></ol>
+      <a class="lk" href="/controls#c-01">See who can approve <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet mint" id="role-account" data-r="account">
+      <header><h3>Partner account manager</h3><p>Per Workspace</p></header>
+      <p class="tchange"><small>What changes</small>The status of a partner's funding is visible without asking the marketing team.</p>
+      <ol class="tsteps"><li><span>Sees every request from the Workspace's partners, and where each one stands.</span></li><li><span>Adds follow-up notes on open requests.</span></li><li><span>Uses the Workspace dashboard in partner conversations.</span></li></ol>
+      
+    </article>
+    <article class="tsheet lav" id="role-partner" data-r="partner">
+      <header><h3>Partner</h3><p>Own organisation only</p></header>
+      <p class="tchange"><small>What changes</small>The partner always knows what is needed next, and never has to ask where a request or claim stands.</p>
+      <ol class="tsteps"><li><span>Prepares a draft with colleagues and submits it under a Program the organisation has access to.</span></li><li><span>Follows the status, answers corrections, and is told the outcome with the approved terms.</span></li><li><span>When the activity is ready, uploads proof and cost files against a checklist and submits the claim.</span></li><li><span>Uploads the invoice for the confirmed amount.</span></li><li><span>Is told when the claim is approved and when payment is recorded.</span></li></ol>
+      <a class="lk" href="/for-partners">What partners see <span aria-hidden="true">→</span></a>
+    </article>
+    <article class="tsheet lav" id="role-signatories" data-r="signatories">
+      <header><h3>Signatories</h3><p>By link · no account</p></header>
+      <p class="tchange"><small>What changes</small>Senior signers act from an email. They need no login and see only the one form.</p>
+      <ol class="tsteps"><li><span>The partner's authorised signatory opens an emailed link, downloads the approved request form and returns it signed, or declines.</span></li><li><span>The marketing manager checks the signed copy.</span></li><li><span>Your named signer countersigns through their own link.</span></li></ol>
+      <a class="lk" href="/questions#q-accounts">Who needs an account? <span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+</div></section>
+
+<!-- 4 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See your team's<br>part of it.</h2><p>We'll walk one request through, role by role, with your own approval route.</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a></div>
+  <ul class="qs"><li><a href="/how-it-works#who">Who does what</a></li><li><a href="/for-partners">For partners</a></li><li><a href="/questions">Questions</a></li></ul>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/teams.js";
+</script>
+</Base>

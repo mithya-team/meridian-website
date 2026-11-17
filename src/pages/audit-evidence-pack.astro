@@ -1,0 +1,80 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/evidence.css";
+---
+<Base
+  title="Audit evidence pack · Meridian"
+  description="Everything Meridian kept about one partner funding request, as your auditor would receive it: every decision, the rule that applied, and the files that were reviewed."
+  share="og-evidence-pack.png"
+  shareAlt="Meridian: The audit evidence pack. An example record, MDF-000123, closed, with nine files fingerprinted."
+>
+
+<main id="main">
+
+<!-- 1 · Hero: words left, the request's summary right -->
+<section class="ehero" id="top"><div class="in ehero-grid">
+  <div class="hero-copy">
+    <span class="pill">Sample record</span>
+    <h1>The audit<br><em>evidence pack.</em></h1>
+    <p class="lead">Everything Meridian kept about one request, as your auditor would receive it. The data is an example.</p>
+    <div class="btns"><a class="btn" href="#walkthrough">Request a walkthrough</a><a class="btn ghost" href="/controls">See the controls</a></div>
+  </div>
+  <div class="sum card pv">
+    <div class="sum-h"><div><b class="mono">MDF-000123</b><small>Halden Networks · Launch event</small></div><span class="st">Closed</span></div>
+    <dl><div><dt>Approved</dt><dd>USD 24,000.00</dd></div><div><dt>Confirmed and invoiced</dt><dd>USD 23,410.00</dd></div><div><dt>Entries in the history</dt><dd>22</dd></div><div><dt>Files, each fingerprinted</dt><dd>9</dd></div></dl>
+  </div>
+</div></section>
+
+<!-- 2 · The history: one long sheet of glass, with every decision on the line -->
+<section class="sec trail" aria-labelledby="h-trail"><div class="in trail-grid">
+  <div class="sheet-wrap">
+    <span class="blob eb1"></span><span class="blob eb2"></span>
+    <div class="esheet" id="sheet">
+      <h2 class="vh" id="h-trail">The history of MDF-000123</h2>
+      <span class="eline" aria-hidden="true"><i></i></span>
+      <ol class="evs">
+        <li class="ev" data-note="3"><div class="ev-h"><h3>Submitted</h3><time datetime="2026-03-03T16:05">3 Mar 2026, 16:05</time></div><p>Priya Nair · Halden Networks, partner</p><ul class="tags"><li class="tag">Request form v4</li><li class="tag">Approval route v3</li></ul></li>
+        <li class="ev" data-note="0"><div class="ev-h"><h3>Approved</h3><time datetime="2026-03-14T10:42">14 Mar 2026, 10:42</time></div><p>Ruth Okafor · Channels leader · step 2 of 3</p><ul class="tags"><li class="tag">USD 24,000</li><li class="tag ctl"><a href="/controls#c-01">C-01 checked</a></li></ul></li>
+        <li class="ev" data-note="2"><div class="ev-h"><h3>Signed and countersigned</h3><time datetime="2026-03-15T14:02">15 Mar 2026, 14:02</time></div><p>Both parties, by secure link</p><ul class="tags"><li class="tag">signed-agreement.pdf</li><li class="tag">7c1e…a90b</li></ul></li>
+        <li class="ev" data-note="1"><div class="ev-h"><h3>Ready</h3><time datetime="2026-03-16T08:47">16 Mar 2026, 08:47</time></div><p>Both signatures, purchase order and campaign reference on file</p><ul class="tags"><li class="tag">PO 4500018832</li><li class="tag ctl"><a href="/controls#c-08">C-08 checked</a></li></ul></li>
+        <li class="ev" data-note="2"><div class="ev-h"><h3>Amount confirmed</h3><time datetime="2026-05-02T13:15">2 May 2026, 13:15</time></div><p>Dana Whitfield · Claims team · 8 files reviewed</p><ul class="tags"><li class="tag">USD 23,410 of 24,000</li><li class="tag">May 2026 rates</li></ul></li>
+        <li class="ev" data-note="1"><div class="ev-h"><h3>Invoice approved and sent to accounts payable</h3><time datetime="2026-05-22T15:20">22 May 2026, 15:20</time></div><p>Elena Marsh · Finance · invoice equals the confirmed amount</p><ul class="tags"><li class="tag">USD 23,410.00</li><li class="tag ctl"><a href="/controls#c-11">C-11 checked</a></li></ul></li>
+      </ol>
+    </div>
+  </div>
+  <aside class="side" aria-label="What you're looking at">
+    <p class="side-h">What you're looking at</p>
+    <ul class="notes" id="notes">
+      <li class="sn"><b>Who, in what role, and when</b><span>On every decision, including corrections.</span></li>
+      <li class="sn"><b>The rule that applied</b><span>Each check names its control.</span></li>
+      <li class="sn"><b>The file that was reviewed</b><span>A fingerprint proves it hasn't changed.</span></li>
+      <li class="sn"><b>The rules in force</b><span>The form and route versions it was submitted under.</span></li>
+    </ul>
+    <p class="side-f">Six of the 22 entries are shown here.</p>
+  </aside>
+</div></section>
+
+<!-- 3 · The files: four tinted tiles, then the rules in force -->
+<section class="sec" id="files" aria-labelledby="h-files"><div class="in">
+  <div class="files-h"><h2 id="h-files" class="rv">Nine files,<br><em>none of them changed.</em></h2><p class="lead rv">Each file is fingerprinted when it's uploaded. Change one character and the fingerprint no longer matches.</p></div>
+  <ul class="fgrid">
+    <li class="file pv" style="--k:var(--mint)"><i class="doc" aria-hidden="true"></i><b>Event photos</b><small>4 files</small><span class="fp">a41f…09cc and 3 more</span><span class="st">Accepted</span></li>
+    <li class="file pv" style="--k:var(--lav)"><i class="doc" aria-hidden="true"></i><b>Attendee list</b><small>1 file</small><span class="fp">5d20…b7e1</span><span class="st">Accepted</span></li>
+    <li class="file pv" style="--k:var(--peach)"><i class="doc" aria-hidden="true"></i><b>Invoice and receipts</b><small>3 files</small><span class="fp">90ab…3f12 and 2 more</span><span class="st">Accepted</span></li>
+    <li class="file pv" style="--k:var(--sky)"><i class="doc" aria-hidden="true"></i><b>Signed agreement</b><small>1 file</small><span class="fp">7c1e…a90b</span><span class="st">On file</span></li>
+  </ul>
+  <div class="force rv"><b>In force for this request</b><span class="tag">Request form v4</span><span class="tag">Approval route v3</span><span class="tag">Exchange rates, May 2026</span><a class="lk" href="/controls">See the controls <span aria-hidden="true">→</span></a></div>
+</div></section>
+
+<!-- 4 · Close: one block of solid teal -->
+<section class="close" id="walkthrough" aria-labelledby="h-close"><div class="in">
+  <div class="blk pv"><h2 id="h-close">See your own process<br>on a record like this.</h2><p>We'll walk one request through with your activity types and your approval rules.</p><a class="btn white" href="/#walkthrough">Request a walkthrough</a></div>
+</div></section>
+
+</main>
+
+<script>
+  import "../scripts/evidence.js";
+</script>
+</Base>
