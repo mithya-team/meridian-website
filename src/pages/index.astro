@@ -15,9 +15,9 @@ import InvoiceCheck from "../components/app/InvoiceCheck.astro";
 <!-- 1 · Hero: words left, product right -->
 <section class="hero" id="top"><div class="in hero-grid">
   <div class="hero-copy">
-    <span class="pill">Marketing enablement platform · MDF</span>
+    <span class="pill">Marketing enablement platform · MDF module</span>
     <h1>The whole MDF cycle,<br> on <em>one common<br> process.</em></h1>
-    <p class="lead">Partners and your teams work the same request from first draft to paid claim, with a clear owner at every step and progress everyone can see.</p>
+    <p class="lead">Partners and your teams work the same request from first draft to paid claim, with a clear owner at every step and visibility into progress for every role.</p>
     <div class="btns"><a class="btn" href="/request-a-walkthrough">Request a walkthrough</a><a class="btn ghost" href="/audit-evidence-pack">See a sample record</a></div>
   </div>
   <div class="hero-art" role="img" aria-label="Example record MDF-000033 for Brightfold Solutions: submitted by Jonas Becker, qualified by Laura Whitfield, and approved by Grace Adeyemi for USD 22,000.">
@@ -52,9 +52,9 @@ import InvoiceCheck from "../components/app/InvoiceCheck.astro";
     <p class="lead rv">That is how MDF often runs, even with a partner portal. Meridian brings them onto one record your partners and your teams work from.</p>
     <div class="one-wrap pv"><span class="stem"></span><div class="one card"><i class="ok">✓</i><b class="mono">MDF-000033</b><span>one record, one history</span></div></div>
     <ul class="repl">
-      <li class="rv"><b>One place for the request</b><span>Replaces a form per activity, sent by email.</span></li>
-      <li class="rv"><b>Approvals that route themselves</b><span>Replaces approval threads someone has to chase.</span></li>
-      <li class="rv"><b>Claims checked against what was approved</b><span>Replaces claim mailboxes and a manual tracker update.</span></li>
+      <li class="rv"><b>One place for the request</b><span class="rx">Partners fill in a structured form that follows your program's rules. Nobody re-types a document into a tracker.</span><span>Replaces a form per activity, sent by email.</span></li>
+      <li class="rv"><b>Approvals that route themselves</b><span class="rx">The amount and your rules pick the approvers. Each one is told when it's their turn, and every decision is recorded with who made it.</span><span>Replaces approval threads someone has to chase.</span></li>
+      <li class="rv"><b>Claims checked against what was approved</b><span class="rx">Proof, costs and the invoice are reviewed on the same record as the approval, so the amount paid traces back to the amount agreed.</span><span>Replaces claim mailboxes and a manual tracker update.</span></li>
     </ul>
   </div>
 </section>
@@ -67,9 +67,9 @@ import InvoiceCheck from "../components/app/InvoiceCheck.astro";
   <div class="stgs">
 
     <article class="stg sky pv" id="j1">
-      <div class="stg-w"><div class="stg-tray"><span class="stg-n">01</span><ol class="chain" aria-label="Who acts, in order"><li>Program administrator</li><li class="ar" aria-hidden="true">→</li><li>Partner</li></ol></div><h3>Plan and budget</h3><p>Each Program has an allocation, and partners plan their activities against it. You always see what's approved, what's in review and what's left.</p>
-        <ul class="ticks"><li><i class="ok">✓</i>Approved, in review and left, per Program</li><li><i class="ok">✓</i><span>Budget pools from your planning tool <span class="st v">Planned</span></span></li></ul></div>
-      <div class="stg-p"><div class="card mini bud"><div class="bud-h"><b class="ttl">FY27 Partner Fund · DACH</b><span class="st">Program</span></div>
+      <div class="stg-w"><div class="stg-tray"><span class="stg-n">01</span><ol class="chain" aria-label="Who acts, in order"><li>Program administrator</li><li class="ar" aria-hidden="true">→</li><li>Partner</li></ol></div><h3>Plan and budget</h3><p>Each Program has an allocation. You always see what's approved, what's in review and what's left.</p>
+        <ul class="ticks"><li><i class="ok">✓</i>Approved, in review and left, per Program</li><li><i class="ok">✓</i><span>Partner plans and budget pools <span class="st v">Planned</span></span></li></ul></div>
+      <div class="stg-p"><div class="card mini bud"><div class="bud-h"><b class="ttl">FY27 Strategic Partner Fund</b><span class="st">Program</span></div>
         <div class="bar" role="img" aria-label="USD 230,000 approved, USD 90,000 in review and USD 180,000 left, of USD 500,000 allocated."><i class="ba"></i><i class="bb"></i></div>
         <ul class="bud-l"><li style="--k:#0E8C82"><span>Approved</span><b class="mono">USD 230,000</b></li><li style="--k:#8E7FF0"><span>In review</span><b class="mono">USD 90,000</b></li><li><span>Left to allocate</span><b class="mono">USD 180,000</b></li></ul></div><div class="chip"><i class="ok">✓</i>USD 500,000 allocated</div></div>
     </article>
@@ -82,7 +82,7 @@ import InvoiceCheck from "../components/app/InvoiceCheck.astro";
 
     <article class="stg mint pv" id="j3">
       <div class="stg-w"><div class="stg-tray"><span class="stg-n">03</span><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol></div><h3>Approve</h3><p>Your rules pick the approval steps from the amount and the recommendation. Each approver is told when it's their turn.</p>
-        <ul class="ticks"><li><i class="ok">✓</i>Nobody approves their own request</li><li><i class="ok">✓</i>One person, one step</li></ul></div>
+        <ul class="ticks"><li><i class="ok">✓</i>Nobody approves a request they submitted or edited</li><li><i class="ok">✓</i>One person, one step</li></ul></div>
       <div class="stg-p"><div class="card mini"><ul class="people"><li><i class="av a2">LW</i><span><b>Laura Whitfield</b><small>Marketing manager · qualified</small></span><i class="ok">✓</i></li><li><i class="av a3">HM</i><span><b>Helen Marsh</b><small>Partner Sales leader</small></span><i class="ok">✓</i></li><li id="samRow"><i class="av a4">TV</i><span><b>Tomas Vidal</b><small>RVP · their turn</small></span><button type="button" class="act" id="approveBtn">Approve</button><i class="ok pop" hidden>✓</i></li></ul><p class="try" id="tryHint">Try it: approve as Tomas.</p></div><div class="chip" id="approveChip"><i class="ok">✓</i><span>Step 1 of 3 approved</span></div></div>
     </article>
 
@@ -96,14 +96,14 @@ import InvoiceCheck from "../components/app/InvoiceCheck.astro";
 
     <article class="stg sky pv" id="j5">
       <div class="stg-w"><div class="stg-tray"><span class="stg-n">05</span><ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol></div><h3>Claim and pay</h3><p>The partner uploads proof by the claim-by date. Your claims team gives a verdict on each file, confirms one amount, and the invoice must match it before it goes to accounts payable.</p>
-        <ul class="ticks"><li><i class="ok">✓</i>A proof checklist for each activity type</li><li><i class="ok">✓</i>Payment stays in your finance system</li></ul></div>
+        <ul class="ticks"><li><i class="ok">✓</i>An evidence checklist for each activity type</li><li><i class="ok">✓</i>Payment stays in your finance system</li></ul></div>
       <div class="stg-p"><InvoiceCheck /><div class="chip"><i class="ok">✓</i>Net equals the confirmed USD 22,000.00</div></div>
     </article>
 
     <article class="stg lav flip pv" id="j6">
-      <div class="stg-w"><div class="stg-tray"><span class="stg-n">06</span><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol></div><h3>Review performance</h3><p>See what each activity cost and what it was expected to return, by Program, partner and region. Every role has a dashboard for its own part.</p>
-        <ul class="ticks"><li><i class="ok">✓</i>Dashboards for each role</li><li><i class="ok">✓</i><span>Actual pipeline from your CRM <span class="st v">Planned</span></span></li></ul></div>
-      <div class="stg-p"><div class="card mini"><b class="ttl">Customer summit · MDF-000033</b><dl class="kv"><div><dt>MDF paid</dt><dd class="mono">USD 22,000</dd></div><div><dt>Expected pipeline</dt><dd class="mono">USD 820,000</dd></div><div><dt>Expected return</dt><dd class="mono">34.2×</dd></div><div><dt>Actual pipeline</dt><dd><span class="st v">From your CRM · Planned</span></dd></div></dl></div><div class="chip"><i class="ok">✓</i>Closed and paid</div></div>
+      <div class="stg-w"><div class="stg-tray"><span class="stg-n">06</span><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol></div><h3>Review performance</h3><p>Partners report each activity's actual cost, attendees, leads and opportunities. Dashboards show MDF requested and approved, and the pipeline it was expected to create, by Program, partner and Workspace.</p>
+        <ul class="ticks"><li><i class="ok">✓</i>A dashboard for each role, arranged by its owner</li><li><i class="ok">✓</i><span>Actual pipeline from your CRM <span class="st v">Planned</span></span></li></ul></div>
+      <div class="stg-p"><div class="card mini"><b class="ttl">Customer summit · MDF-000033</b><dl class="kv"><div><dt>MDF paid</dt><dd class="mono">USD 22,000</dd></div><div><dt>Expected pipeline</dt><dd class="mono">USD 820,000</dd></div><div><dt>Expected return</dt><dd class="mono">34.2×</dd></div><div><dt>Actual pipeline</dt><dd><span class="st v">From your CRM · Planned</span></dd></div></dl></div><div class="chip"><i class="ok">✓</i>Closed, payment recorded</div></div>
     </article>
 
   </div>

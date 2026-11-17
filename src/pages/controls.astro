@@ -29,37 +29,37 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
       <span class="ktip">You submitted this request</span>
     </div>
     <div class="chip kchip"><i class="kx" aria-hidden="true">✕</i>Blocked by rule <b class="mono">C-01</b></div>
-    <p class="khint" id="tryHint" aria-live="polite">Nobody approves their own request.</p>
+    <p class="khint" id="tryHint" aria-live="polite">Nobody approves a request they submitted or edited.</p>
   </div>
 </div></section>
 
 <!-- 2 · Every rule: the heading stays on the left; on the right, one column that opens a group at a time -->
 <section class="sec" id="rules" aria-labelledby="h-rules"><div class="in kcols">
-  <div class="khead"><h2 id="h-rules" class="rv">Every rule,<br><em>in plain words.</em></h2><p class="lead rv">19 controls, grouped by the question they answer.</p><p class="knote rv">These are controls built into the workflow. Security attestations are a separate subject.</p></div>
+  <div class="khead"><h2 id="h-rules" class="rv">Every rule,<br><em>in plain words.</em></h2><p class="lead rv">19 controls, grouped by the question they answer. Eight are checks the workflow enforces, marked Enforced. The rest describe what is checked and kept on the record.</p><p class="knote rv">These are controls built into the workflow. Security attestations are a separate subject.</p></div>
   <div class="kacc">
       <details class="kt lav pv" name="rules" open>
         <summary><h3>Who can approve</h3><span class="kn">5 rules</span><i class="kplus" aria-hidden="true"></i></summary>
         <ul>
-        <li class="kc" id="c-01"><b class="mono">C-01</b><span>The person who submitted or edited a request cannot approve it.</span></li>
-        <li class="kc" id="c-02"><b class="mono">C-02</b><span>One person takes at most one approval step on a request per round.</span></li>
+        <li class="kc" id="c-01"><b class="mono">C-01</b><span>The person who submitted or edited a request cannot approve it.</span><i class="kenf">Enforced</i></li>
+        <li class="kc" id="c-02"><b class="mono">C-02</b><span>One person takes at most one approval step on a request per round.</span><i class="kenf">Enforced</i></li>
         <ApprovalRoute />
-        <li class="kc" id="c-03"><b class="mono">C-03</b><span>A step accepts only the role it names, with a minimum number of different approvers.</span></li>
+        <li class="kc" id="c-03"><b class="mono">C-03</b><span>A step accepts only the role it names, with a minimum number of different approvers.</span><i class="kenf">Enforced</i></li>
         <li class="kc" id="c-04"><b class="mono">C-04</b><span>Approval steps are selected by amount and funding recommendation, from the published route.</span></li>
         <li class="kc" id="c-05"><b class="mono">C-05</b><span>Approval records the amount, the period and any conditions.</span></li></ul>
       </details>
       <details class="kt mint pv" name="rules">
         <summary><h3>Before anything is signed</h3><span class="kn">3 rules</span><i class="kplus" aria-hidden="true"></i></summary>
         <ul>
-        <li class="kc" id="c-06"><b class="mono">C-06</b><span>Nothing is signed before the campaign references are recorded.</span></li>
-        <li class="kc" id="c-07"><b class="mono">C-07</b><span>The countersignature follows the partner's signature.</span></li>
-        <li class="kc" id="c-08"><b class="mono">C-08</b><span>An activity is Ready only with both signatures, a current purchase order and campaign references.</span></li></ul>
+        <li class="kc" id="c-06"><b class="mono">C-06</b><span>Nothing is signed before the campaign references are recorded.</span><i class="kenf">Enforced</i></li>
+        <li class="kc" id="c-07"><b class="mono">C-07</b><span>The countersignature follows the partner's signature.</span><i class="kenf">Enforced</i></li>
+        <li class="kc" id="c-08"><b class="mono">C-08</b><span>An activity is Ready only with both signatures, a current purchase order and campaign references.</span><i class="kenf">Enforced</i></li></ul>
       </details>
       <details class="kt peach pv" name="rules">
         <summary><h3>Before anything is paid</h3><span class="kn">4 rules</span><i class="kplus" aria-hidden="true"></i></summary>
         <ul>
         <li class="kc" id="c-09"><b class="mono">C-09</b><span>Proof is reviewed file by file and cost line by cost line, against the activity type's checklist.</span></li>
         <li class="kc" id="c-10"><b class="mono">C-10</b><span>Costs are converted at your published monthly exchange rates.</span></li>
-        <li class="kc" id="c-11"><b class="mono">C-11</b><span>The invoice must equal the confirmed claim amount exactly.</span></li>
+        <li class="kc" id="c-11"><b class="mono">C-11</b><span>The invoice must equal the confirmed claim amount exactly.</span><i class="kenf">Enforced</i></li>
         <li class="kc" id="c-12"><b class="mono">C-12</b><span>Only approved invoices reach accounts payable, stamped with who approved them.</span></li></ul>
       </details>
       <details class="kt sky pv" name="rules">
@@ -72,7 +72,7 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
       <details class="kt lav pv" name="rules">
         <summary><h3>Who can see what</h3><span class="kn">4 rules</span><i class="kplus" aria-hidden="true"></i></summary>
         <ul>
-        <li class="kc" id="c-16"><b class="mono">C-16</b><span>Partners never see internal notes, reasons, budgets or other partners.</span></li>
+        <li class="kc" id="c-16"><b class="mono">C-16</b><span>Partners never see internal notes, reasons, budgets or other partners.</span><i class="kenf">Enforced</i></li>
         <li class="kc" id="c-17"><b class="mono">C-17</b><span>The explanation shown to the partner is stored apart from internal reasons.</span></li>
         <li class="kc" id="c-18"><b class="mono">C-18</b><span>Each customer's data is isolated. Access is granted per person, per Workspace, per role.</span></li>
         <li class="kc" id="c-19"><b class="mono">C-19</b><span>Meridian staff set up your organization and have no access to your business records.</span></li></ul>
@@ -90,7 +90,7 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
     <li class="wyc pv"><span class="pill">Proof before payment</span><p>In 2022 the SEC found that a large software vendor's subsidiaries approved marketing reimbursements under USD 5,000 without evidence the activity took place.</p>
       <div class="wya"><a class="tag ctl" href="#c-08">C-08</a><a class="tag ctl" href="#c-09">C-09</a><a class="tag ctl" href="#c-11">C-11</a></div>
       <a class="lk" href="https://www.sec.gov/files/litigation/admin/2022/34-95913.pdf" target="_blank" rel="noopener">SEC order 34-95913 <span aria-hidden="true">↗</span></a></li>
-    <li class="wyc pv"><span class="pill">Expense or revenue</span><p>Under ASC 606 and IFRS 15, a payment to a partner is a marketing expense only when it buys a distinct service at fair value.</p>
+    <li class="wyc pv"><span class="pill">Expense or revenue</span><p>Under ASC 606 and IFRS 15, a payment to a partner counts as a marketing expense only for a distinct service, and only up to that service's fair value. The rest reduces revenue.</p>
       <div class="wya"><a class="tag ctl" href="#c-09">C-09</a><a class="tag ctl" href="#c-10">C-10</a><a class="tag ctl" href="#c-14">C-14</a></div>
       <a class="lk" href="https://viewpoint.pwc.com/dt/us/en/pwc/accounting_guides/revenue_from_contrac/revenue_from_contrac_US/chapter_4_determinin_US/46consideration_paya_US.html" target="_blank" rel="noopener">PwC on ASC 606 <span aria-hidden="true">↗</span></a></li>
   </ul>
