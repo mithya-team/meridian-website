@@ -43,7 +43,8 @@ for (const file of pages(DIST)) {
       continue;
     }
     checked++;
-    const [path, hash] = local.split("#");
+    const [pathq, hash] = local.split("#");
+    const path = pathq.split("?")[0];
     const target = path === "" ? file : fileFor(path);
     if (!target) { problems.push(`${where}: ${href} leads to no page`); continue; }
     if (hash && hash !== "top" && !idsOf(target).has(hash)) problems.push(`${where}: ${href} has no #${hash} on that page`);

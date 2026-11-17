@@ -14,6 +14,15 @@
     if (document.referrer && new URL(document.referrer).host === location.host) source.value = new URL(document.referrer).pathname;
   } catch (e) {}
 
+  // Arriving from Trust's "Send your questionnaire" (?topic=security): set the form up for a security review.
+  try {
+    if (new URLSearchParams(location.search).get("topic") === "security") {
+      document.getElementById("wt-team").value = "IT or security";
+      var notes = document.getElementById("wt-notes");
+      if (!notes.value) notes.value = "Security review: we'd like to send our security questionnaire, and ask about certifications, hosting and data handling.";
+    }
+  } catch (e) {}
+
   var names = { name: "your full name", email: "a work email", company: "your company", team: "your team", consent: "your agreement to be contacted" };
 
   function invalidFields() {

@@ -26,7 +26,7 @@
       if (el) { show(el.getAttribute("data-r")); $("#roles").scrollIntoView(); return true; }
       return false;
     };
-    if (!fromHash()) show(sheets[0].getAttribute("data-r"));
+    if (!fromHash()) show(tabs[0].getAttribute("data-r")); // opens on the first role listed (partner marketing manager)
     window.addEventListener("hashchange", fromHash);
   })();
 

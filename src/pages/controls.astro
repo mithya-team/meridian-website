@@ -8,7 +8,7 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
   title="Controls · Meridian"
   description="The rules Meridian's workflow enforces on every partner funding request: who can approve, what must be in place before signing and paying, what is kept, and who can see what."
   share="og-controls.png"
-  shareAlt="Meridian: Rules the workflow won't let you break. An example request, MDF-000033: its Approve button is blocked by rule C-01, because you submitted it."
+  shareAlt="Meridian: Rules the workflow enforces and records. An example request, MDF-000033: its Approve button is blocked by rule C-01, because you submitted it."
 >
 
 <main id="main">
@@ -17,8 +17,8 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
 <section class="khero" id="top"><div class="in khero-grid">
   <div class="hero-copy">
     <span class="pill">Controls</span>
-    <h1>Rules the workflow <em>won't let you break.</em></h1>
-    <p class="lead">They aren't policies to remember. The workflow checks each rule at the moment it matters, and every decision goes on the record.</p>
+    <h1>Rules the workflow <em>enforces and records.</em></h1>
+    <p class="lead">They aren't policies to remember. Some rules the workflow checks at the moment they matter, so they can't be skipped. The rest are kept on the record, and every decision goes on the record too.</p>
     <div class="btns"><a class="btn" href="#rules">See every rule</a><a class="btn ghost" href="/audit-evidence-pack">See them on a record</a></div>
   </div>
   <div class="ktry rose halo" id="tryBox"><span class="sheet" aria-hidden="true"></span>
@@ -66,7 +66,7 @@ import ApprovalRoute from "../components/app/ApprovalRoute.astro";
         <summary><h3>What is kept</h3><span class="kn">3 rules</span><i class="kplus" aria-hidden="true"></i></summary>
         <ul>
         <li class="kc" id="c-13"><b class="mono">C-13</b><span>Every decision is stored with the person, their role and the time.</span></li>
-        <li class="kc" id="c-14"><b class="mono">C-14</b><span>Uploaded files are fingerprinted and cannot be altered after upload.</span></li>
+        <li class="kc" id="c-14"><b class="mono">C-14</b><span>Uploaded files are fingerprinted and cannot be altered after upload. A correction is a new file; the original stays on the record.</span></li>
         <li class="kc" id="c-15"><b class="mono">C-15</b><span>Each request keeps the form and approval-route version it was submitted under.</span></li></ul>
       </details>
       <details class="kt rose pv" name="rules">
