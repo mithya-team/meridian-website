@@ -52,7 +52,7 @@ Both are drafts. Every detail the company still has to supply is highlighted on 
 - `src/components/`: `Nav.astro`, `Footer.astro` and `Logo.astro`, shared by every page.
 - `src/styles/site.css`: the design system (colours, type, cards, chips, buttons, the accordion) and the homepage's sections. Every page imports it first, then its own stylesheet.
 - `src/scripts/`: one script per page. Each checks whether the visitor prefers reduced motion and leaves the page fully readable without it.
-- `public/`: icons, the web manifest, the share images (`og-*.png`, 1200 × 630) and `robots.txt`.
+- `public/`: icons, the web manifest and the share images (`og-*.png`, 1200 × 630, drawn by `brand/web/build_og.py`). `robots.txt` and `sitemap.xml` are written at build time by `astro.config.mjs`, following `LIVE`.
 - `src/site.config.mjs`: the live address and the launch switch (see below).
 
 Short class names in `site.css` are already taken (`.t`, `.in`, `.sheet`, `.stage`, `.rail`, `.note`, `.plus`), so page stylesheets use a prefix for their own: `k` (Controls), `fp` (For partners), `q` (Questions), `t` (Teams), `tr` (Trust), `w` (How it works), `c`.
@@ -71,7 +71,7 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 ## Before launch
 
 - [ ] Choose the domain, add it under Settings › Pages, and set `SITE_URL` and `BASE_PATH` in the workflow (share images need the right address).
-- [ ] Set `LIVE = true` there, and allow crawlers in `public/robots.txt`.
+- [ ] Set `LIVE = true` in `src/site.config.mjs`. That one switch removes the noindex tag, allows crawlers and adds the sitemap.
 - [ ] Connect the walkthrough form (see above).
 - [ ] Fill in and review the Privacy and Terms pages.
 - [ ] Answer the Trust page's "To confirm" topics.
