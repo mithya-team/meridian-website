@@ -73,6 +73,7 @@
         g.classList.toggle("none", here === 0);
         g._none.hidden = here !== 0;
         g._count.textContent = here === 0 ? "No part here" : plural(here, "step", "steps");
+        if (window.matchMedia("(max-width: 560px)").matches) { if (here === 0) g.open = false; return; } // phones: nothing opens by itself
         g.open = here > 0 && !opened;
         if (g.open) opened = true;
       });

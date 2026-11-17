@@ -27,3 +27,12 @@
   .lg-grid { grid-template-columns: minmax(0, 1fr); }
   .lg-toc { position: static; }
 }
+
+/* phones: the contents list is one closed row with full-height links inside */
+@media (max-width: 560px) {
+  .lg-toc details { background: #F4F6F8; border-radius: 16px; }
+  .lg-toc summary { padding: .85rem 1rem; }
+  .lg-toc summary h2 { margin: 0; font-size: .9375rem; }
+  .lg-toc ol { gap: 0; padding: 0 1rem .6rem; }
+  .lg-toc li a { display: block; padding-block: .55rem; }
+}

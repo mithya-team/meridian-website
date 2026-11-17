@@ -110,3 +110,12 @@ html:not(.ix) .seg { display: none; }
 
 .close { padding-top: clamp(1rem, 3vw, 2.5rem); }
 @media (max-width: 560px) { .rl-h, .rp { grid-template-columns: minmax(0, 1fr) repeat(3, 2.6rem); column-gap: .15rem; } .rp { font-size: .9375rem; padding: .65rem .75rem; } .rl-h { padding-inline: .75rem; } .rl-g { padding-inline: .75rem; } .rl-h .mk { padding-inline: .4rem; } }
+
+/* connections: a phone-only accordion; on wider screens each card stays open */
+.cx details > dl { margin-top: 1rem; }
+@media (max-width: 560px) {
+  .cx { padding-block: 1rem; }
+  .cx summary h3 { flex: 1; }
+  .cx details[data-phone] > summary .ptags { display: flex; gap: .3rem; }
+  .cx details[data-phone][open] > summary .ptags { display: none; }
+}

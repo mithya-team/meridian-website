@@ -48,5 +48,16 @@ const url = new URL(Astro.url.pathname, SITE_URL + "/").href.replace(/\/$/, "");
 <Nav />
 <slot />
 <Footer />
+<script is:inline>
+// Phones: every accordion starts closed, except the one a link points into. Phone-only accordions (data-phone) stay open and fixed on wider screens.
+(function () {
+  var phone = window.matchMedia("(max-width: 560px)");
+  var id = location.hash.length > 1 ? decodeURIComponent(location.hash.slice(1)) : "";
+  var target = id ? document.getElementById(id) : null;
+  if (phone.matches) document.querySelectorAll("details[open]:not(.mnav)").forEach(function (d) { if (!(target && d.contains(target))) d.open = false; });
+  document.querySelectorAll("details[data-phone] > summary").forEach(function (s) { s.addEventListener("click", function (e) { if (!phone.matches) e.preventDefault(); }); });
+  phone.addEventListener("change", function (e) { if (!e.matches) document.querySelectorAll("details[data-phone]").forEach(function (d) { d.open = true; }); });
+})();
+</script>
 </body>
 </html>

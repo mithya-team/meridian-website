@@ -193,10 +193,12 @@
 
   // 6. Roles: choose a column and it widens while the open one narrows.
   (function () {
-    var roles = $$(".role");
+    var roles = $$(".role"), stacked = window.matchMedia("(max-width: 900px)");
+    var shut = function (o) { o.classList.remove("open"); $(".role-t", o).setAttribute("aria-expanded", "false"); };
+    if (window.matchMedia("(max-width: 560px)").matches) roles.forEach(shut); // phones: all closed to start
     roles.forEach(function (r) {
       $(".role-t", r).addEventListener("click", function () {
-        if (r.classList.contains("open")) return;
+        if (r.classList.contains("open")) { if (stacked.matches) shut(r); return; } // stacked: tap again to close
         roles.forEach(function (o) {
           var on = o === r;
           o.classList.toggle("open", on);

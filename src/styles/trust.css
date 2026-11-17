@@ -30,3 +30,10 @@
 @media (max-width: 760px) { .trdoors { grid-template-columns: 1fr; } .trdoor { min-height: 0; gap: 1rem; } }
 
 .close { padding-top: clamp(1rem, 3vw, 2.5rem); }
+
+/* phones: the role sits under the name, so names stay on one line */
+@media (max-width: 560px) {
+  .tracc li:not(.fl-t) { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: .8rem; row-gap: .3rem; }
+  .tracc li:not(.fl-t) > .av { grid-row: span 2; align-self: center; }
+  .tracc li:not(.fl-t) > .st { justify-self: start; }
+}

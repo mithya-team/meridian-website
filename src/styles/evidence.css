@@ -61,3 +61,6 @@
 
 @media (prefers-reduced-motion: reduce) { .ev, .sn { opacity: 1 !important; } }
 .tag.ctl a { color: inherit; } .tag.ctl a:hover { text-decoration: underline; }
+
+/* a taller tap area for the rule links, without changing the tag's size */
+.tag.ctl a { display: inline-block; padding-block: .5rem; margin-block: -.5rem; }

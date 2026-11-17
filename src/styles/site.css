@@ -269,6 +269,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .ix .roles { flex-direction: column; } .ix .role { height: auto; flex: none; }
   .ix .role:not(.open) .role-t { position: relative; inset: auto; padding: 1.4rem 4.5rem 1.4rem 1.5rem; }
   .ix .role-b { position: static; width: auto; padding-top: 1.1rem; display: none; } .ix .role.open .role-b { display: flex; }
+  .ix .role.open .role-t { cursor: pointer; padding-right: 4.5rem; } .ix .role.open .plus { display: grid; rotate: 45deg; }
 }
 
 .rnote { max-width: 40rem; margin: 1.75rem auto 0; text-align: center; font-size: 1rem; color: var(--ink2); }
@@ -388,7 +389,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .stg-tray .stg-n { background: var(--accent-t); border-radius: 999px; padding: .4rem .6rem; flex: none; }
 .stg-tray .chain { flex-wrap: wrap; gap: .3rem .4rem; font-size: .8125rem; min-width: 0; }
 .stg-tray .chain li { background: none; box-shadow: none; padding: 0; white-space: nowrap; color: var(--ink); }
-.stg-tray .chain .ar { color: var(--mut); }
+.stg-tray .chain .ar { font-style: normal; color: var(--mut); margin-right: .4rem; }
 @media (max-width: 560px) { .stg-tray { align-items: flex-start; } .stg-tray .chain { padding-top: .35rem; } }
 
 /* role cards: every row on one line, values aligned on the right at the same height */
@@ -407,3 +408,20 @@ html, main { overflow-x: clip; }
 .ok::before, .ac-box::before, .seal::before { content: ""; position: absolute; inset: 0; margin: auto; width: 62%; height: 62%; background: #fff; -webkit-mask: var(--tick) center / contain no-repeat; mask: var(--tick) center / contain no-repeat; }
 .no .ok::before { opacity: 0; }
 .seal::before { width: 46%; height: 46%; }
+
+/* phones: a step's chip wraps inside its panel; footer links get a full-height tap row */
+@media (max-width: 560px) { .stg-p .ac + .chip { position: static; display: inline-flex; margin-top: .75rem; white-space: normal; max-width: 100%; } }
+@media (max-width: 760px) { .foot ul { gap: 0; } .foot ul a { display: inline-block; padding-block: .55rem; } }
+.hero.nf { padding-bottom: clamp(3.5rem, 8vw, 6rem); }
+
+/* Phone-only accordions (details[data-phone]): open and fixed on wider screens, a closed row on phones.
+   Every other accordion also starts closed on phones (the script at the end of Base.astro). */
+details[data-phone] > summary { list-style: none; }
+details[data-phone] > summary::-webkit-details-marker { display: none; }
+details[data-phone] > summary .aplus, details[data-phone] > summary .ptags { display: none; }
+details[data-phone][open] .aplus::after { rotate: 0deg; opacity: 0; }
+@media (max-width: 560px) {
+  details[data-phone] > summary { cursor: pointer; display: flex; align-items: center; gap: .75rem; }
+  details[data-phone] > summary .aplus { display: grid; margin-left: auto; background: #F4F6F8; }
+  details[data-phone] > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 12px; }
+}

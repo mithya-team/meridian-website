@@ -21,7 +21,7 @@
         var on = g.getAttribute("data-g") === id;
         g.classList.toggle("on", on);
         if (on) {
-          var items = $$("details", g), target = openId ? document.getElementById(openId) : items[0];
+          var items = $$("details", g), target = openId ? document.getElementById(openId) : (window.matchMedia("(max-width: 560px)").matches ? null : items[0]);
           items.forEach(function (d) { d.open = d === target; });
         }
       });

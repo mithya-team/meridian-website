@@ -107,4 +107,4 @@
 .ac-pdf dd { padding: .3rem .5rem; }
 @media (max-width: 520px) { .ac-well { height: 17.5rem; } }
 /* phones: amounts stay on one line, and the signing chip sits under its card instead of over the label */
-@media (max-width: 560px) { .acs dd.mono { white-space: nowrap; } .acs .chip { position: static; align-self: flex-start; } }
+@media (max-width: 560px) { .acs dd.mono { white-space: nowrap; } .acs .chip { position: static; align-self: flex-start; } .ac-file { flex-wrap: wrap; } .ac-file .mono { white-space: normal; overflow-wrap: anywhere; flex: 1 1 8rem; } }
