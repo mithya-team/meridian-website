@@ -390,3 +390,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* the closing step after the five stages: labelled Then, not numbered */
 .stg-tray .stg-n.then { background: var(--lav); color: #4A3CC0; font-family: var(--sans); }
+
+/* decorative glows may reach past the screen edge; clip them inside the page so phones never scroll sideways (clip, unlike hidden, keeps sticky elements working) */
+html, main { overflow-x: clip; }
