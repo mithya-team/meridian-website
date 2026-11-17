@@ -10,16 +10,16 @@
 .lg-toc { position: sticky; top: 6rem; font-size: .875rem; }
 .lg-toc h2 { font-size: .8125rem; letter-spacing: 0; font-weight: 600; margin-bottom: .75rem; }
 .lg-toc ol { display: flex; flex-direction: column; gap: .45rem; color: var(--ink2); }
-.lg-toc a:hover { color: var(--teal-d); }
+.lg-toc a:hover { color: var(--accent-d); }
 
 .lg-doc { display: flex; flex-direction: column; gap: 2.25rem; min-width: 0; }
 .lg-doc section { display: flex; flex-direction: column; gap: .85rem; scroll-margin-top: 6rem; }
 .lg-doc h2 { font-size: 1.375rem; letter-spacing: -.02em; line-height: 1.25; }
 .lg-doc p, .lg-doc li { color: var(--ink2); }
 .lg-doc ul { display: flex; flex-direction: column; gap: .5rem; padding-left: 1.2rem; list-style: disc; }
-.lg-doc li::marker { color: var(--teal); }
+.lg-doc li::marker { color: var(--accent); }
 .lg-doc b { color: var(--ink); font-weight: 600; }
-.lg-doc a { color: var(--teal-d); text-decoration: underline; text-underline-offset: 2px; }
+.lg-doc a { color: var(--accent-d); text-decoration: underline; text-underline-offset: 2px; }
 /* Details the company still has to supply: easy to spot, easy to search for ("To fill in"). */
 .fill { background: #FFF4D6; color: #7A4E00; border-radius: 4px; padding: 0 .3em; font-weight: 500; }
 
