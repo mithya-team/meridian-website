@@ -2,6 +2,8 @@
 import Base from "../layouts/Base.astro";
 import "../styles/site.css";
 import "../styles/evidence.css";
+import RequestHistory from "../components/app/RequestHistory.astro";
+import ClaimHistory from "../components/app/ClaimHistory.astro";
 ---
 <Base
   title="Audit evidence pack · Meridian"
@@ -27,7 +29,7 @@ import "../styles/evidence.css";
 </div></section>
 
 <!-- 2 · The history: one long sheet of glass, with every decision on the line -->
-<section class="sec trail" aria-labelledby="h-trail"><div class="in trail-grid">
+<section class="sec etrail" aria-labelledby="h-trail"><div class="in trail-grid">
   <div class="sheet-wrap">
     <span class="blob eb1"></span><span class="blob eb2"></span>
     <div class="esheet" id="sheet">
@@ -36,10 +38,10 @@ import "../styles/evidence.css";
       <ol class="evs">
         <li class="ev" data-note="3"><div class="ev-h"><h3>Submitted</h3><time datetime="2026-11-03T09:14">3 Nov 2026, 09:14</time></div><p>Jonas Becker · Brightfold Solutions, partner</p><ul class="tags"><li class="tag">Request form v4</li><li class="tag">Approval route v3</li></ul></li>
         <li class="ev" data-note="0"><div class="ev-h"><h3>Approved</h3><time datetime="2026-11-09T09:05">9 Nov 2026, 09:05</time></div><p>Grace Adeyemi · Channels leader · step 3 of 3</p><ul class="tags"><li class="tag">USD 22,000</li><li class="tag ctl"><a href="/controls#c-01">Rule C-01</a></li></ul></li>
-        <li class="ev" data-note="2"><div class="ev-h"><h3>Signed and countersigned</h3><time datetime="2026-11-12T14:02">12 Nov 2026, 14:02</time></div><p>Both parties, by secure link</p><ul class="tags"><li class="tag">signed-agreement.pdf</li><li class="tag">7c1e…a90b</li></ul></li>
-        <li class="ev" data-note="1"><div class="ev-h"><h3>Ready</h3><time datetime="2026-11-13T08:47">13 Nov 2026, 08:47</time></div><p>Both signatures, purchase order and campaign reference on file</p><ul class="tags"><li class="tag">PO 4500018832</li><li class="tag ctl"><a href="/controls#c-08">Rule C-08</a></li></ul></li>
-        <li class="ev" data-note="2"><div class="ev-h"><h3>Amount confirmed</h3><time datetime="2026-12-10T13:15">10 Dec 2026, 13:15</time></div><p>Samir Haddad · Claims team · 8 files reviewed</p><ul class="tags"><li class="tag">USD 22,000, as approved</li><li class="tag">December 2026 rates</li></ul></li>
-        <li class="ev" data-note="1"><div class="ev-h"><h3>Invoice approved and sent to accounts payable</h3><time datetime="2026-12-14T15:20">14 Dec 2026, 15:20</time></div><p>Samir Haddad · Claims team · invoice equals the confirmed amount</p><ul class="tags"><li class="tag">USD 22,000.00</li><li class="tag ctl"><a href="/controls#c-11">Rule C-11</a></li></ul></li>
+        <li class="ev" data-note="2"><div class="ev-h"><h3>Signed and countersigned</h3><time datetime="2026-11-11T09:48">11 Nov 2026, 09:48</time></div><p>Both parties, by secure link</p><ul class="tags"><li class="tag">Countersigned statement</li><li class="tag">7c1e…a90b</li></ul></li>
+        <li class="ev" data-note="1"><div class="ev-h"><h3>Ready</h3><time datetime="2026-11-16T15:20">16 Nov 2026, 15:20</time></div><p>Both signatures, purchase order and campaign reference on file</p><ul class="tags"><li class="tag">PO 6200004812</li><li class="tag ctl"><a href="/controls#c-08">Rule C-08</a></li></ul></li>
+        <li class="ev" data-note="2"><div class="ev-h"><h3>Amount confirmed</h3><time datetime="2026-12-08T09:52">8 Dec 2026, 09:52</time></div><p>Samir Haddad · Claims team · 4 files reviewed</p><ul class="tags"><li class="tag">USD 22,000, as approved</li><li class="tag">December 2026 rates</li></ul></li>
+        <li class="ev" data-note="1"><div class="ev-h"><h3>Invoice approved and sent to accounts payable</h3><time datetime="2026-12-11T10:24">11 Dec 2026, 10:24</time></div><p>Samir Haddad · Claims team · invoice equals the confirmed amount</p><ul class="tags"><li class="tag">USD 22,000.00</li><li class="tag ctl"><a href="/controls#c-11">Rule C-11</a></li></ul></li>
       </ol>
     </div>
   </div>
@@ -53,6 +55,15 @@ import "../styles/evidence.css";
     </ul>
     <p class="side-f">Six of the 22 entries are shown here.</p>
   </aside>
+</div></section>
+
+<!-- 2b · The same history in the product: the request's history and its claim's, side by side -->
+<section class="sec" id="in-meridian" aria-labelledby="h-same"><div class="in">
+  <div class="sec-h rv"><h2 id="h-same">The same history, <em>in Meridian.</em></h2><p class="lead">The request and its claim each keep their own history. This is what your team sees on screen.</p></div>
+  <div class="acs req lav">
+    <div class="acs-c pv"><span class="pill">On the request</span><RequestHistory /></div>
+    <div class="acs-c pv"><span class="pill">On its claim</span><ClaimHistory /></div>
+  </div>
 </div></section>
 
 <!-- 3 · The files: four tinted tiles, then the rules in force -->

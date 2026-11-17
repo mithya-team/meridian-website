@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import "../styles/site.css";
 import "../styles/controls.css";
+import ApprovalRoute from "../components/app/ApprovalRoute.astro";
 ---
 <Base
   title="Controls · Meridian"
@@ -41,6 +42,7 @@ import "../styles/controls.css";
         <ul>
         <li class="kc" id="c-01"><b class="mono">C-01</b><span>The person who submitted or edited a request cannot approve it.</span></li>
         <li class="kc" id="c-02"><b class="mono">C-02</b><span>One person takes at most one approval step on a request per round.</span></li>
+        <ApprovalRoute />
         <li class="kc" id="c-03"><b class="mono">C-03</b><span>A step accepts only the role it names, with a minimum number of different approvers.</span></li>
         <li class="kc" id="c-04"><b class="mono">C-04</b><span>Approval steps are selected by amount and funding recommendation, from the published route.</span></li>
         <li class="kc" id="c-05"><b class="mono">C-05</b><span>Approval records the amount, the period and any conditions.</span></li></ul>
@@ -100,7 +102,7 @@ import "../styles/controls.css";
     <span class="blob kb1"></span><span class="blob kb2"></span>
     <div class="kglass">
       <div class="kp-w"><h2 id="h-proof">Every decision <em>leaves a mark.</em></h2><p class="lead">Each one is on the record: who, in what role, and when. Each step follows a published rule.</p><a class="lk" href="/audit-evidence-pack">Open the audit evidence pack <span aria-hidden="true">→</span></a></div>
-      <ul class="kp-l" aria-label="Checks on example record MDF-000033"><li><time>9 Nov</time><span>Approved by Grace Adeyemi</span><b class="tag ctl">Rule C-01</b></li><li><time>13 Nov</time><span>Ready</span><b class="tag ctl">Rule C-08</b></li><li><time>14 Dec</time><span>Invoice approved</span><b class="tag ctl">Rule C-11</b></li></ul>
+      <ul class="kp-l" aria-label="Checks on example record MDF-000033"><li><time>9 Nov</time><span>Approved by Grace Adeyemi</span><b class="tag ctl">Rule C-01</b></li><li><time>16 Nov</time><span>Ready</span><b class="tag ctl">Rule C-08</b></li><li><time>11 Dec</time><span>Invoice approved</span><b class="tag ctl">Rule C-11</b></li></ul>
     </div>
   </div>
 </div></section>

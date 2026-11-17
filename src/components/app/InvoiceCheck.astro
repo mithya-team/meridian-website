@@ -1,0 +1,18 @@
+---
+// Home, step 05. The claims team's invoice check in the app, on 11 Dec 2026: four boxes ticked, just before Approve.
+// Sized to the journey's rhythm (376 px wide, under 293 px tall). The app's other automatic check,
+// "Net equals the confirmed USD 22,000.00", is the floating chip beside this card in index.astro.
+import "../../styles/app-cards.css";
+---
+<div class="card ac ac-inv">
+  <div class="ac-h"><b>Invoice check</b><span class="st mono">USD 22,000.00</span></div>
+  <p class="ac-meta"><span class="mono">BRF-INV-2026-0419</span> · 10 Dec 2026 · VAT <span class="mono">0.00</span></p>
+  <ul class="ac-ck" aria-label="Checks: the first is automatic, the other four are the claims team's">
+    <li class="auto"><i class="ok">✓</i>Net plus VAT adds up to the total</li>
+    <li><i class="ac-box" aria-hidden="true">✓</i>The PO number matches the final PO</li>
+    <li><i class="ac-box" aria-hidden="true">✓</i>Billed to the right entity and address</li>
+    <li><i class="ac-box" aria-hidden="true">✓</i>The activity reference is on the invoice</li>
+    <li><i class="ac-box" aria-hidden="true">✓</i>The partner's name, address and VAT details are on the invoice</li>
+  </ul>
+  <div class="ac-btns" aria-hidden="true"><span class="ac-b go">Approve</span><span class="ac-b">Return invoice</span><span class="ac-b no">Reject claim</span></div>
+</div>

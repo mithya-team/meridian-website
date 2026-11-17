@@ -1,0 +1,25 @@
+---
+// Audit evidence pack. The claim's history in the app (CLM-000001), every entry, including the returned invoice and its reason.
+// The app lists the three "File reviewed" entries one by one; here they share a row, with all three times.
+import "../../styles/app-cards.css";
+const rows = [
+  ["2026-12-04T15:24", "4 Dec", "15:24", "Draft started", "Jonas Becker"],
+  ["2026-12-07T10:22", "7 Dec", "10:22", "Submitted", "Jonas Becker"],
+  ["2026-12-08T09:30", "8 Dec", "09:30", "Review started", "Samir Haddad"],
+  ["2026-12-08T09:31", "8 Dec", "09:31", "File reviewed ×3", "09:31, 09:34 and 09:38 · Samir Haddad · accepted"],
+  ["2026-12-08T09:44", "8 Dec", "09:44", "Cost reviewed", "Samir Haddad"],
+  ["2026-12-08T09:52", "8 Dec", "09:52", "Amount confirmed", "Samir Haddad"],
+  ["2026-12-09T11:05", "9 Dec", "11:05", "Invoice sent", "Jonas Becker · Invoice BRF-INV-2026-0419"],
+];
+---
+<div class="card ac">
+  <div class="ac-h"><div><b>Claim history</b><small class="mono">CLM-000001</small></div><span class="st">Approved</span></div>
+  <ol class="ac-log">
+    {rows.map(([dt, d, t, what, who]) => (
+      <li><time datetime={dt}>{d}<span>{t}</span></time><span><b>{what}</b><small>{who}</small></span></li>
+    ))}
+    <li class="ret"><time datetime="2026-12-09T15:40">9 Dec<span>15:40</span></time><span><b>Invoice returned</b><small>Samir Haddad</small><q>The invoice PDF shows a net of 21,500.00, but the confirmed amount is 22,000.00. Please send a corrected invoice for 22,000.00.</q></span></li>
+    <li><time datetime="2026-12-10T09:12">10 Dec<span>09:12</span></time><span><b>Invoice sent</b><small>Jonas Becker · Invoice BRF-INV-2026-0419</small></span></li>
+    <li class="fin"><time datetime="2026-12-11T10:24">11 Dec<span>10:24</span></time><span><b><i class="ok">✓</i>Approved</b><small>Samir Haddad</small></span></li>
+  </ol>
+</div>

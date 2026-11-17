@@ -2,6 +2,8 @@
 import Base from "../layouts/Base.astro";
 import "../styles/site.css";
 import "../styles/partners.css";
+import WhereItStands from "../components/app/WhereItStands.astro";
+import SigningPage from "../components/app/SigningPage.astro";
 ---
 <Base
   title="For partners · Meridian"
@@ -47,6 +49,15 @@ import "../styles/partners.css";
     <li class="fpi"><h3>Invoice, then payment</h3><p>The partner uploads the invoice for the confirmed amount, and is told when payment is recorded.</p>
       <div class="fps"><i class="ok">✓</i>Payment recorded · 22 Dec 2026</div></li>
   </ol>
+</div></section>
+
+<!-- 2b · The partner's side in the product: their page for the request, and the signatory's page -->
+<section class="sec" id="in-meridian" aria-labelledby="h-see-it"><div class="in">
+  <div class="sec-h rv"><h2 id="h-see-it">What they see, <em>in Meridian.</em></h2><p class="lead">The partner's page for the request, and the page their signatory opens from the emailed link.</p></div>
+  <div class="acs part sky">
+    <div class="acs-c pv"><span class="pill">The partner's page</span><WhereItStands /></div>
+    <div class="acs-c pv"><span class="pill">The signatory's link</span><SigningPage /><div class="chip"><i class="ok">✓</i>No account needed</div></div>
+  </div>
 </div></section>
 
 <!-- 3 · What partners see and never see: two panes -->

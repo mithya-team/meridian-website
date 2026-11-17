@@ -1,0 +1,14 @@
+---
+// Controls, under rule C-02. What Helen Marsh sees in the app on 5 Nov 2026, after taking step 2: the route refuses her a second step.
+import "../../styles/app-cards.css";
+---
+<li class="kex" aria-label="Example: the approval route of MDF-000033, as Helen Marsh sees it after taking step 2">
+  <div class="ac-route-h"><b>Approval route</b><span><small>Funding recommendation</small><span class="mono">USD 22,000.00</span></span></div>
+  <ol class="ac-steps">
+    <li class="done"><span class="ac-n">1</span><span><b>Qualification</b><small>Approved by Laura Whitfield</small></span><span class="st">Done</span></li>
+    <li class="done"><span class="ac-n">2</span><span><b>Partner Sales leader approval</b><small>Approved by Helen Marsh (you)</small></span><span class="st">Done</span></li>
+    <li class="cur"><span class="ac-n">3</span><span><b>RVP approval</b></span><span class="st now">Current</span></li>
+    <li class="wait"><span class="ac-n">4</span><span><b>Channels leader approval</b></span><span class="st wait">Pending</span></li>
+  </ol>
+  <div class="ac-refuse"><span class="ac-b off" aria-hidden="true">Approve step</span><p class="ac-tip">You already took a step on this version of the Request. Another person must take this step.</p></div>
+</li>

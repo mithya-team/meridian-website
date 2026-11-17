@@ -1,0 +1,110 @@
+/* App cards: six moments from the product, drawn in the site's own card style (white card, soft shadow, kv rows, ticks, pills).
+   The words and numbers come from the app itself (example record MDF-000033, Brightfold Solutions). Prefix: ac. */
+
+/* shared */
+.ac { padding: 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .2rem; font-size: .9375rem; }
+.ac-h { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding-bottom: .8rem; }
+.ac-h b { display: block; font-size: .9375rem; font-weight: 600; } .ac-h small { display: block; font-size: .8125rem; color: var(--mut); margin-top: .1rem; }
+.ac-meta { font-size: .8125rem; color: var(--mut); }
+.ac .mono, .ac time { font-family: var(--mono); font-feature-settings: "tnum"; }
+.ac .nw, .ac-next b .mono { white-space: nowrap; }
+.ac-btns { display: flex; flex-wrap: wrap; gap: .45rem; padding-top: .85rem; }
+.ac-b { font: 500 .8125rem/1 var(--sans); padding: .55rem .8rem; border-radius: 8px; white-space: nowrap; background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px #CBD2DB; }
+.ac-b.go { background: var(--teal); color: #fff; box-shadow: none; }
+.ac-b.no { color: #B42318; box-shadow: inset 0 0 0 1px #F4C7C3; }
+.ac-b.off { background: #F1F3F6; color: #A0A7B4; box-shadow: none; }
+.st.now { background: var(--teal); color: #fff; } .st.wait { background: #fff; color: var(--mut); box-shadow: inset 0 0 0 1px #D5DAE1; }
+
+/* tinted stage holding two cards side by side */
+.acs { border-radius: 28px; padding: clamp(1.25rem, 3.5vw, 2.75rem); display: grid; gap: 1.25rem; align-items: start; }
+.acs.req { grid-template-columns: minmax(0, 1.57fr) minmax(0, 1fr); }
+.acs.part { grid-template-columns: minmax(0, 1.36fr) minmax(0, 1fr); }
+.acs-c { position: relative; display: flex; flex-direction: column; gap: .8rem; min-width: 0; }
+.acs-c > .pill { background: #fff; }
+.acs .chip { right: -.75rem; top: 1.6rem; }
+.js .acs .acs-c:nth-child(2) { transition-delay: .12s; }
+@media (max-width: 900px) { .acs.req, .acs.part { grid-template-columns: 1fr; } .acs .chip { right: .25rem; top: -.4rem; } }
+
+/* 1 · invoice check (Home, step 05). Kept within the journey's card size: 376 px wide, under 293 px tall. */
+.ac-inv { padding: 1rem 1.3rem 1.05rem; }
+.ac-inv .ac-h { align-items: center; padding-bottom: .2rem; }
+.ac-inv .ac-h .st { font-size: .8125rem; }
+.ac-ck { display: flex; flex-direction: column; border-top: 1px solid var(--soft); padding-top: .3rem; margin-top: .5rem; }
+.ac-ck li { display: flex; align-items: center; gap: .6rem; padding: .2rem 0; font-size: .875rem; line-height: 1.35; }
+.ac-ck li.auto { color: var(--teal-d); }
+.ac-ck .ok { width: 1.125rem; height: 1.125rem; font-size: .5625rem; }
+.ac-box { flex: none; width: 1.125rem; height: 1.125rem; border-radius: 5px; background: var(--teal); color: #fff; display: inline-grid; place-items: center; font: 600 .5625rem/1 var(--sans); font-style: normal; }
+.ac-ck li.auto + li:not(.auto) { margin-top: .1rem; padding-top: .3rem; border-top: 1px dashed #E1E5EB; }
+.ac-inv .ac-btns { padding-top: .6rem; }
+.ac-inv .ac-b { padding: .45rem .75rem; }
+.js .pv .ac-ck .ok, .js .pv .ac-ck .ac-box { transform: scale(0); transition: transform .45s var(--spring); }
+.js .pv.seen .ac-ck .ok, .js .pv.seen .ac-ck .ac-box { transform: none; }
+.js .pv.seen .ac-ck li:nth-child(1) i { transition-delay: .5s; } .js .pv.seen .ac-ck li:nth-child(2) i { transition-delay: .7s; }
+.js .pv.seen .ac-ck li:nth-child(3) i { transition-delay: .85s; } .js .pv.seen .ac-ck li:nth-child(4) i { transition-delay: 1s; }
+.js .pv.seen .ac-ck li:nth-child(5) i { transition-delay: 1.15s; }
+
+/* 2 · approval route refusing (Controls, under C-02) */
+.kex { background: #fff; border-radius: 14px; padding: 1.1rem 1.15rem 1.15rem; margin: .1rem 0 .35rem 3.6rem; box-shadow: 0 18px 30px -24px rgb(11 18 32 / .35); }
+.kt[open] .kex { animation: rowIn .45s var(--ease) both .3s; }
+.ac-route-h { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; padding-bottom: .75rem; }
+.ac-route-h > b { font-size: .9375rem; font-weight: 600; } .ac-route-h > span { text-align: right; } .ac-route-h small { display: block; font-size: .75rem; color: var(--mut); } .ac-route-h .mono { font-size: .875rem; font-weight: 500; }
+.ac-steps li { display: grid; grid-template-columns: 1.75rem minmax(0, 1fr) auto; align-items: center; gap: .8rem; padding: .6rem 0; border-top: 1px solid var(--soft); }
+.ac-n { width: 1.75rem; height: 1.75rem; border-radius: 50%; display: grid; place-items: center; font: 500 .75rem/1 var(--mono); background: #fff; color: var(--mut); box-shadow: inset 0 0 0 1.5px #D5DAE1; }
+.ac-steps .done .ac-n { background: var(--mint); color: var(--teal-d); box-shadow: none; }
+.ac-steps .cur .ac-n { background: var(--teal); color: #fff; box-shadow: 0 0 0 4px var(--mint); }
+.ac-steps b { display: block; font-size: .9375rem; font-weight: 500; } .ac-steps small { display: block; font-size: .8125rem; color: var(--mut); }
+.ac-steps .wait b { color: var(--ink2); font-weight: 400; }
+.ac-refuse { display: flex; flex-direction: column; align-items: flex-start; gap: .7rem; padding-top: .9rem; border-top: 1px solid var(--soft); }
+.ac-tip { position: relative; font-size: .8125rem; line-height: 1.45; background: var(--ink); color: #fff; padding: .55rem .75rem; border-radius: 8px; max-width: 34rem; }
+.ac-tip::before { content: ""; position: absolute; left: 1.3rem; top: -4px; width: 9px; height: 9px; background: var(--ink); transform: rotate(45deg); }
+@media (max-width: 900px) { .kex { margin-left: 0; } }
+@media (max-width: 520px) { .ac-route-h { flex-direction: column; align-items: flex-start; } .ac-route-h > span { text-align: left; } }
+
+/* 3 · request history (Audit evidence pack) */
+.ac-tl > li { position: relative; padding: .8rem 0 .8rem 1.9rem; border-top: 1px solid var(--soft); }
+.ac-tl > li::before { content: ""; position: absolute; left: .2rem; top: 1.12rem; width: .7rem; height: .7rem; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px var(--teal); }
+.ac-tl > li.fin::before { background: var(--teal); }
+.ac-tl > li > b { display: block; font-size: .9375rem; font-weight: 500; }
+.ac-tl > li > small { display: block; font-size: .8125rem; color: var(--mut); } .ac-tl time { font-size: .75rem; color: var(--ink2); }
+.ac-detail { margin-top: .7rem; background: #F7F8FA; border-radius: 12px; padding: .2rem .95rem; }
+.ac-detail div { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: .3rem 1rem; padding: .6rem 0; border-top: 1px solid #E9ECF1; font-size: .875rem; }
+.ac-detail div:first-child { border-top: 0; }
+.ac-detail dt { color: var(--mut); } .ac-detail dd { font-weight: 500; }
+.ac-detail .wide { grid-template-columns: 1fr; } .ac-detail .wide dd { font-weight: 400; color: var(--ink); }
+@media (max-width: 520px) { .ac-detail div { grid-template-columns: 1fr; } }
+
+/* 4 · claim history (Audit evidence pack) */
+.ac-log li { display: grid; grid-template-columns: 4.1rem minmax(0, 1fr); gap: .8rem; padding: .55rem 0; border-top: 1px solid var(--soft); font-size: .875rem; line-height: 1.4; }
+.ac-log time { font-size: .75rem; line-height: 1.55; color: var(--mut); } .ac-log time span { display: block; color: var(--ink2); }
+.ac-log b { font-weight: 500; } .ac-log small { display: block; font-size: .8125rem; color: var(--mut); }
+.ac-log .ret { background: var(--peach); border-radius: 12px; border-top-color: transparent; padding: .6rem .7rem; margin: .2rem -.7rem; }
+.ac-log .ret b { color: #9A4B00; } .ac-log .ret q { display: block; margin-top: .3rem; font-size: .8125rem; color: var(--ink); quotes: "“" "”"; }
+.ac-log .ret + li { border-top-color: transparent; }
+.ac-log .fin b { color: var(--teal-d); } .ac-log .fin .ok { width: 1rem; height: 1rem; font-size: .5rem; margin-right: .35rem; vertical-align: -.15em; }
+
+/* 5 · where it stands (For partners) */
+.ac-where .kv div { font-size: .9375rem; } .ac-where .kv dd { text-align: right; }
+.ac-next { margin-top: .9rem; background: var(--mint); border-radius: 12px; padding: .9rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: .6rem 1rem; flex-wrap: wrap; }
+.ac-next small { display: block; font-size: .75rem; color: var(--teal-d); } .ac-next b { display: block; font-size: 1rem; font-weight: 600; } .ac-next span > span { display: block; font-size: .8125rem; color: var(--ink2); margin-top: .15rem; }
+.ac-next .ac-b { box-shadow: none; color: var(--teal-d); }
+
+/* 6 · the signatory's page (For partners) */
+.ac-sign { gap: .55rem; }
+.ac-eyebrow { font-size: .8125rem; color: var(--mut); }
+.ac-sign h3 { font-size: 1.1875rem; }
+.ac-sign > p { font-size: .875rem; line-height: 1.5; color: var(--ink2); }
+.ac-file { display: flex; align-items: center; gap: .6rem; padding-top: .45rem; font-size: .875rem; }
+.ac-file .mono { font-size: .8125rem; color: var(--mut); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } .ac-file .ac-b { margin-left: auto; }
+.ac-ico { flex: none; width: 1.2rem; height: 1.45rem; border-radius: 3px; background: #fff; box-shadow: inset 0 0 0 1.5px #98A2B3;
+  background-image: linear-gradient(#98A2B3, #98A2B3), linear-gradient(#98A2B3, #98A2B3), linear-gradient(#98A2B3, #98A2B3); background-size: .6rem 1.5px, .6rem 1.5px, .4rem 1.5px; background-position: .3rem .45rem, .3rem .7rem, .3rem .95rem; background-repeat: no-repeat; }
+.ac-well { position: relative; height: 14rem; overflow: hidden; margin-top: .25rem; border-radius: 12px; background: #F2F4F7; padding: .8rem .8rem 0; -webkit-mask-image: linear-gradient(#000 70%, transparent); mask-image: linear-gradient(#000 70%, transparent); }
+.ac-pdf { background: #fff; border-radius: 4px; padding: .75rem .75rem 0; box-shadow: 0 1px 3px rgb(11 18 32 / .12); font-family: Arial, "Helvetica Neue", sans-serif; color: #1D2939; }
+.ac-pdf-h { background: #102449; color: #fff; padding: .55rem .7rem; display: flex; flex-direction: column; gap: .2rem; }
+.ac-pdf-h small { font-size: .75rem; opacity: .85; } .ac-pdf-h b { font-size: .8125rem; font-weight: 700; line-height: 1.25; }
+.ac-pdf-s { margin-top: .55rem; background: #102449; color: #fff; font-size: .75rem; font-weight: 700; padding: .3rem .6rem; }
+.ac-pdf dl div { display: grid; grid-template-columns: 46% 1fr; border: 1px solid #B9C6E3; border-top: 0; font-size: .75rem; }
+.ac-pdf dt { background: #DCE3F1; color: #102449; font-weight: 700; padding: .3rem .5rem; } .ac-pdf dt i { color: #D92D20; font-style: normal; }
+.ac-pdf dd { padding: .3rem .5rem; }
+@media (max-width: 520px) { .ac-well { height: 17.5rem; } }
+/* phones: amounts stay on one line, and the signing chip sits under its card instead of over the label */
+@media (max-width: 560px) { .acs dd.mono { white-space: nowrap; } .acs .chip { position: static; align-self: flex-start; } }

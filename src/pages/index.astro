@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import "../styles/site.css";
+import InvoiceCheck from "../components/app/InvoiceCheck.astro";
 ---
 <Base
   title="Meridian · The whole MDF cycle, on one common process"
@@ -96,7 +97,7 @@ import "../styles/site.css";
     <article class="stg sky pv" id="j5">
       <div class="stg-w"><div class="stg-tray"><span class="stg-n">05</span><ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol></div><h3>Claim and pay</h3><p>The partner uploads proof by the claim-by date. Your claims team gives a verdict on each file, confirms one amount, and the invoice must match it before it goes to accounts payable.</p>
         <ul class="ticks"><li><i class="ok">✓</i>A proof checklist for each activity type</li><li><i class="ok">✓</i>Payment stays in your finance system</li></ul></div>
-      <div class="stg-p"><div class="card mini"><div class="bud-h"><b class="ttl">Proof</b><span class="st w">Claim by 15 Jan 2027</span></div><ul class="checks"><li><i class="ok">✓</i><span>Event agenda</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Attendee list</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Venue photos</span><small>Accepted</small></li></ul><div class="rec-f"><span>Confirmed</span><b class="mono">USD 22,000.00</b></div></div><div class="chip"><i class="ok">✓</i>Sent to accounts payable</div></div>
+      <div class="stg-p"><InvoiceCheck /><div class="chip"><i class="ok">✓</i>Net equals the confirmed USD 22,000.00</div></div>
     </article>
 
     <article class="stg lav flip pv" id="j6">
@@ -125,7 +126,7 @@ import "../styles/site.css";
 <section class="sec" id="record" aria-labelledby="h-record"><div class="in obj-grid">
   <div class="obj pv" id="obj" aria-hidden="true">
     <span class="blob b1"></span><span class="blob b2"></span><span class="beam"></span>
-    <div class="glass"><div class="g-h"><b class="mono">MDF-000033</b><span class="st">Closed</span></div><ul class="g-rows"><li><time>9 Nov</time><span><b>Approved</b><small>Grace Adeyemi · Channels leader</small></span></li><li><time>12 Nov</time><span><b>Signed and countersigned</b><small>Both parties, by secure link</small></span></li><li><time>10 Dec</time><span><b>Amount confirmed</b><small>USD 22,000, as approved</small></span></li></ul><div class="g-f"><span>9 files, each fingerprinted<span class="mono">7c1e…a90b</span></span><span class="seal">✓</span></div></div>
+    <div class="glass"><div class="g-h"><b class="mono">MDF-000033</b><span class="st">Closed</span></div><ul class="g-rows"><li><time>9 Nov</time><span><b>Approved</b><small>Grace Adeyemi · Channels leader</small></span></li><li><time>11 Nov</time><span><b>Signed and countersigned</b><small>Both parties, by secure link</small></span></li><li><time>8 Dec</time><span><b>Amount confirmed</b><small>USD 22,000, as approved</small></span></li></ul><div class="g-f"><span>9 files, each fingerprinted<span class="mono">7c1e…a90b</span></span><span class="seal">✓</span></div></div>
   </div>
   <div class="obj-copy">
     <h2 id="h-record" class="rv">Every decision,<br><em>on file.</em></h2>
