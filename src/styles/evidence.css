@@ -12,7 +12,7 @@
 @media (max-width: 900px) { .ehero-grid { grid-template-columns: 1fr; } .sum { justify-self: stretch; width: 100%; } }
 
 /* 2 the history */
-.trail { padding-top: clamp(1.5rem, 3vw, 3rem); }
+.etrail { padding-top: clamp(1.5rem, 3vw, 3rem); } /* not .trail: site.css styles .trail li as small pills (How it works) */
 .trail-grid { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 4rem; align-items: start; }
 .sheet-wrap { position: relative; }
 .eb1 { left: -6rem; top: -4rem; width: 26rem; height: 26rem; background: #A9E8DB; animation: blob 12s ease-in-out infinite; }

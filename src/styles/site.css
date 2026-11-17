@@ -342,8 +342,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .stg-p .chip { right: -1rem; top: -2rem; }
 .stg-p .checks li .st { flex: none; }
 .stg-p .kv dd { display: flex; align-items: center; }
-.trail { display: flex; flex-wrap: wrap; gap: .35rem; }
-.trail li { font-size: .75rem; font-weight: 500; line-height: 1; padding: .42rem .65rem; border-radius: 999px; background: #fff; color: var(--teal-d); }
+.stg .trail { display: flex; flex-wrap: wrap; gap: .35rem; }
+.stg .trail li { font-size: .75rem; font-weight: 500; line-height: 1; padding: .42rem .65rem; border-radius: 999px; background: #fff; color: var(--teal-d); }
 .js .stg .trail li, .js .stg .chain li { opacity: .3; transform: translateY(4px); transition: opacity .45s var(--ease), transform .45s var(--ease); }
 .js .stg.seen .trail li, .js .stg.seen .chain li { opacity: 1; transform: none; }
 .js .stg.seen .chain li:nth-child(1) { transition-delay: .35s; } .js .stg.seen .chain li:nth-child(2) { transition-delay: .5s; } .js .stg.seen .chain li:nth-child(3) { transition-delay: .65s; } .js .stg.seen .chain li:nth-child(4) { transition-delay: .8s; } .js .stg.seen .chain li:nth-child(5) { transition-delay: .95s; }
