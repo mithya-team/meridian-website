@@ -58,48 +58,59 @@ import "../styles/site.css";
   </div>
 </section>
 
-<!-- 3 · The journey: a line of six stops over one wide stage, with a flag where other tools end -->
-<section class="sec" id="how" aria-labelledby="h-how"><div class="in">
-  <div class="sec-h rv"><h2 id="h-how">From budget to <em>paid claim.</em></h2><a class="lk" href="/how-it-works">See how it works <span aria-hidden="true">→</span></a></div>
-  <div class="railwrap rv" id="railwrap">
-    <p class="flag">Most MDF tools stop here</p>
-    <div class="rail" role="tablist" aria-label="The six steps">
-      <span class="prog" aria-hidden="true"></span>
-      <button role="tab" id="st0" class="done" aria-controls="sp0" aria-selected="false" tabindex="-1">Budget</button>
-      <button role="tab" id="st1" class="done" aria-controls="sp1" aria-selected="false" tabindex="-1">Request</button>
-      <button role="tab" id="st2" class="done" aria-controls="sp2" aria-selected="false" tabindex="-1">Qualify</button>
-      <button role="tab" id="st3" aria-controls="sp3" aria-selected="true">Approve</button>
-      <button role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1">Sign</button>
-      <button role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1">Claim and pay</button>
-    </div>
-  </div>
-  <div class="stage pv">
-    <div class="panel" role="tabpanel" id="sp0" aria-labelledby="st0" hidden>
-      <div class="say"><h3>Budget</h3><p>Each Program has an allocation. You always see what's approved, what's in review and what's left.</p><ol class="chain" aria-label="Who acts, in order"><li>Program administrator</li><li class="ar" aria-hidden="true">→</li><li>Marketing manager</li></ol></div>
-      <div class="pic"><div class="card mini bud"><div class="bud-h"><b class="ttl">FY27 Partner Fund · DACH</b><span class="st">Program</span></div>
-        <div class="bar" role="img" aria-label="USD 230,000 approved, USD 90,000 in review and USD 180,000 available, of USD 500,000 allocated."><i class="ba"></i><i class="bb"></i></div>
-        <ul class="bud-l"><li style="--k:#0E8C82"><span>Approved</span><b class="mono">USD 230,000</b></li><li style="--k:#8E7FF0"><span>In review</span><b class="mono">USD 90,000</b></li><li><span>Available</span><b class="mono">USD 180,000</b></li></ul></div><div class="chip s"><i class="ok">✓</i>USD 500,000 allocated</div></div>
-    </div>
-    <div class="panel" role="tabpanel" id="sp1" aria-labelledby="st1" hidden>
-      <div class="say"><h3>Request</h3><p>The partner fills in one request per activity, on a form that follows your program's rules.</p><ol class="chain" aria-label="Who acts, in order"><li>Partner</li></ol></div>
-      <div class="pic"><div class="card mini"><b class="ttl">New request</b><dl class="kv"><div><dt>Activity</dt><dd>Customer summit</dd></div><div><dt>Program</dt><dd>FY27 Partner Fund</dd></div><div><dt>Amount</dt><dd class="mono">USD 24,000</dd></div></dl><span class="fakebtn">Submit request</span></div><div class="chip s"><i class="ok">✓</i>Draft saved</div></div>
-    </div>
-    <div class="panel" role="tabpanel" id="sp2" aria-labelledby="st2" hidden>
-      <div class="say"><h3>Qualify</h3><p>Your marketing manager checks the request and records a funding recommendation.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li></ol></div>
-      <div class="pic"><div class="card mini"><b class="ttl">Funding recommendation</b><div class="opts"><span class="on"><i class="ok">✓</i>Fund in full</span><span>Fund in part</span><span>Decline</span></div><p class="note">"Fits the Q2 launch plan."</p></div><div class="chip s"><i class="ok">✓</i>Qualified by Tom</div></div>
-    </div>
-    <div class="panel" role="tabpanel" id="sp3" aria-labelledby="st3">
-      <div class="say"><h3>Approve</h3><p>Your rules pick the approvers from the amount. Each one is told when it's their turn.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol></div>
-      <div class="pic"><div class="card mini"><ul class="people"><li><i class="av a2">LW</i><span><b>Laura Whitfield</b><small>Marketing manager</small></span><i class="ok">✓</i></li><li><i class="av a3">HM</i><span><b>Helen Marsh</b><small>Partner Sales leader</small></span><i class="ok">✓</i></li><li id="samRow"><i class="av a4">TV</i><span><b>Tomas Vidal</b><small>RVP · their turn</small></span><button type="button" class="act" id="approveBtn">Approve</button><i class="ok pop" hidden>✓</i></li></ul><p class="try" id="tryHint">Try it: approve as Tomas.</p></div><div class="chip s" id="approveChip"><i class="ok">✓</i><span>Step 2 of 3 approved</span></div></div>
-    </div>
-    <div class="panel" role="tabpanel" id="sp4" aria-labelledby="st4" hidden>
-      <div class="say"><h3>Sign</h3><p>The partner signs by secure link, with no account needed. Your signer countersigns, and the purchase order is recorded.</p><ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Signatories</li><li class="ar" aria-hidden="true">+</li><li>Claims team</li></ol></div>
-      <div class="pic"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Partner signature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Your countersignature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Purchase order</span><small class="mono">4500018832</small></li></ul><div class="rec-f"><span>Status</span><span class="st">Ready</span></div></div><div class="chip s"><i class="ok">✓</i>Signed by link, no account</div></div>
-    </div>
-    <div class="panel" role="tabpanel" id="sp5" aria-labelledby="st5" hidden>
-      <div class="say"><h3>Claim and pay</h3><p>The partner uploads proof. Your team confirms one amount, the invoice must match it, and it goes to accounts payable.</p><ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol></div>
-      <div class="pic"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Event photos</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Attendee list</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Agency invoice</span><small>Accepted</small></li></ul><div class="rec-f"><span>Confirmed</span><b class="mono">USD 22,000.00</b></div></div><div class="chip s"><i class="ok">✓</i>Sent to accounts payable</div></div>
-    </div>
+<!-- 3 · The journey: six stops in a list that follows you on the left, one tinted block per stop on the right (the same pattern as How it works) -->
+<section class="sec" id="how" aria-labelledby="h-how">
+<div class="in"><div class="sec-h rv"><h2 id="h-how">From plan to <em>performance review.</em></h2><a class="lk" href="/how-it-works">See how it works <span aria-hidden="true">→</span></a></div></div>
+<div class="in flow jflow">
+  <nav class="idx" id="idx" aria-label="The six steps"><a href="#j1"><i>01</i>Plan and budget</a><a href="#j2"><i>02</i>Request and qualify</a><a href="#j3"><i>03</i>Approve</a><a href="#j4"><i>04</i>Agreement and PO</a><a href="#j5"><i>05</i>Claim and pay</a><a href="#j6"><i>06</i>Review performance</a></nav>
+  <div class="stgs">
+
+    <article class="stg sky pv" id="j1">
+      <div class="stg-w"><span class="stg-n">01</span><h3>Plan and budget</h3><p>Each Program has an allocation, and partners plan their activities against it. You always see what's approved, what's in review and what's left.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Program administrator</li><li class="ar" aria-hidden="true">→</li><li>Partner</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Approved, in review and left, per Program</li><li><i class="ok">✓</i><span>Budget pools from your planning tool <span class="st v">Planned</span></span></li></ul></div>
+      <div class="stg-p"><div class="card mini bud"><div class="bud-h"><b class="ttl">FY27 Partner Fund · DACH</b><span class="st">Program</span></div>
+        <div class="bar" role="img" aria-label="USD 230,000 approved, USD 90,000 in review and USD 180,000 left, of USD 500,000 allocated."><i class="ba"></i><i class="bb"></i></div>
+        <ul class="bud-l"><li style="--k:#0E8C82"><span>Approved</span><b class="mono">USD 230,000</b></li><li style="--k:#8E7FF0"><span>In review</span><b class="mono">USD 90,000</b></li><li><span>Left to allocate</span><b class="mono">USD 180,000</b></li></ul></div><div class="chip"><i class="ok">✓</i>USD 500,000 allocated</div></div>
+    </article>
+
+    <article class="stg lav flip pv" id="j2">
+      <div class="stg-w"><span class="stg-n">02</span><h3>Request and qualify</h3><p>The partner fills in one request per activity, on a form that follows your program's rules. Your marketing manager qualifies it and records a funding recommendation.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">→</li><li>Marketing manager</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Co-funding and expected return, worked out as they type</li><li><i class="ok">✓</i>Drafts save as they go</li></ul></div>
+      <div class="stg-p"><div class="card mini"><b class="ttl">Customer summit · request</b><dl class="kv"><div><dt>Total cost</dt><dd class="mono">USD 48,000</dd></div><div><dt>MDF requested</dt><dd class="mono">USD 24,000</dd></div><div><dt>Co-funding</dt><dd class="mono">50%</dd></div><div><dt>Expected pipeline</dt><dd class="mono">USD 820,000</dd></div><div><dt>Expected return</dt><dd class="mono">34.2×</dd></div></dl></div><div class="chip"><i class="ok">✓</i>Recommended: USD 22,000</div></div>
+    </article>
+
+    <article class="stg mint pv" id="j3">
+      <div class="stg-w"><span class="stg-n">03</span><h3>Approve</h3><p>Your rules pick the approval steps from the amount and the recommendation. Each approver is told when it's their turn.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Nobody approves their own request</li><li><i class="ok">✓</i>One person, one step</li></ul></div>
+      <div class="stg-p"><div class="card mini"><ul class="people"><li><i class="av a2">LW</i><span><b>Laura Whitfield</b><small>Marketing manager · qualified</small></span><i class="ok">✓</i></li><li><i class="av a3">HM</i><span><b>Helen Marsh</b><small>Partner Sales leader</small></span><i class="ok">✓</i></li><li id="samRow"><i class="av a4">TV</i><span><b>Tomas Vidal</b><small>RVP · their turn</small></span><button type="button" class="act" id="approveBtn">Approve</button><i class="ok pop" hidden>✓</i></li></ul><p class="try" id="tryHint">Try it: approve as Tomas.</p></div><div class="chip" id="approveChip"><i class="ok">✓</i><span>Step 1 of 3 approved</span></div></div>
+    </article>
+
+    <div class="stopflag" id="stopflag"><span>Most MDF tools go straight to the claim</span></div>
+
+    <article class="stg peach flip pv" id="j4">
+      <div class="stg-w"><span class="stg-n">04</span><h3>Agreement and purchase order</h3><p>The partner's signatory signs by secure link, with no account. Your signer countersigns, the purchase order is recorded, and only then is the activity ready.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Signatories</li><li class="ar" aria-hidden="true">+</li><li>Claims team</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Signing links work once, then expire</li><li><i class="ok">✓</i>Ready only when every piece is in place</li></ul></div>
+      <div class="stg-p"><div class="card mini"><ul class="checks"><li><i class="ok">✓</i><span>Campaign references</span><small>Recorded</small></li><li><i class="ok">✓</i><span>Partner signature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Your countersignature</span><small>Signed</small></li><li><i class="ok">✓</i><span>Purchase order</span><small class="mono">6200004812</small></li></ul><div class="rec-f"><span>Status</span><span class="st">Ready</span></div></div><div class="chip"><i class="ok">✓</i>Signed by link, no account</div></div>
+    </article>
+
+    <article class="stg sky pv" id="j5">
+      <div class="stg-w"><span class="stg-n">05</span><h3>Claim and pay</h3><p>The partner uploads proof by the claim-by date. Your claims team gives a verdict on each file, confirms one amount, and the invoice must match it before it goes to accounts payable.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Partner</li><li class="ar" aria-hidden="true">⇄</li><li>Claims team</li><li class="ar" aria-hidden="true">→</li><li>Accounts payable</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>A proof checklist for each activity type</li><li><i class="ok">✓</i>Payment stays in your finance system</li></ul></div>
+      <div class="stg-p"><div class="card mini"><div class="bud-h"><b class="ttl">Proof</b><span class="st w">Claim by 15 Jan 2027</span></div><ul class="checks"><li><i class="ok">✓</i><span>Event agenda</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Attendee list</span><small>Accepted</small></li><li><i class="ok">✓</i><span>Venue photos</span><small>Accepted</small></li></ul><div class="rec-f"><span>Confirmed</span><b class="mono">USD 22,000.00</b></div></div><div class="chip"><i class="ok">✓</i>Sent to accounts payable</div></div>
+    </article>
+
+    <article class="stg lav flip pv" id="j6">
+      <div class="stg-w"><span class="stg-n">06</span><h3>Review performance</h3><p>See what each activity cost and what it was expected to return, by Program, partner and region. Every role has a dashboard for its own part.</p>
+        <ol class="chain" aria-label="Who acts, in order"><li>Marketing manager</li><li class="ar" aria-hidden="true">→</li><li>Leadership</li></ol>
+        <ul class="ticks"><li><i class="ok">✓</i>Dashboards for each role</li><li><i class="ok">✓</i><span>Actual pipeline from your CRM <span class="st v">Planned</span></span></li></ul></div>
+      <div class="stg-p"><div class="card mini"><b class="ttl">Customer summit · MDF-000033</b><dl class="kv"><div><dt>MDF paid</dt><dd class="mono">USD 22,000</dd></div><div><dt>Expected pipeline</dt><dd class="mono">USD 820,000</dd></div><div><dt>Expected return</dt><dd class="mono">34.2×</dd></div><div><dt>Actual pipeline</dt><dd><span class="st v">From your CRM · Planned</span></dd></div></dl></div><div class="chip"><i class="ok">✓</i>Closed and paid</div></div>
+    </article>
+
   </div>
 </div></section>
 
@@ -107,10 +118,10 @@ import "../styles/site.css";
 <section class="sec" id="rules" aria-labelledby="h-rules"><div class="in">
   <div class="sec-h rv"><h2 id="h-rules">Built so <em>nothing slips.</em></h2><a class="lk" href="/controls">See the controls <span aria-hidden="true">→</span></a></div>
   <div class="tiles">
-    <article class="tile lav pv" id="tileA"><h3>Nobody approves their own request</h3>
-      <div class="card mock"><p class="mock-t"><b class="mono">MDF-000033</b> is waiting for approval.</p><span class="dis">Approve</span><span class="tip">You submitted this request</span></div></article>
+    <article class="tile lav pv" id="tileA"><h3>One person, one step</h3>
+      <div class="card mock"><p class="mock-t"><b class="mono">MDF-000033</b> · RVP approval is waiting.</p><span class="dis">Approve</span><span class="tip">You already took a step on this request</span></div></article>
     <article class="tile mint pv" id="tileB"><h3>Ready means ready</h3>
-      <ul class="card ck"><li><i class="ok">✓</i>Partner signature</li><li><i class="ok">✓</i>Your signature</li><li><i class="ok">✓</i>Purchase order</li><li class="no"><i class="ok">✓</i>Campaign reference</li></ul></article>
+      <ul class="card ck"><li><i class="ok">✓</i>Partner signature</li><li><i class="ok">✓</i>Your signature</li><li><i class="ok">✓</i>Purchase order</li><li class="no"><i class="ok">✓</i>Campaign references</li></ul></article>
     <article class="tile peach pv" id="tileC"><h3>The invoice must match</h3>
       <div class="card eq"><div><span>Confirmed</span><b class="mono" data-count="22000">22,000.00</b></div><div><span>Invoice</span><b class="mono" data-count="22000">22,000.00</b></div><div class="m"><span>Amounts match</span><i class="ok">✓</i></div></div></article>
   </div>

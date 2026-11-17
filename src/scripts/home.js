@@ -71,54 +71,38 @@
     update();
   })();
 
-  // 3. Journey: six stops. Click, use arrow keys, or let it play. The flag lights once you pass Approve.
+  // 3. Journey: six stops down the page. The list on the left shows which one you're reading,
+  //    the flag lights as you pass the point where most tools go straight to the claim,
+  //    and the visitor can give the RVP's approval themselves.
   (function () {
-    var wrap = $("#railwrap"), rail = $(".rail"), tabs = $$('[role="tab"]', rail), timer = null, touched = false;
-    var APPROVE = 3;
-    var select = function (i, focus) {
-      tabs.forEach(function (t, j) {
-        var on = j === i;
-        t.setAttribute("aria-selected", on ? "true" : "false"); t.tabIndex = on ? 0 : -1;
-        t.classList.toggle("done", j < i);
-        document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    var links = $$("#idx a"), stages = links.map(function (a) { return $(a.getAttribute("href")); });
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var mark = window.innerHeight * 0.45, cur = 0;
+      stages.forEach(function (s, i) { if (s.getBoundingClientRect().top < mark) cur = i; });
+      links.forEach(function (a, i) {
+        a.classList.toggle("on", i === cur); a.classList.toggle("done", i < cur);
+        if (i === cur) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
       });
-      rail.style.setProperty("--n", i);
-      wrap.classList.toggle("past", i > APPROVE);
-      if (focus) tabs[i].focus();
     };
-    var current = function () { return tabs.findIndex(function (t) { return t.getAttribute("aria-selected") === "true"; }); };
-    var stop = function () { touched = true; window.clearInterval(timer); };
-    tabs.forEach(function (t, i) {
-      t.addEventListener("click", function () { stop(); select(i, false); });
-      t.addEventListener("keydown", function (e) {
-        var n = null;
-        if (e.key === "ArrowRight") n = (i + 1) % tabs.length;
-        if (e.key === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
-        if (e.key === "Home") n = 0; if (e.key === "End") n = tabs.length - 1;
-        if (n !== null) { e.preventDefault(); stop(); select(n, true); }
-      });
-    });
-    select(current(), false);
-    var stage = $(".stage");
-    function play() {
-      window.clearInterval(timer);
-      timer = window.setInterval(function () { select((current() + 1) % tabs.length, false); }, 4200);
-    }
-    if (motion) {
-      stage.addEventListener("pointerenter", function () { window.clearInterval(timer); });
-      stage.addEventListener("pointerleave", function () { if (!touched) play(); });
-      onSeen(stage, function () { select(0, false); play(); }, 0.5);
-    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
+    update();
 
-    // The visitor can give the last approval themselves.
+    var flag = $("#stopflag");
+    if (hasIO) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); flag.classList.add("lit"); } });
+      }, { rootMargin: "0px 0px -45% 0px", threshold: 1 });
+      io.observe(flag);
+    } else flag.classList.add("lit");
+
     var btn = $("#approveBtn");
     btn.addEventListener("click", function () {
-      stop();
       btn.hidden = true; $("#samRow .ok").hidden = false;
       $("#samRow small").textContent = "RVP · approved just now";
-      $("#approveChip span").textContent = "All three approved";
-      $("#tryHint").textContent = "Approved. Next, both sides sign.";
-      later(function () { if (current() === APPROVE) select(APPROVE + 1, false); }, 1700);
+      $("#approveChip span").textContent = "Step 2 of 3 approved";
+      $("#tryHint").textContent = "Approved. Next, the Channels leader.";
     });
   })();
 
