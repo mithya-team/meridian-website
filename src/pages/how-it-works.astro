@@ -120,10 +120,20 @@ import "../styles/how.css";
 <section class="sec" id="who" aria-labelledby="h-who"><div class="in acols">
   <div class="ahead">
     <h2 id="h-who" class="rv">Who does <em>what.</em></h2>
-    <p class="lead rv" id="whoSum" aria-live="polite">Every step has one owner. Everyone else sees only what they need.</p>
-    <div class="rolepick rv" id="rolepick" role="group" aria-label="Choose a role"><button type="button" class="rp" aria-pressed="false">Program administrator</button><button type="button" class="rp" aria-pressed="false">Marketing manager</button><button type="button" class="rp" aria-pressed="false">Account manager</button><button type="button" class="rp" aria-pressed="false">Leadership</button><button type="button" class="rp" aria-pressed="false">Claims team</button><button type="button" class="rp" aria-pressed="false">Partner</button><button type="button" class="rp" aria-pressed="false">Signatories</button><button type="button" class="rp" aria-pressed="false">Accounts payable</button></div>
-    <p class="wkey rv" id="wkey"><span><b class="mk d">Does</b>performs or decides the step</span><span><b class="mk v">Sees</b>can see it</span><span><b class="mk e">Told</b>gets an email when it happens</span></p>
-    <p class="wnote rv">Signatories and accounts payable work outside Meridian. They act from an emailed link or a mailbox, and need no account.</p>
+    <div class="rlist rv" id="rolepick" role="group" aria-label="Choose a role to see its steps">
+      <div class="rl-h" aria-hidden="true"><span>Role</span><b class="mk d">Does</b><b class="mk v">Sees</b><b class="mk e">Told</b></div>
+      <p class="rl-g">Your team</p>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Program administrator: does 4"><span>Program administrator</span><b>4</b><b>–</b><b>–</b></button>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Marketing manager: does 6, sees 9, is told about 4"><span>Marketing manager</span><b>6</b><b>9</b><b>4</b></button>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Account manager: does 1, sees 1, is told about 1"><span>Account manager</span><b>1</b><b>1</b><b>1</b></button>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Leadership: does 2, sees 1, is told about 1"><span>Leadership</span><b>2</b><b>1</b><b>1</b></button>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Claims team: does 5, sees 1, is told about 3"><span>Claims team</span><b>5</b><b>1</b><b>3</b></button>
+      <p class="rl-g">Your partner</p>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Partner: does 4, sees 1, is told about 7"><span>Partner</span><b>4</b><b>1</b><b>7</b></button>
+      <p class="rl-g">By email, no account needed</p>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Signatories: does 1, is told about 1"><span>Signatories</span><b>1</b><b>–</b><b>1</b></button>
+      <button type="button" class="rp" aria-pressed="false" aria-label="Accounts payable: is told about 1"><span>Accounts payable</span><b>–</b><b>–</b><b>1</b></button>
+    </div>
   </div>
   <div class="wacc" id="wgrid">
     <details class="wg sky pv" name="who" open>

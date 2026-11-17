@@ -50,7 +50,7 @@
 
   // Who does what: choose a role, and the column shows only that role's steps, stage by stage.
   (function () {
-    var picks = $$(".rp"), groups = $$(".wg"), sum = $("#whoSum");
+    var picks = $$(".rp"), groups = $$(".wg");
     var words = { D: ["d", "Does"], V: ["v", "Sees"], E: ["e", "Told"] };
     var plural = function (n, one, many) { return n + " " + (n === 1 ? one : many); };
     groups.forEach(function (g) {
@@ -61,14 +61,14 @@
       });
     });
     var choose = function (i) {
-      var n = { D: 0, V: 0, E: 0 }, opened = false;
+      var opened = false;
       picks.forEach(function (p, j) { p.setAttribute("aria-pressed", j === i ? "true" : "false"); });
       groups.forEach(function (g) {
         var here = 0;
         g._rows.forEach(function (r) {
           var c = r._m[i], w = words[c];
           r.classList.toggle("off", !w);
-          if (w) { r._mk.className = "mk " + w[0]; r._mk.textContent = w[1]; n[c] += 1; here += 1; }
+          if (w) { r._mk.className = "mk " + w[0]; r._mk.textContent = w[1]; here += 1; }
         });
         g.classList.toggle("none", here === 0);
         g._none.hidden = here !== 0;
@@ -76,13 +76,6 @@
         g.open = here > 0 && !opened;
         if (g.open) opened = true;
       });
-      var parts = [];
-      if (n.D) parts.push("does " + plural(n.D, "step", "steps"));
-      if (n.V) parts.push("sees " + n.V);
-      if (n.E) parts.push("is told about " + n.E);
-      sum.innerHTML = "";
-      var b = document.createElement("b"); b.textContent = picks[i].textContent;
-      sum.appendChild(b); sum.appendChild(document.createTextNode(" " + parts.join(", ").replace(/, ([^,]*)$/, " and $1") + "."));
     };
     picks.forEach(function (p, i) { p.addEventListener("click", function () { choose(i); }); });
     choose(1);
