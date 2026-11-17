@@ -13,7 +13,8 @@ interface Props {
 }
 
 const { title, description, share, shareAlt } = Astro.props;
-const url = SITE_URL + Astro.url.pathname.replace(/\/$/, "");
+// The page's full address. Astro.url.pathname already includes the site's folder, if any.
+const url = new URL(Astro.url.pathname, SITE_URL + "/").href.replace(/\/$/, "");
 ---
 <!doctype html>
 <html lang="en">

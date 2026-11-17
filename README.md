@@ -15,6 +15,12 @@ npm run check      # builds the site, then checks every link between pages and e
 npm run build      # the finished site, in dist/
 ```
 
+## Where it's published
+
+Every change to `main` is published to **https://mithya-team.github.io/meridian-website/** by `.github/workflows/pages.yml` (Actions tab). The workflow runs `npm run check` first, so a broken link stops the publish.
+
+On GitHub Pages the site sits in a folder (`/meridian-website`). Write links from the root anyway (`/controls`, `/favicon.svg`): the build adds the folder in front of them. With a custom domain, set `SITE_URL` to it and `BASE_PATH` to `/` in the workflow.
+
 ## Pages
 
 | Address | Page | Files |
@@ -52,7 +58,7 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 
 ## Before launch
 
-- [ ] Choose the domain and set `SITE_URL` in `src/site.config.mjs` (share images need it).
+- [ ] Choose the domain, add it under Settings › Pages, and set `SITE_URL` and `BASE_PATH` in the workflow (share images need the right address).
 - [ ] Set `LIVE = true` there, and allow crawlers in `public/robots.txt`.
 - [ ] Make "Request a walkthrough" send somewhere: today it only scrolls to the closing section.
 - [ ] Replace the footer's placeholder links (About, Contact, Privacy, Terms, Roadmap).

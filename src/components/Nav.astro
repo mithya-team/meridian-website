@@ -10,7 +10,10 @@ const links = [
 ];
 const menu = [...links, { href: "/questions", label: "Questions" }];
 
-const here = Astro.url.pathname.replace(/\/$/, "") || "/";
+// The page's own address, without the folder the site may sit in (see site.config.mjs).
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const path = Astro.url.pathname.startsWith(base) ? Astro.url.pathname.slice(base.length) : Astro.url.pathname;
+const here = path.replace(/\/$/, "") || "/";
 const current = (href: string) => (href === here ? "page" : undefined);
 // Every page ends with a #walkthrough section, except the not-found page: send that one to the homepage's.
 const walkthrough = here.startsWith("/404") ? "/#walkthrough" : "#walkthrough";
