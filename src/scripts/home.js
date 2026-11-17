@@ -63,7 +63,7 @@
     var update = function () {
       ticking = false;
       var r = sec.getBoundingClientRect(), vh = window.innerHeight;
-      // 0 while the section is centred or lower; 1 once its lower third reaches mid-screen
+      // 0 while the section is centered or lower; 1 once its lower third reaches mid-screen
       var p = (vh * 0.45 - r.top) / (r.height * 0.6);
       sec.style.setProperty("--p", Math.max(0, Math.min(1, p)).toFixed(3));
     };
@@ -115,7 +115,7 @@
     btn.addEventListener("click", function () {
       stop();
       btn.hidden = true; $("#samRow .ok").hidden = false;
-      $("#samRow small").textContent = "Regional VP · approved just now";
+      $("#samRow small").textContent = "RVP · approved just now";
       $("#approveChip span").textContent = "All three approved";
       $("#tryHint").textContent = "Approved. Next, both sides sign.";
       later(function () { if (current() === APPROVE) select(APPROVE + 1, false); }, 1700);
@@ -131,7 +131,7 @@
     $(".dis", a).addEventListener("pointerenter", refuse);
     onSeen(b, function () { later(function () { b.classList.remove("pre"); }, 700); }, 0.6);
     onSeen(c, function () {
-      var nums = $$("[data-count]", c), end = 23410, t0 = null, dur = 1100;
+      var nums = $$("[data-count]", c), end = 22000, t0 = null, dur = 1100;
       var fmt = function (v) { return v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
       nums.forEach(function (n) { n.textContent = fmt(0); });
       later(function () {
@@ -146,7 +146,7 @@
     }, 0.6);
   })();
 
-  // 5. The glass record leans towards the pointer.
+  // 5. The glass record leans toward the pointer.
   if (motion) (function () {
     var obj = $("#obj"), glass = $(".glass", obj);
     if (!window.matchMedia("(hover: hover)").matches) return;
