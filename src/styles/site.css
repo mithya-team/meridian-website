@@ -387,3 +387,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .rcard li { white-space: nowrap; min-height: 1.6rem; }
 .rcard li > b, .rcard li > .st { flex: none; }
 .rcard .rsub { display: block; min-height: 0; margin-top: -.35rem; font-size: .8125rem; color: var(--mut); }
+
+/* the closing step after the five stages: labelled Then, not numbered */
+.stg-tray .stg-n.then { background: var(--lav); color: #4A3CC0; font-family: var(--sans); }

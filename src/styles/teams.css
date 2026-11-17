@@ -49,3 +49,5 @@
 
 .close { padding-top: clamp(1rem, 3vw, 2.5rem); }
 @media (max-width: 560px) { .tfin-p .tclose { width: 84%; } }
+/* queue names stay on one line, phones included */
+.tart li > span:first-of-type { white-space: nowrap; }
