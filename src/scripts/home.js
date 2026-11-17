@@ -45,29 +45,77 @@
     later(function () { chips[1].classList.remove("wait"); foot.classList.remove("wait"); }, 3500);
   })();
 
-  // 2. Ten tools: labels drift and swap names, then gather into the record as you scroll.
+  // 2. Ten tools: labels drift and swap names; as you scroll, each one travels into the record,
+  //    one after another, and the record answers every arrival with a bop and a ring.
   if (motion) (function () {
-    var sec = $("#tools"), labels = $$(".t", sec);
+    var sec = $("#tools"), layer = $(".floaters", sec), card = $(".one", sec), labels = $$(".t", sec);
+    var narrow = window.matchMedia("(max-width: 900px)");
     labels.forEach(function (t) {
       var a = t.textContent, b = t.getAttribute("data-alt");
       t.textContent = ""; var s = document.createElement("b"); s.textContent = a; t.appendChild(s);
-      t._names = [a, b]; t._i = 0;
+      t._names = [a, b]; t._i = 0; t._in = false;
     });
     var k = 0;
     window.setInterval(function () {
       var t = labels[k % labels.length]; k += 1;
+      if (t._q > 0.05) return;  // leave a label alone once it's on its way
       t.classList.add("swap");
       later(function () { t._i = 1 - t._i; t.firstChild.textContent = t._names[t._i]; t.classList.remove("swap"); }, 450);
     }, 1600);
+
+    // The order they arrive in: nearest first, so the card fills up steadily.
+    var order = labels.slice();
+    var ease = function (x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+    var clamp = function (x) { return Math.max(0, Math.min(1, x)); };
+    var arrived = 0;
+
+    var bop = function () {
+      card.classList.remove("bop"); void card.offsetWidth; card.classList.add("bop");
+    };
+    var reset = function () {
+      labels.forEach(function (t) { t.style.transform = ""; t.style.opacity = ""; t.classList.remove("moving"); t._in = false; t._q = 0; });
+      card.classList.remove("full"); arrived = 0;
+    };
+
     var ticking = false;
     var update = function () {
       ticking = false;
-      var r = sec.getBoundingClientRect(), vh = window.innerHeight;
-      // 0 while the section is centered or lower; 1 once its lower third reaches mid-screen
-      var p = (vh * 0.45 - r.top) / (r.height * 0.6);
-      sec.style.setProperty("--p", Math.max(0, Math.min(1, p)).toFixed(3));
+      if (narrow.matches) { reset(); return; }
+      var vh = window.innerHeight, L = layer.getBoundingClientRect(), C = card.getBoundingClientRect();
+      // Timed by the record itself: 0 while it is still a screen below view, 1 once it sits just above the middle.
+      var p = clamp((vh * 1.25 - (C.top + C.height / 2)) / (vh * 0.68));
+      sec.style.setProperty("--p", p.toFixed(3));
+      var cx = C.left + C.width / 2 - L.left, cy = C.top + C.height / 2 - L.top;
+      order.forEach(function (t, i) {
+        var q = clamp((p - i * 0.075) / 0.55);
+        t._q = q;
+        var x0 = t.offsetLeft + t.offsetWidth / 2, y0 = t.offsetTop + t.offsetHeight / 2;
+        var e = ease(q);
+        var shrink = clamp((q - 0.78) / 0.22);              // visible and full size until the last stretch
+        var rot = parseFloat(getComputedStyle(t).getPropertyValue("--r")) || 0;
+        t.style.transform = "translate(" + ((cx - x0) * e).toFixed(1) + "px," + ((cy - y0) * e).toFixed(1) + "px) rotate(" + (rot * (1 - e)).toFixed(2) + "deg) scale(" + (1 - 0.8 * shrink).toFixed(3) + ")";
+        t.style.opacity = (1 - shrink).toFixed(3);
+        t.classList.toggle("moving", q > 0);
+        if (q >= 0.98 && !t._in) { t._in = true; arrived += 1; bop(); }
+        else if (q < 0.9 && t._in) { t._in = false; arrived -= 1; }
+      });
+      card.classList.toggle("full", arrived === labels.length);
     };
-    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
+    var go = function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } };
+    window.addEventListener("scroll", go, { passive: true });
+    window.addEventListener("resize", go);
+    // Measure nearest-first once the layout has settled.
+    var sortByDistance = function () {
+      var L = layer.getBoundingClientRect(), C = card.getBoundingClientRect();
+      var cx = C.left + C.width / 2 - L.left, cy = C.top + C.height / 2 - L.top;
+      order.sort(function (a, b) {
+        var da = Math.hypot(a.offsetLeft + a.offsetWidth / 2 - cx, a.offsetTop + a.offsetHeight / 2 - cy);
+        var db = Math.hypot(b.offsetLeft + b.offsetWidth / 2 - cx, b.offsetTop + b.offsetHeight / 2 - cy);
+        return da - db;
+      });
+      update();
+    };
+    if (document.readyState === "complete") sortByDistance(); else window.addEventListener("load", sortByDistance);
     update();
   })();
 

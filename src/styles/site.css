@@ -104,21 +104,32 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .tools .lead { max-width: 36rem; }
 .floaters { position: absolute; inset: 0; pointer-events: none; }
 .t { position: absolute; left: var(--x); top: var(--y); display: inline-flex; align-items: center; gap: .55rem; background: #fff; color: var(--mut); font-size: .9375rem; padding: .6rem .9rem; border-radius: 10px; box-shadow: 0 0 0 1px var(--line), 0 10px 24px -14px rgb(11 18 32 / .25); white-space: nowrap;
-  transform: translate(calc(var(--dx) * var(--p)), calc(var(--dy) * var(--p))) rotate(var(--r)) scale(calc(1 - .45 * var(--p))); opacity: calc(1 - var(--p) * 1.15); animation: drift var(--d, 9s) ease-in-out infinite; }
+  transform: rotate(var(--r)); will-change: transform, opacity; animation: drift var(--d, 9s) ease-in-out infinite; }
 .t::before { content: ""; width: 1.05rem; height: 1.05rem; border-radius: 4px; background: var(--k); }
 .t b { font-weight: 400; transition: opacity .45s; } .t.swap b { opacity: 0; }
 @keyframes drift { 50% { translate: 0 -10px; rotate: 1.2deg; } }
-.t1 { --x: 9%; --y: 16%; --r: -6deg; --dx: 34vw; --dy: 22rem; --d: 8s; }
-.t2 { --x: 71%; --y: 12%; --r: 5deg; --dx: -24vw; --dy: 24rem; --d: 10s; animation-delay: -2s; }
-.t3 { --x: 4%; --y: 46%; --r: 4deg; --dx: 38vw; --dy: 9rem; --d: 11s; animation-delay: -5s; }
-.t4 { --x: 80%; --y: 42%; --r: -4deg; --dx: -32vw; --dy: 11rem; --d: 9s; animation-delay: -3s; }
-.t5 { --x: 7%; --y: 60%; --r: -3deg; --dx: 30vw; --dy: -1rem; --d: 12s; animation-delay: -7s; }
-.t6 { --x: 77%; --y: 61%; --r: 6deg; --dx: -22vw; --dy: -2rem; --d: 10s; animation-delay: -1s; }
+.t.moving { animation: none; }
+.t1 { --x: 9%; --y: 16%; --r: -6deg; --d: 8s; }
+.t2 { --x: 71%; --y: 12%; --r: 5deg; --d: 10s; animation-delay: -2s; }
+.t3 { --x: 4%; --y: 46%; --r: 4deg; --d: 11s; animation-delay: -5s; }
+.t4 { --x: 80%; --y: 42%; --r: -4deg; --d: 9s; animation-delay: -3s; }
+.t5 { --x: 7%; --y: 60%; --r: -3deg; --d: 12s; animation-delay: -7s; }
+.t6 { --x: 77%; --y: 61%; --r: 6deg; --d: 10s; animation-delay: -1s; }
 @media (max-width: 900px) { .floaters { position: static; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; padding: 0 20px 2rem; } .t { position: static; transform: rotate(var(--r)); opacity: 1; font-size: .8125rem; } .tools { padding-top: 4rem; } }
 .one-wrap { display: flex; flex-direction: column; align-items: center; margin-top: 1rem; }
 .stem { width: 2px; height: 4.5rem; background: linear-gradient(rgb(14 140 130 / 0), var(--teal)); }
 .one { display: flex; align-items: center; gap: .9rem; padding: 1rem 1.4rem; font-size: 1rem; color: var(--mut); position: relative; flex-wrap: wrap; justify-content: center; }
 .one b { font-weight: 500; color: var(--ink); }
+/* the record answers each arrival: a bop, a ring, the tick pops; a soft glow stays once all six are in */
+.one { transition: box-shadow .6s var(--ease); }
+.one::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.one.bop { animation: bop .5s var(--spring); }
+.one.bop::after { animation: ring .75s ease-out; }
+.one.bop .ok { animation: tickPop .5s var(--spring); }
+.one.full { box-shadow: 0 0 0 1px rgb(14 140 130 / .35), 0 0 42px -6px rgb(14 140 130 / .5), 0 30px 60px -30px rgb(11 18 32 / .3); }
+@keyframes bop { 40% { transform: scale(1.05); } }
+@keyframes ring { from { box-shadow: 0 0 0 0 rgb(14 140 130 / .45); } to { box-shadow: 0 0 0 16px rgb(14 140 130 / 0); } }
+@keyframes tickPop { 45% { transform: scale(1.3); } }
 .one::before { content: ""; position: absolute; inset: -3rem -7rem; z-index: -1; background: radial-gradient(closest-side at 38% 50%, #CFF1EA, rgb(207 241 234 / 0) 78%), radial-gradient(closest-side at 68% 55%, #E2DCFF, rgb(226 220 255 / 0) 70%); opacity: calc(.4 + var(--p) * .6); }
 
 .repl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 2.5rem; margin-top: 3.5rem; text-align: left; width: 100%; }
@@ -226,7 +237,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .plus::before, .plus::after { content: ""; position: absolute; width: .8rem; height: 2px; border-radius: 2px; background: var(--ink2); } .plus::after { rotate: 90deg; }
 .role-b { flex: 1; position: relative; padding: 1.1rem 1.75rem 1.75rem; display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
 .role-b h3 { font-size: clamp(1.375rem, 2.1vw, 1.75rem); max-width: 17ch; } .role-b p { font-size: 1.0625rem; color: var(--ink2); max-width: 19rem; } .role-b .lk { margin-top: auto; }
-.rpic { position: absolute; right: 1.5rem; bottom: 1.5rem; width: min(15.5rem, 52%); }
+.rpic { position: absolute; right: 1.5rem; bottom: 1.5rem; width: min(17.5rem, 56%); }
 .rcard { padding: 1.1rem 1.2rem; display: flex; flex-direction: column; gap: .65rem; font-size: .9375rem; color: var(--ink2); rotate: -2deg; transition: rotate .4s var(--ease), translate .4s var(--ease); }
 .role:hover .rcard { rotate: 0deg; translate: 0 -4px; }
 .rcard li { display: flex; align-items: center; gap: .7rem; } .rcard li > b, .rcard li > .st { margin-left: auto; } .rcard li > b { font-weight: 500; font-size: .875rem; color: var(--ink); }
@@ -362,3 +373,16 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .halo > .card, .halo > p, .halo > div:not(.chip) { position: relative; z-index: 1; }
 .halo > .chip { z-index: 2; }
 @media (max-width: 900px) { .halo::before { width: 14rem; height: 14rem; } .halo::after { width: 11rem; height: 11rem; } }
+
+/* step header: the number and who acts share one tray, on one line */
+.stg-tray { display: inline-flex; align-items: center; gap: .7rem; max-width: 100%; background: #fff; border-radius: 1.3rem; padding: .3rem .95rem .3rem .3rem; box-shadow: 0 1px 2px rgb(11 18 32 / .06); }
+.stg-tray .stg-n { background: var(--mint); border-radius: 999px; padding: .4rem .6rem; flex: none; }
+.stg-tray .chain { flex-wrap: wrap; gap: .3rem .4rem; font-size: .8125rem; min-width: 0; }
+.stg-tray .chain li { background: none; box-shadow: none; padding: 0; white-space: nowrap; color: var(--ink); }
+.stg-tray .chain .ar { color: var(--mut); }
+@media (max-width: 560px) { .stg-tray { align-items: flex-start; } .stg-tray .chain { padding-top: .35rem; } }
+
+/* role cards: every row on one line, values aligned on the right at the same height */
+.rcard li { white-space: nowrap; min-height: 1.6rem; }
+.rcard li > b, .rcard li > .st { flex: none; }
+.rcard .rsub { display: block; min-height: 0; margin-top: -.35rem; font-size: .8125rem; color: var(--mut); }
