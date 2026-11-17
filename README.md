@@ -33,6 +33,18 @@ On GitHub Pages the site sits in a folder (`/meridian-website`). Write links fro
 | `/for-partners` | For partners | `for-partners.astro`, `styles/partners.css`, `scripts/partners.js` |
 | `/questions` | Questions | `questions.astro`, `styles/questions.css`, `scripts/questions.js` |
 | `/trust` | Trust | `trust.astro`, `styles/trust.css`, `scripts/trust.js` |
+| `/request-a-walkthrough` | Request a walkthrough (also the footer's Contact) | `request-a-walkthrough.astro`, `styles/walkthrough.css`, `scripts/walkthrough.js` |
+| `/privacy`, `/terms` | Privacy notice, website terms (drafts) | `privacy.astro`, `terms.astro`, `styles/legal.css` |
+
+## Connecting the walkthrough form
+
+Every "Request a walkthrough" button leads to `/request-a-walkthrough`. The form checks what's typed, then sends it to the address in `FORM_ENDPOINT` at the top of `src/pages/request-a-walkthrough.astro`. That is empty today, so on submit the page says plainly that nothing was sent.
+
+To connect it, set `FORM_ENDPOINT` to the URL of your form service or endpoint. It receives a `POST` of form data (`multipart/form-data`) with an `Accept: application/json` header, and any 2xx reply shows the thank-you message. The fields are `name`, `email`, `company`, `job_title`, `team`, `partner_count`, `regions` (repeated, one per ticked region), `notes`, `consent` (`yes`), `source` (the page the visitor came from), and `website`, a trap for bots that must be empty (the script drops entries where it's filled). Then add the service to the "Who we share it with" section of the privacy notice.
+
+## Privacy and Terms
+
+Both are drafts. Every detail the company still has to supply is highlighted on the page and marked `To fill in:` in the source (search for it). Have them reviewed by counsel before launch. If the site adds analytics or cookies, update the privacy notice's Cookies section.
 
 ## How it fits together
 
@@ -60,6 +72,6 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 
 - [ ] Choose the domain, add it under Settings › Pages, and set `SITE_URL` and `BASE_PATH` in the workflow (share images need the right address).
 - [ ] Set `LIVE = true` there, and allow crawlers in `public/robots.txt`.
-- [ ] Make "Request a walkthrough" send somewhere: today it only scrolls to the closing section.
-- [ ] Replace the footer's placeholder links (About, Contact, Privacy, Terms, Roadmap).
+- [ ] Connect the walkthrough form (see above).
+- [ ] Fill in and review the Privacy and Terms pages.
 - [ ] Answer the Trust page's "To confirm" topics.

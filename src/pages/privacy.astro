@@ -1,0 +1,136 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/site.css";
+import "../styles/legal.css";
+
+// Draft. Everything in <span class="fill"> is a detail the company still has to supply.
+// Have it reviewed by counsel before launch, and update it if the site adds analytics or cookies.
+const sections = [
+  ["who", "Who we are"],
+  ["covers", "What this notice covers"],
+  ["collect", "What we collect"],
+  ["use", "How we use it"],
+  ["share", "Who we share it with"],
+  ["cookies", "Cookies"],
+  ["keep", "How long we keep it"],
+  ["rights", "Your choices and rights"],
+  ["transfers", "Where it's processed"],
+  ["security", "How we protect it"],
+  ["changes", "Changes to this notice"],
+  ["contact", "Contact us"],
+];
+---
+<Base
+  title="Privacy · Meridian"
+  description="How Meridian handles the personal details you share on this website, and the choices you have."
+  share="og-trust.png"
+  shareAlt="Meridian: Said plainly, and only what's true."
+>
+
+<main id="main">
+
+<section class="lg-head" id="top"><div class="in">
+  <span class="pill">Privacy</span>
+  <h1>Privacy notice</h1>
+  <p class="lead">How we handle the details you share on this website, said plainly.</p>
+  <div class="lg-meta"><span>Last updated: <span class="fill">To fill in: date</span></span><span>Applies to this website</span></div>
+  <p class="lg-draft"><b>Draft for review.</b> Highlighted details are still to be filled in, and the text is to be reviewed by counsel before launch.</p>
+</div></section>
+
+<section class="lg-body"><div class="in lg-grid">
+
+  <nav class="lg-toc" aria-label="On this page">
+    <h2>On this page</h2>
+    <ol>{sections.map(([id, label]) => <li><a href={"#" + id}>{label}</a></li>)}</ol>
+  </nav>
+
+  <div class="lg-doc">
+
+    <section id="who">
+      <h2>Who we are</h2>
+      <p>This website is run by <span class="fill">To fill in: company legal name</span>, <span class="fill">To fill in: registered address</span> ("we", "us"). We make Meridian, software for running market development funds (MDF). For the personal details described here, we are the controller: we decide how they are used.</p>
+    </section>
+
+    <section id="covers">
+      <h2>What this notice covers</h2>
+      <p>This notice covers this website and the walkthrough request form on it.</p>
+      <p>It doesn't cover the data inside the Meridian product. When an organization uses Meridian, it decides what goes into it, and we handle that data on its behalf under our agreement with that organization. If you use Meridian through your employer or a vendor you work with, their privacy notice applies, and you can ask them about it.</p>
+    </section>
+
+    <section id="collect">
+      <h2>What we collect</h2>
+      <p><b>What you tell us.</b> When you request a walkthrough, we receive what you enter: your name, work email, company, job title, your team, how many partners you work with, the regions you run MDF in, anything you write about what you'd like to see, and your agreement to be contacted. We also note which page of this site you came from.</p>
+      <p><b>What your browser sends.</b> Like any website, this one receives technical details when you visit, such as your IP address, browser type and the pages you request. Our hosting provider keeps these in its logs to run and secure the service.</p>
+      <p>We don't ask for sensitive information, and we ask you not to include any in the form.</p>
+    </section>
+
+    <section id="use">
+      <h2>How we use it</h2>
+      <ul>
+        <li><b>To answer your request:</b> to contact you, arrange the walkthrough and prepare it with your activity types and approval rules. We rely on your agreement, which you give with the checkbox on the form.</li>
+        <li><b>To follow up about Meridian:</b> while you're evaluating it, we may send you information related to your request. This is in our legitimate interest in answering business inquiries. You can ask us to stop at any time.</li>
+        <li><b>To keep the website running and secure:</b> technical details are used to deliver pages and prevent abuse. This is in our legitimate interest in running a safe website.</li>
+      </ul>
+      <p>We don't sell your personal details, and we don't use them for advertising profiles.</p>
+    </section>
+
+    <section id="share">
+      <h2>Who we share it with</h2>
+      <p>Only with service providers who help us run this website and answer your request, and only for those purposes:</p>
+      <ul>
+        <li><b>Website hosting:</b> GitHub Pages (GitHub, Inc.), which serves the pages and keeps technical logs.</li>
+        <li><b>Fonts:</b> Google Fonts (Google LLC). Your browser fetches the site's typefaces from Google, which receives your IP address when it does.</li>
+        <li><b>Form handling and email:</b> <span class="fill">To fill in: the service that receives form entries, and the email or CRM tool used to reply</span>.</li>
+      </ul>
+      <p>We may also disclose details where the law requires it, or to protect our rights or someone's safety.</p>
+    </section>
+
+    <section id="cookies">
+      <h2>Cookies</h2>
+      <p>This website doesn't set cookies, and it doesn't use analytics or advertising trackers. If that changes, we'll update this notice and ask for your consent where the law requires it.</p>
+    </section>
+
+    <section id="keep">
+      <h2>How long we keep it</h2>
+      <p>We keep walkthrough requests for as long as we're in conversation with you, and then for <span class="fill">To fill in: retention period</span>, unless you ask us to delete them sooner. Hosting logs are kept by the hosting provider under its own retention rules.</p>
+    </section>
+
+    <section id="rights">
+      <h2>Your choices and rights</h2>
+      <p>Depending on where you live, you may have the right to:</p>
+      <ul>
+        <li>see the personal details we hold about you, and get a copy;</li>
+        <li>have them corrected or deleted;</li>
+        <li>object to, or ask us to limit, how we use them;</li>
+        <li>withdraw your agreement to be contacted, at any time;</li>
+        <li>complain to your data protection authority.</li>
+      </ul>
+      <p>To use any of these rights, email <span class="fill">To fill in: privacy contact email</span>. We'll reply within the time the law allows, and we won't treat you differently for asking.</p>
+    </section>
+
+    <section id="transfers">
+      <h2>Where it's processed</h2>
+      <p>Our service providers may process your details in countries other than yours, including the United States. Where the law requires it, we rely on safeguards such as standard contractual clauses. <span class="fill">To fill in: where the company itself stores form entries</span>.</p>
+    </section>
+
+    <section id="security">
+      <h2>How we protect it</h2>
+      <p>The website is served over an encrypted connection (HTTPS). Only the people who answer walkthrough requests can see them. No method of sending or storing data is completely secure, but we take reasonable steps to protect what you share.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes to this notice</h2>
+      <p>If we change how we handle your details, we'll update this page and the date at the top. If a change is significant, we'll make that clear on this page.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact us</h2>
+      <p>Questions about this notice or your details: <span class="fill">To fill in: privacy contact email</span>, or write to <span class="fill">To fill in: company legal name and address</span>.</p>
+      <p>For questions about Meridian itself, <a href="/request-a-walkthrough">request a walkthrough</a>.</p>
+    </section>
+
+  </div>
+</div></section>
+
+</main>
+</Base>
