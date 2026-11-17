@@ -1,10 +1,11 @@
 ---
 import Logo from "./Logo.astro";
+const year = new Date().getFullYear(); // the year the site was built
 ---
 <footer class="foot"><div class="in">
   <div class="brandcol"><Logo /><p>Market development funds, run like finance.</p><p class="by">Brought to you by <a href="https://venzi.ai">Venzi</a>, an enterprise marketing agency trusted for over eight years.</p></div>
   <div><h3>Product</h3><ul><li><a href="/how-it-works">How it works</a></li><li><a href="/controls">Controls</a></li><li><a href="/audit-evidence-pack">Audit evidence pack</a></li><li><a href="/teams">Teams</a></li><li><a href="/for-partners">For partners</a></li></ul></div>
   <div><h3>Evaluate</h3><ul><li><a href="/questions">Questions</a></li><li><a href="/trust">Trust</a></li></ul></div>
   <div><h3>Company</h3><ul><li><a href="/request-a-walkthrough">Contact</a></li><li><a href="mailto:avneesh@venzi.ai">Email us</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li></ul></div>
-  <p class="small">Names, companies and figures shown are examples.</p>
+  <p class="small">© {year} Venzi Inc. All rights reserved. Names, companies and figures shown are examples.</p>
 </div></footer>
