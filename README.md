@@ -61,7 +61,7 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 
 ## What the copy must keep to
 
-- The product is **Meridian**. Not "Venzi Meridian".
+- The product is **Meridian**. Not "Venzi Meridian", and Venzi is never in the product name or logo. Venzi appears only as the company behind it: "Brought to you by Venzi" in the footer, and Venzi Inc. on the legal pages.
 - Say **marketing**, never "field marketing".
 - Connections to sign-in, document storage, e-signature, CRM and budget planning are **Planned**, not built. Label them that way.
 - Don't claim a certification (SOC 2, ISO 27001). The site states only what is true; open questions live in `strategy/questions-for-the-team.md`, not on the site.
