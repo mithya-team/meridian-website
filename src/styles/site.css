@@ -192,7 +192,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .rose { background: var(--rose); } .mint { background: var(--mint); } .peach { background: var(--peach); } .butter { background: var(--butter); }
 .mock { margin-top: auto; padding: 1.25rem 1.25rem 3.25rem; position: relative; display: flex; flex-direction: column; gap: .9rem; }
 .mock-t { font-size: .9375rem; color: var(--ink2); } .mock-t b { color: var(--ink); font-weight: 500; }
-.dis { align-self: flex-start; font-size: .9375rem; font-weight: 500; color: #A0A7B4; background: #F1F3F6; padding: .65rem 1.2rem; border-radius: 8px; cursor: not-allowed; }
+.dis { align-self: flex-start; font-size: .9375rem; font-weight: 500; color: #5D6577; background: #F1F3F6; padding: .65rem 1.2rem; border-radius: 8px; cursor: not-allowed; }
 .tip { position: absolute; left: 1.25rem; bottom: .75rem; font-size: .8125rem; background: var(--ink); color: #fff; padding: .45rem .7rem; border-radius: 7px; transition: opacity .3s, transform .4s var(--spring); }
 .tip::before { content: ""; position: absolute; left: 1.2rem; top: -4px; width: 9px; height: 9px; background: var(--ink); transform: rotate(45deg); }
 .tile.pre .tip { opacity: 0; transform: translateY(-6px); } .tile.shake .dis { animation: shake .45s; }

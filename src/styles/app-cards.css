@@ -12,7 +12,7 @@
 .ac-b { font: 500 .8125rem/1 var(--sans); padding: .55rem .8rem; border-radius: 8px; white-space: nowrap; background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px #CBD2DB; }
 .ac-b.go { background: var(--accent); color: #fff; box-shadow: none; }
 .ac-b.no { color: #B42318; box-shadow: inset 0 0 0 1px #F4C7C3; }
-.ac-b.off { background: #F1F3F6; color: #A0A7B4; box-shadow: none; }
+.ac-b.off { background: #F1F3F6; color: #5D6577; box-shadow: none; } /* reads as switched off, and still readable (5.3:1) */
 .st.now { background: var(--accent); color: #fff; } .st.wait { background: #fff; color: var(--mut); box-shadow: inset 0 0 0 1px #D5DAE1; }
 
 /* tinted stage holding two cards side by side */
@@ -80,6 +80,7 @@
 .ac-log .ret { background: var(--peach); border-radius: 12px; border-top-color: transparent; padding: .6rem .7rem; margin: .2rem -.7rem; }
 .ac-log .ret b { color: #9A4B00; } .ac-log .ret q { display: block; margin-top: .3rem; font-size: .8125rem; color: var(--ink); quotes: "“" "”"; }
 .ac-log .ret + li { border-top-color: transparent; }
+.ac-log .ret time, .ac-log .ret small { color: #5D6577; } /* the muted grey is 4.4:1 on peach; this keeps it readable (5.1:1) */
 .ac-log .fin b { color: var(--accent-d); } .ac-log .fin .ok { width: 1rem; height: 1rem; font-size: .5rem; margin-right: .35rem; vertical-align: -.15em; }
 
 /* 5 · where it stands (For partners) */
