@@ -349,3 +349,16 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .jflow .stg h3 { font-size: clamp(1.75rem, 2.9vw, 2.375rem); letter-spacing: -.03em; line-height: 1.08; }
 .jflow .stg-p .bud-h .st { white-space: nowrap; }
 .ticks .st { margin-left: .35rem; vertical-align: 1px; }
+
+/* inner page heroes: the homepage's soft glow and glass sheet behind the picture, instead of a flat tinted panel */
+.halo { position: relative; background: transparent !important; isolation: isolate; overflow: visible; }
+.halo::before, .halo::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; filter: blur(46px); opacity: .85; pointer-events: none; }
+.halo::before { width: 19rem; height: 19rem; right: -1rem; top: 0; background: var(--glow1, #BFEDE3); }
+.halo::after { width: 15rem; height: 15rem; left: 1rem; bottom: 0; background: var(--glow2, #D9D2FF); }
+.js .halo::before { animation: blob 12s ease-in-out infinite; } .js .halo::after { animation: blob 14s ease-in-out infinite reverse; }
+.halo.mint { --glow1: #BFEDE3; --glow2: #D9D2FF; } .halo.lav { --glow1: #D9D2FF; --glow2: #BFEDE3; }
+.halo.peach { --glow1: #FFD9BD; --glow2: #D9D2FF; } .halo.sky { --glow1: #C9DEFF; --glow2: #BFEDE3; }
+.halo > .sheet { z-index: 0; width: min(86%, 24rem); height: 70%; }
+.halo > .card, .halo > p, .halo > div:not(.chip) { position: relative; z-index: 1; }
+.halo > .chip { z-index: 2; }
+@media (max-width: 900px) { .halo::before { width: 14rem; height: 14rem; } .halo::after { width: 11rem; height: 11rem; } }
