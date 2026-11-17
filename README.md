@@ -64,7 +64,7 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 - The product is **Meridian**. Not "Venzi Meridian".
 - Say **marketing**, never "field marketing".
 - Connections to sign-in, document storage, e-signature, CRM and budget planning are **Planned**, not built. Label them that way.
-- Don't claim a certification (SOC 2, ISO 27001). Those answers are still "To confirm" on the Trust page.
+- Don't claim a certification (SOC 2, ISO 27001). The site states only what is true; open questions live in `strategy/questions-for-the-team.md`, not on the site.
 - Prices, and any prospect's name or tools, stay off the site.
 - Example people, companies and amounts are fictional.
 
@@ -74,4 +74,4 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 - [ ] Set `LIVE = true` in `src/site.config.mjs`. That one switch removes the noindex tag, allows crawlers and adds the sitemap.
 - [ ] Connect the walkthrough form (see above).
 - [ ] Fill in and review the Privacy and Terms pages.
-- [ ] Answer the Trust page's "To confirm" topics.
+- [ ] Get engineering to sign off the Trust page's eight "True today" claims (`strategy/questions-for-the-team.md`, part 1).

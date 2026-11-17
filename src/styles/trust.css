@@ -1,4 +1,4 @@
-/* Trust page. Shares the homepage's look (home.css is loaded first, including the shared accordion). Hero with an access list, what is true today as one accordion column, what is being confirmed in one tinted panel, two doors to the controls and the evidence pack, then the teal close. */
+/* Trust page. Shares the homepage's look (home.css is loaded first, including the shared accordion). Hero with an access list, what is true today as one accordion column, two doors to the controls and the evidence pack, then the indigo close. */
 
 /* 1 hero */
 .trhero { padding-block: clamp(2rem, 5vw, 4rem) clamp(2.5rem, 5vw, 4rem); }
@@ -19,14 +19,6 @@
 .qa p { font-size: 1.0625rem; line-height: 1.55; color: var(--ink2); } .qa .lk { font-size: 1rem; margin-left: .2rem; }
 .js .acc .pv:nth-child(n+2) { transition-delay: .08s; }
 
-/* 3 being confirmed */
-.trpend { border-radius: 28px; background: var(--peach); padding: clamp(1.6rem, 4vw, 3rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 2.5rem 3.5rem; align-items: start; }
-.trpend-w { display: flex; flex-direction: column; gap: 1.2rem; }
-.trpend h2 { font-size: clamp(2.125rem, 3.7vw, 3.25rem); }
-.trlist { display: flex; flex-direction: column; gap: .45rem; }
-.trlist li { background: #fff; border-radius: 14px; padding: .85rem 1rem; display: flex; align-items: center; gap: .9rem; font-size: 1rem; line-height: 1.4; }
-.trlist .st { flex: none; }
-@media (max-width: 900px) { .trpend { grid-template-columns: 1fr; } .trlist li { align-items: flex-start; flex-direction: column; gap: .5rem; } }
 
 /* 4 two doors */
 .trdoors-s { padding-top: 0; }
