@@ -398,6 +398,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 html, main { overflow-x: clip; }
 
 /* ticks: a rounded stroke check drawn with a mask (the ✓ glyph stays in the markup for screen readers, but isn't shown) */
-.ok, .ac-box { position: relative; color: transparent !important; }
-.ok::before, .ac-box::before { content: ""; position: absolute; inset: 0; margin: auto; width: 62%; height: 62%; background: #fff; -webkit-mask: var(--tick) center / contain no-repeat; mask: var(--tick) center / contain no-repeat; }
+.ok, .ac-box, .seal { position: relative; color: transparent !important; }
+.ok::before, .ac-box::before, .seal::before { content: ""; position: absolute; inset: 0; margin: auto; width: 62%; height: 62%; background: #fff; -webkit-mask: var(--tick) center / contain no-repeat; mask: var(--tick) center / contain no-repeat; }
 .no .ok::before { opacity: 0; }
+.seal::before { width: 46%; height: 46%; }
