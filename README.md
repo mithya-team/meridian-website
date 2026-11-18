@@ -74,4 +74,4 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 - [ ] Set `LIVE = true` in `src/site.config.mjs`. That one switch removes the noindex tag, allows crawlers and adds the sitemap.
 - [ ] Connect the walkthrough form (see above).
 - [ ] Fill in and review the Privacy and Terms pages.
-- [ ] Get engineering to sign off the Trust page's eight "True today" claims (`strategy/questions-for-the-team.md`, part 1).
+- [ ] Get engineering to sign off the Trust page's nine "True today" claims (the ninth, data retention, is MER-23) (`strategy/questions-for-the-team.md`, part 1).
