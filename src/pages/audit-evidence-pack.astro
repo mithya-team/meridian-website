@@ -68,7 +68,7 @@ import ClaimHistory from "../components/app/ClaimHistory.astro";
 
 <!-- 3 · The files: four tinted tiles, then the rules in force -->
 <section class="sec" id="files" aria-labelledby="h-files"><div class="in">
-  <div class="files-h"><h2 id="h-files" class="rv">Nine files,<br><em>none of them changed.</em></h2><p class="lead rv">Each file is fingerprinted when it's uploaded. Change one character and the fingerprint no longer matches.</p></div>
+  <div class="files-h"><h2 id="h-files" class="rv">Nine files,<br><em>none of them changed.</em></h2><p class="lead rv">Each file's SHA-256 fingerprint is recorded when it's uploaded. Change one character and it no longer matches, so any later change can be detected.</p></div>
   <ul class="fgrid">
     <li class="file pv" style="--k:var(--mint)"><i class="doc" aria-hidden="true"></i><b>Proof of the event</b><small>3 files: agenda, attendee list, venue photo</small><span class="fp">bc7a…8053 and 2 more</span><span class="st">Accepted</span></li>
     <li class="file pv" style="--k:var(--rose)"><i class="doc" aria-hidden="true"></i><b>Invoices</b><small>3 files: the supplier's, and the partner's, sent twice</small><span class="fp">0b1f…ab1c and 2 more</span><span class="st">Approved</span></li>
