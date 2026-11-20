@@ -34,7 +34,7 @@ On GitHub Pages the site sits in a folder (`/meridian-website`). Write links fro
 | `/questions` | Questions | `questions.astro`, `styles/questions.css`, `scripts/questions.js` |
 | `/trust` | Trust | `trust.astro`, `styles/trust.css`, `scripts/trust.js` |
 | `/request-a-walkthrough` | Request a walkthrough (also the footer's Contact) | `request-a-walkthrough.astro`, `styles/walkthrough.css`, `scripts/walkthrough.js` |
-| `/privacy`, `/terms` | Privacy notice, website terms (drafts) | `privacy.astro`, `terms.astro`, `styles/legal.css` |
+| `/privacy`, `/terms` | Privacy notice, website terms | `privacy.astro`, `terms.astro`, `styles/legal.css` |
 
 ## Connecting the walkthrough form
 
@@ -44,7 +44,7 @@ To connect it, set `FORM_ENDPOINT` to the URL of your form service or endpoint. 
 
 ## Privacy and Terms
 
-Both are drafts. Every detail the company still has to supply is highlighted on the page and marked `To fill in:` in the source (search for it). Have them reviewed by counsel before launch. If the site adds analytics or cookies, update the privacy notice's Cookies section.
+Both are final, adapted per Saurabh (MER-34): New York law, last updated 20 November 2026. Change the date whenever the text changes. If the site adds analytics or cookies, update the privacy notice's Cookies section.
 
 ## How it fits together
 
@@ -73,5 +73,5 @@ Links between pages use the page's address (`/controls#c-08`, `/teams#role-claim
 - [ ] Choose the domain, add it under Settings › Pages, and set `SITE_URL` and `BASE_PATH` in the workflow (share images need the right address).
 - [ ] Set `LIVE = true` in `src/site.config.mjs`. That one switch removes the noindex tag, allows crawlers and adds the sitemap.
 - [ ] Connect the walkthrough form (see above).
-- [ ] Fill in and review the Privacy and Terms pages.
+- [x] Fill in and review the Privacy and Terms pages.
 - [ ] Get engineering to sign off the Trust page's nine "True today" claims (the ninth, data retention, is MER-23) (`strategy/questions-for-the-team.md`, part 1).
